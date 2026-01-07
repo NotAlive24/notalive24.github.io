@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotAlive | Cyber Write-ups</title>
+    <style>
+        /* THE NEON CORE */
+        :root {
+            --orange: #ff8c00;
+            --red: #ff0000;
+            --pink: #ff00ff;
+            --bg: #050505;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: white;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* GRADIENT TEXT HEADER */
+        h1 {
+            font-size: 3rem;
+            background: linear-gradient(to right, var(--orange), var(--red), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* NEON BORDER BOX */
+        .container {
+            border: 2px solid transparent;
+            background-image: linear-gradient(var(--bg), var(--bg)), 
+                              linear-gradient(to right, var(--orange), var(--red), var(--pink));
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+        }
+
+        .post-link {
+            color: var(--pink);
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .post-link:hover {
+            color: white;
+            text-shadow: 0 0 10px var(--pink);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>NotAlive</h1>
+    <div class="container">
+        <p>> INITIALIZING DATABASE...</p>
+        <p>> ACCESS GRANTED.</p>
+        
+        <h2>LATEST WRITE-UPS</h2>
+        <a href="posts/ctf-01.html" class="post-link">01. Rooting the Matrix v2.0</a>
+        <a href="posts/ctf-02.html" class="post-link">02. Binary Echoes Challenge</a>
+    </div>
+
+</body>
+</html>
