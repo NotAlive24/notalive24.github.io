@@ -3,76 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NotAlive | Cyber Write-ups</title>
+    <title>NotAlive | Cyber Research</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <meta property="og:title" content="NotAlive Cyber Archive">
+    <meta property="og:description" content="Cybersecurity research, CTF write-ups, and penetration testing logs.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:url" content="https://notalive24.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/png" href="assets/favicon.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
     <style>
-        /* THE NEON CORE */
-        :root {
-            --orange: #ff8c00;
-            --red: #ff0000;
-            --pink: #ff00ff;
-            --bg: #050505;
-        }
-
-        body {
-            background-color: var(--bg);
-            color: white;
-            font-family: 'Courier New', monospace;
-            margin: 0;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        /* GRADIENT TEXT HEADER */
         h1 {
-            font-size: 3rem;
-            background: linear-gradient(to right, var(--orange), var(--red), var(--pink));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-bottom: 10px;
-        }
-
-        /* NEON BORDER BOX */
-        .container {
-            border: 2px solid transparent;
-            background-image: linear-gradient(var(--bg), var(--bg)), 
-                              linear-gradient(to right, var(--orange), var(--red), var(--pink));
-            background-origin: border-box;
-            background-clip: content-box, border-box;
-            padding: 20px;
-            width: 80%;
-            max-width: 800px;
-            box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
-        }
-
-        .post-link {
-            color: var(--pink);
-            text-decoration: none;
-            display: block;
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        .post-link:hover {
-            color: white;
-            text-shadow: 0 0 10px var(--pink);
         }
     </style>
+
 </head>
 <body>
 
-    <h1>NotAlive</h1>
-    <div class="container">
-        <p>> INITIALIZING DATABASE...</p>
-        <p>> ACCESS GRANTED.</p>
-        
-        <h2>LATEST WRITE-UPS</h2>
-        <a href="posts/ctf-01.html" class="post-link">01. Rooting the Matrix v2.0</a>
-        <a href="posts/ctf-02.html" class="post-link">02. Binary Echoes Challenge</a>
-    </div>
+    <h1>Not Alive</h1>
 
+    <div class="content">
+        <p style="text-align: center; color: #888; margin-bottom: 30px;">
+            > SYSTEM STATUS: ONLINE<br>
+            > ACCESSING ARCHIVES...
+        </p>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search write-ups (ex: 'matrix', 'web')...">
+        </div>
+
+        <div class="posts-grid" id="posts-container">
+            
+            <a href="posts/introduction.html" class="post-card" data-title="Who is Not Alive?" data-category="Web">
+                <div class="card-meta">
+                    <span>2026-01-07</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Who is Not Alive?</span>
+                <div class="card-preview">
+                    A detailed introduction about myself.
+                </div>
+            </a>
+            
+        </div>
+    </div>
+    
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>

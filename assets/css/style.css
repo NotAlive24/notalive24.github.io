@@ -1,0 +1,325 @@
+/* --- CORE THEME VARIABLES --- */
+:root {
+    --orange: #ff8c00;
+    --yellow: #FFFF00;
+    --red: #ff0000;
+    --pink: #ff00ff;
+    --bg: #050505;
+    --text-main: #e0e0e0;
+    --card-bg: #0a0a0a; 
+    --code-bg: #111;
+}
+
+/* --- ANIMATIONS --- */
+@keyframes turn-on {
+    0% { transform: scale(1, 0.002); opacity: 0; filter: brightness(0); }
+    30% { transform: scale(1, 0.002); opacity: 1; filter: brightness(3); }
+    60% { transform: scale(1, 0.002); filter: brightness(10); }
+    100% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+}
+
+@keyframes flicker {
+    /* GLOW REDUCED BY 50% HERE */
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 0 0 2px var(--orange), 0 0 5px var(--orange);
+        opacity: 1;
+    }
+    20%, 24%, 55% { text-shadow: none; opacity: 0.5; }
+}
+
+/* --- BASE STYLING --- */
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+    
+    /* Animation Speed */
+    animation: turn-on 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+    transform-origin: center;
+
+    /* --- DISABLE TEXT SELECTION --- */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE10+/Edge */
+    user-select: none;         /* Standard */
+}
+
+/* --- NAVIGATION --- */
+nav {
+    padding: 20px;
+    border-bottom: 1px solid #333;
+    text-align: center;
+    background-color: rgba(5, 5, 5, 0.9);
+}
+
+.home-link {
+    color: var(--orange);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    transition: text-shadow 0.3s ease;
+}
+
+.home-link:hover {
+    text-shadow: 0 0 10px var(--orange);
+}
+
+/* --- MAIN CONTAINER --- */
+.content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    box-sizing: border-box;
+}
+
+/* --- HEADERS --- */
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, var(--orange), var(--red), var(--pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+    text-align: center;
+    animation: flicker 3s infinite alternate;
+}
+
+h2 {
+    color: var(--pink);
+    border-bottom: 1px dashed var(--pink);
+    padding-bottom: 5px;
+    margin-top: 40px;
+}
+
+/* --- SEARCH BAR --- */
+.search-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#search-input {
+    background: transparent;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    padding: 10px 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#search-input:focus {
+    box-shadow: 0 0 15px var(--orange);
+    background: rgba(255, 140, 0, 0.1);
+}
+
+#search-input::placeholder {
+    color: rgba(255, 140, 0, 0.5);
+}
+
+/* --- POSTS GRID --- */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.post-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--pink);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+}
+
+.card-title {
+    color: var(--orange);
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.card-meta {
+    font-size: 0.85rem;
+    color: #666;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.card-preview {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.4;
+}
+
+.category-red {
+    border: 1px solid var(--red);
+    color: var(--red);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.category-yellow {
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+
+/* --- CODE BLOCKS --- */
+pre {
+    background-color: var(--code-bg);
+    border: 1px solid var(--red);
+    padding: 15px;
+    overflow-x: auto;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    position: relative;
+}
+
+code {
+    font-family: 'Consolas', 'Monaco', monospace;
+    color: var(--orange);
+}
+
+/* --- BUTTONS (Copy & Back To Top) --- */
+.copy-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    padding: 2px 8px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s;
+    opacity: 0.7;
+}
+
+.copy-btn:hover {
+    background-color: var(--orange);
+    color: #000;
+    opacity: 1;
+    box-shadow: 0 0 10px var(--orange);
+}
+
+#scrollTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    background-color: #000;
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--orange);
+    color: #000;
+    box-shadow: 0 0 15px var(--orange);
+}
+
+/* --- MOBILE OPTIMIZATION --- */
+@media (max-width: 600px) {
+    .content { padding: 15px; }
+    h1 { font-size: 1.8rem; }
+    .posts-grid { grid-template-columns: 1fr; }
+}
+
+/* Allow selection inside inputs so people can type */
+input, textarea {
+    -webkit-user-select: text !important;
+    user-select: text !important;
+}
+
+.terminal-link {
+    color: var(--orange);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--orange);
+    cursor: pointer; /* Ensures the hand icon appears */
+    transition: all 0.2s ease;
+}
+
+.terminal-link:hover {
+    background-color: var(--orange);
+    color: #000;
+    box-shadow: 0 0 10px var(--orange);
+}
+
+/* --- FLOATING TOAST NOTIFICATION --- */
+#toast-notification {
+    visibility: hidden; /* Hidden by default */
+    min-width: 250px;
+    background-color: #000; /* Black background */
+    color: var(--orange);   /* Neon text */
+    text-align: center;
+    border: 1px solid var(--orange);
+    box-shadow: 0 0 15px var(--orange);
+    border-radius: 4px;
+    padding: 16px;
+    
+    /* Positioning */
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%); /* Centers it horizontally */
+    
+    font-family: 'Orbitron', sans-serif; /* Use your sci-fi font */
+    font-size: 0.9rem;
+}
+
+/* The class that triggers the animation */
+#toast-notification.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations */
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
