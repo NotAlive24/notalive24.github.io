@@ -1,4 +1,3 @@
-/* --- CORE THEME VARIABLES --- */
 :root {
     --orange: #ff8c00;
     --yellow: #FFFF00;
@@ -10,7 +9,6 @@
     --code-bg: #111;
 }
 
-/* --- ANIMATIONS --- */
 @keyframes turn-on {
     0% { transform: scale(1, 0.002); opacity: 0; filter: brightness(0); }
     30% { transform: scale(1, 0.002); opacity: 1; filter: brightness(3); }
@@ -19,7 +17,6 @@
 }
 
 @keyframes flicker {
-    /* GLOW REDUCED BY 50% HERE */
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
         text-shadow: 0 0 2px var(--orange), 0 0 5px var(--orange);
         opacity: 1;
@@ -27,7 +24,6 @@
     20%, 24%, 55% { text-shadow: none; opacity: 0.5; }
 }
 
-/* --- BASE STYLING --- */
 body {
     background-color: var(--bg);
     color: var(--text-main);
@@ -36,19 +32,14 @@ body {
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden;
-    
-    /* Animation Speed */
     animation: turn-on 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     transform-origin: center;
-
-    /* --- DISABLE TEXT SELECTION --- */
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE10+/Edge */
-    user-select: none;         /* Standard */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-/* --- NAVIGATION --- */
 nav {
     padding: 20px;
     border-bottom: 1px solid #333;
@@ -69,7 +60,6 @@ nav {
     text-shadow: 0 0 10px var(--orange);
 }
 
-/* --- MAIN CONTAINER --- */
 .content {
     width: 100%;
     max-width: 1000px;
@@ -78,7 +68,6 @@ nav {
     box-sizing: border-box;
 }
 
-/* --- HEADERS --- */
 h1 {
     font-size: 2.5rem;
     background: linear-gradient(to right, var(--orange), var(--red), var(--pink));
@@ -96,21 +85,24 @@ h2 {
     margin-top: 40px;
 }
 
-/* --- SEARCH BAR --- */
 .search-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
     text-align: center;
-    margin-bottom: 40px;
 }
 
 #search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 16px;
+    box-sizing: border-box;
     background: transparent;
     border: 1px solid var(--orange);
     color: var(--orange);
-    padding: 10px 20px;
     font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
-    width: 100%;
-    max-width: 500px;
     border-radius: 5px;
     outline: none;
     transition: all 0.3s ease;
@@ -125,7 +117,6 @@ h2 {
     color: rgba(255, 140, 0, 0.5);
 }
 
-/* --- POSTS GRID --- */
 .posts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -190,8 +181,6 @@ h2 {
     text-transform: uppercase;
 }
 
-
-/* --- CODE BLOCKS --- */
 pre {
     background-color: var(--code-bg);
     border: 1px solid var(--red);
@@ -209,7 +198,6 @@ code {
     color: var(--orange);
 }
 
-/* --- BUTTONS (Copy & Back To Top) --- */
 .copy-btn {
     position: absolute;
     top: 5px;
@@ -256,14 +244,12 @@ code {
     box-shadow: 0 0 15px var(--orange);
 }
 
-/* --- MOBILE OPTIMIZATION --- */
 @media (max-width: 600px) {
     .content { padding: 15px; }
     h1 { font-size: 1.8rem; }
     .posts-grid { grid-template-columns: 1fr; }
 }
 
-/* Allow selection inside inputs so people can type */
 input, textarea {
     -webkit-user-select: text !important;
     user-select: text !important;
@@ -273,7 +259,7 @@ input, textarea {
     color: var(--orange);
     text-decoration: none;
     border-bottom: 1px dashed var(--orange);
-    cursor: pointer; /* Ensures the hand icon appears */
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 
@@ -283,37 +269,31 @@ input, textarea {
     box-shadow: 0 0 10px var(--orange);
 }
 
-/* --- FLOATING TOAST NOTIFICATION --- */
 #toast-notification {
-    visibility: hidden; /* Hidden by default */
+    visibility: hidden;
     min-width: 250px;
-    background-color: #000; /* Black background */
-    color: var(--orange);   /* Neon text */
+    background-color: #000;
+    color: var(--orange);
     text-align: center;
     border: 1px solid var(--orange);
     box-shadow: 0 0 15px var(--orange);
     border-radius: 4px;
     padding: 16px;
-    
-    /* Positioning */
     position: fixed;
     z-index: 1000;
     left: 50%;
     bottom: 30px;
-    transform: translateX(-50%); /* Centers it horizontally */
-    
-    font-family: 'Orbitron', sans-serif; /* Use your sci-fi font */
+    transform: translateX(-50%);
+    font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
 }
 
-/* The class that triggers the animation */
 #toast-notification.show {
     visibility: visible;
     -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
 }
 
-/* Animations */
 @keyframes fadein {
     from {bottom: 0; opacity: 0;}
     to {bottom: 30px; opacity: 1;}
