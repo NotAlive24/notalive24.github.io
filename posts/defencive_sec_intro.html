@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defencive Security Intro | NotAlive</title>
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <meta property="og:title" content="Write-up Title | NotAlive">
+    <meta property="og:description" Oontent="Security analysis and exploitation walkthrough.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.png">
+    
+    <link rel="icon" type="image/png" href="../assets/favicon.jpg">
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html" class="home-link"><< Return to Mainframe</a>
+    </nav>
+
+    <div class="content">
+        <h1>Defencive Security Intro</h1>
+
+        <h2>What is this page about?</h2>
+        <p>
+            Hello everyone, this is <strong>NotAlive.</strong>
+            <br>
+            In this page I will be summarizing the <strong>Defencive Security Intro</strong> Room from <strong>tryhackme</strong>.
+            <br>
+            If you are new I would recommend not to read this as this is something for <em><strong>revision</strong></em>.
+            <br>
+            Let's get started.
+        </p>
+        <h2>1. Introduction to Defencive Security?</h2>
+        <p>
+            In the previous Write-up we learnt what <em>Offencive Security</em> is, this is similar to that we are going to see what <em>Defencive Security</em> is.
+            <br><br>
+            In this we will have 2 main tasks
+            <br>
+            1. Preventing intrusions from occurring
+            <br>
+            2. Detecting intrusions when they occur and responding properly.
+            <br>
+            <br>
+            Tasks related to Defencive Security:
+            <ul>
+                <li>User cyber security awareness: This is about teaching user about cyber security to help make sure they are secure.</li>
+                <li>Documenting and managing assets: We need to know what to manage and protect.</li>
+                <li>Updating and patching systems: Making sure that the softwares are cleanly updated and patched.</li>
+                <li>Setting up preventative security devices: Adding prevention systems like firewall, IPS(Intrusion Prevention System) and more....</li>
+                <li>Setting up logging and monitoring devices: Log everything like login and logout, new device login like windows but don't over bloat it like windows.</li>
+            </ul>
+            <ul>
+                Catagories of Defencive Security:
+                <li>SOC (Security Operation Center)</li>
+                <li>Threat Intelligence</li>
+                <li>Digital Forensics and Incident Response (DFIR)</li>
+                <li>Malware Analysis</li>
+            </ul>
+        </p>
+
+        <h2>2. Areas of Defencive Security</h2>
+        <p>
+            The module covers 2 topics:
+            <ul>
+                <li>Security Operations Center (SOC), where they covered Threat Intelligence in it.</li>
+                <li>Digital Forensics and Incident Response (DFIR), where they covered Malware Analysis in it.</li>
+            </ul>
+            <br>
+            <h3>Security Operation Center (SOC):</h3>
+            <p>
+                SOC is a team where they moniter the network and system, to detect malicious cyber security events:
+                <ul>
+                    <li>Vulnerabilities: So if a Vulnerability is found it is nessary to fix it by updating or patching, if those are not available it is nessary to take measure to prevent it from being exploited, also Vulnerabilities is not the main goal of SOC teams.</li>
+                    <li>Policy Violation: It's SOC Team's duty to make sure no one violates the company policy, example, uploading confidential files to cloud storages.</li>
+                    <li>Unauthorized activity: It is SOC Team's work to make sure Unauthorized users are not being allowed. If something like that happen then the user must be blocked before any damage is cause.</li>
+                    <li>Network intrusions: When a Network intrusion is detected it is nessary to block them before they cause any further damage.</li>
+                </ul>
+                Security operations cover various tasks to ensure protection; one such task is threat intelligence.
+                <br>
+                <h3>Threat Intelligence</h3>
+                This is about <em>How well you know about the enemy</em> and who else could be a <em>potential enemy</em>. This is so that we can better prepare against potential adversaries.
+                <br><br>
+                Different companies have different adversaries. Some adversaries might seek to steal customer data from a mobile operator; however, other adversaries are interested in halting the production in a petroleum refinery. 
+                <br><br>
+                Example adversaries include a nation-state cyber army working for political reasons and a ransomware group acting for financial purposes. Based on the company (target), we can expect adversaries.
+                <br><br>
+                Intelligence need data, data needs to be collected.
+                Data can be gathered from sources like network logs and public sources this process can also be called as <em><strong>OSINT</strong></em>.
+                <br><br>
+                So basically, Threat Intelligence is all about predicting who might be the potential threat for the company and creating tactics, techniques, and procedures hence, we can mitigate the consequences.
+                <br>
+            </p>
+            <h3>Digital Forensics and Incident Response (DFIR)</h3>
+            <p>
+                We are going to cover:
+                <ul>
+                    <li>Digital Forensics</li>
+                    <li>Incident Response</li>
+                    <li>Malware Analysis</li>
+                </ul>
+                <h4>Digital Forensics</h4>
+                <p>
+                    Forensics Science is the investigation of emerging from the need to investigate crimes and add facts, but in Digital Forensics this is all about detecting "How" and "Who" behind the cyberattack.
+                    <br><br>
+                    In the world of cybersecurity, digital forensics isn't just about solving past crimes; it’s a critical pillar of defensive security. Instead of just looking at physical evidence, experts dive into digital footprints to uncover.
+                    <ul>
+                        <li>File System: Analyzing a digital forensics image (low-level copy) of a system’s storage reveals much information, such as installed programs, created files, partially overwritten files, and deleted files.</li>
+                        <li>System memory: If the attacker runs their malicious program in memory without saving it to the disk, taking a forensic image (low-level copy) of the system memory is the best way to analyze its contents and learn about the attack.</li>
+                        <li>System logs: Each client and server computer maintains different log files about what is happening. Log files provide plenty of information about what happened on a system. Even if the attacker tries to clear their traces, some traces will remain.</li>
+                        <li>Network logs: Logs of the network packets that have traversed a network would help answer more questions about whether an attack is occurring and what it entails.</li>
+                    </ul>
+                </p>
+                <h4>Incident Response</h4>
+                <p>
+                    An incident usually refers to a data breach or cyber attack; however, in some cases, it can be something less critical, such as a misconfiguration, an intrusion attempt, or a policy violation.
+                    <br><br>
+                    Incident response specifies the methodology that should be followed to handle such a case. The aim is to reduce damage and recover in the shortest time possible. Ideally, you would develop a plan that is ready for incident response.
+                    <br><br>
+                    The four major phases of the incident response process are:
+                    <ul>
+                        <li>Preparation: This requires a team trained and ready to handle incidents.</li>
+                        <li>Detection and Analysis: The team has the necessary resources to detect any incident; moreover, it is essential to analyze any detected incidents.</li>
+                        <li>Containment, Eradication, and Recovery: Once an incident is detected, it is a must to stop it, eleminate it and recover it from the incident.</li>
+                        <li>Post-Incident Activity: After a successful recovery, a report is produced, and the lesson learned is shared to prevent similar future incidents (sharing is caring).</li>
+                    </ul>
+                </p>
+                <h4>Malware Analysis</h4>
+                <p>
+                    Malwares are in many forms, such as:
+                    <ul>
+                        <li>Virus: A virus is a piece of code that attaches itself to a program. It is designed to spread from one computer to another and works by altering, overwriting, and deleting files once it infects a computer.The result ranges from the computer becoming slow to unusable.</li>
+                        <li>Trojan: A Trojan is a software that is executed when a program is executed, or when it's triggered.</li>
+                        <li>Ransomware: Ransomware is a malicious program that encrypts the user’s files. Encryption makes the files unreadable without knowing the encryption password. The attacker offers the user the encryption password if the user is willing to pay a “ransom.”</li>
+                    </ul>
+                    Malware Analysis aims to learn about such malicious programs using various means:
+                    <ul>
+                        <li>Static analysis: Static analysis works by inspecting the malicious program without running it. This usually requires solid knowledge of assembly language.</li>
+                        <li>Dynamic analysis: Dynamic analysis works by running the malware in a controlled environment and monitoring its activities. It lets you observe how the malware behaves when running.</li>
+                    </ul>
+                </p>
+            </p>
+            <h2>3. Practical Example of Defensive Security</h2>
+            <p>
+                They stimulated the threat by giving us an UI of an SOC pannel and working us through.
+                <br>
+                It will be little defficult to copy the IP in the task, So just copy the IP given below.
+                <pre><code>143.110.250.149</code></pre>
+            </p>
+            <pre><code>email:   <a href="mailto:notalive7593@duck.com" class="terminal-link">notalive7593@duck.com</a>
+discord: <span class="terminal-link" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')">_i_am_innocent_</span>
+github:  <a href="https://github.com/notalive24" target="_blank" class="terminal-link">github.com/notalive24</a></code></pre>
+    </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../assets/js/script.js" defer></script>
+</body>
+</html>
