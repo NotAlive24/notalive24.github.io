@@ -303,3 +303,12 @@ input, textarea {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+
+
+img {
+    max-width: 75%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border: 1px solid #333;
+}
