@@ -1,20 +1,89 @@
+   
+body {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    letter-spacing: 0.3px; 
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    letter-spacing: 3px;  
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.system-status {
+    opacity: 0.7;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+
+
 :root {
     --orange: #ff8c00;
     --yellow: #FFFF00;
     --red: #ff0000;
     --pink: #ff00ff;
-    --bg: #050505;
+
+    --bg: #050505;          
     --text-main: #e0e0e0;
-    --card-bg: #0a0a0a; 
+    --card-bg: #0a0a0a;
     --code-bg: #111;
+
+    color-scheme: dark;
+
+    
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.10);
+    --glass-highlight: rgba(255, 255, 255, 0.16);
+
+    
+    --pink-a: rgba(255, 0, 255, 0.25);
+    --pink-b: rgba(255, 0, 255, 0.12);
 }
 
-@keyframes turn-on {
-    0% { transform: scale(1, 0.002); opacity: 0; filter: brightness(0); }
-    30% { transform: scale(1, 0.002); opacity: 1; filter: brightness(3); }
-    60% { transform: scale(1, 0.002); filter: brightness(10); }
-    100% { transform: scale(1, 1); filter: brightness(1); opacity: 1; }
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
+
+
+
+@keyframes pageFade {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    overflow-x: hidden;
+
+    animation: pageFade 0.8s ease-out forwards;
+
+    position: relative;
+    isolation: isolate;
+}
+
+
 
 @keyframes flicker {
     0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
@@ -24,41 +93,133 @@
     20%, 24%, 55% { text-shadow: none; opacity: 0.5; }
 }
 
+/* ===================== SMALL MOVING PINK GLOW (MOSTLY BLACK) ===================== */
+/* Viewport-fixed. Only a LITTLE pink. It moves around the screen. */
+
+@keyframes pinkMoveA {
+    0%   { transform: translate(-20%, -10%) scale(1.0); }
+    25%  { transform: translate( 30%, -15%) scale(1.05); }
+    50%  { transform: translate( 40%,  25%) scale(1.0); }
+    75%  { transform: translate(-10%,  35%) scale(1.05); }
+    100% { transform: translate(-20%, -10%) scale(1.0); }
+}
+
+@keyframes pinkMoveB {
+    0%   { transform: translate( 25%,  30%) scale(1.0); }
+    33%  { transform: translate(-35%,  10%) scale(1.08); }
+    66%  { transform: translate(-20%, -25%) scale(1.0); }
+    100% { transform: translate( 25%,  30%) scale(1.0); }
+}
+
 body {
-    background-color: var(--bg);
+    background-color: var(--bg); 
     color: var(--text-main);
-    font-family: 'Courier New', Courier, monospace;
     margin: 0;
+    animation: pageFade 0.8s ease-out forwards;
     padding: 0;
     line-height: 1.6;
     overflow-x: hidden;
-    animation: turn-on 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
     transform-origin: center;
+
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    position: relative;
+    isolation: isolate;
 }
+
+/* Two small pink glows that move; rest stays black */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;           /* locked to viewport, won’t go past footer */
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+body::before {
+    z-index: -2;
+
+    
+    background:
+        radial-gradient(420px 420px at 20% 20%, var(--pink-a), transparent 70%),
+        radial-gradient(520px 520px at 75% 65%, var(--pink-b), transparent 75%);
+
+    filter: blur(26px) saturate(170%);
+    opacity: 0.9;
+
+    animation: pinkMoveA 12s ease-in-out infinite;
+}
+
+body::after {
+    z-index: -1;
+
+    background:
+        radial-gradient(380px 380px at 70% 30%, rgba(255,0,255,0.16), transparent 72%);
+
+    filter: blur(30px) saturate(150%);
+    mix-blend-mode: screen;
+    opacity: 0.65;
+
+    animation: pinkMoveB 16s ease-in-out infinite;
+}
+
+    
+body::after {
+    background:
+        radial-gradient(380px 380px at 70% 30%, rgba(255,0,255,0.16), transparent 72%),
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,0.012),
+            rgba(255,255,255,0.012) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+}
+
+
+
+
+html, body { height: 100%; }
+body { overflow-x: hidden; } /* ok */
+body { overflow-x: hidden; } 
+
 
 nav {
-    padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  border-radius: 10px;
+
+  padding: 20px;
+  text-align: center;
+
+    background-color: rgba(18, 18, 18, 0.85);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
     border-bottom: 1px solid #333;
-    text-align: center;
-    background-color: rgba(5, 5, 5, 0.9);
 }
 
+
 .home-link {
-    color: var(--orange);
-    font-weight: bold;
-    text-decoration: none;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    transition: text-shadow 0.3s ease;
+  color: var(--orange);
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 
 .home-link:hover {
-    text-shadow: 0 0 10px var(--orange);
+    color: var(--pink);
 }
+
+
+
+
 
 .content {
     width: 100%;
@@ -67,6 +228,8 @@ nav {
     padding: 20px 30px;
     box-sizing: border-box;
 }
+
+
 
 h1 {
     font-size: 2.5rem;
@@ -85,6 +248,8 @@ h2 {
     margin-top: 40px;
 }
 
+
+
 .search-container {
     width: 100%;
     max-width: 600px;
@@ -102,20 +267,20 @@ h2 {
     background: transparent;
     border: 1px solid var(--orange);
     color: var(--orange);
-    font-family: 'Courier New', monospace;
     border-radius: 5px;
     outline: none;
     transition: all 0.3s ease;
 }
 
 #search-input:focus {
-    box-shadow: 0 0 15px var(--orange);
+    box-shadow: 0 0 12px rgba(255, 0, 255, 0.35);
+    border-color: var(--pink);
     background: rgba(255, 140, 0, 0.1);
 }
 
-#search-input::placeholder {
-    color: rgba(255, 140, 0, 0.5);
-}
+#search-input::placeholder { color: rgba(255, 140, 0, 0.5); }
+
+
 
 .posts-grid {
     display: grid;
@@ -123,23 +288,69 @@ h2 {
     gap: 20px;
 }
 
+
+
 .post-card {
-    background-color: var(--card-bg);
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 20px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-    display: block;
     position: relative;
     overflow: hidden;
+    border-radius: 10px;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+
+    
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+
+    -webkit-backdrop-filter: blur(42px) saturate(210%) contrast(120%);
+    backdrop-filter: blur(42px) saturate(210%) contrast(120%);
+
+    box-shadow:
+        0 18px 55px rgba(0,0,0,0.65),
+        inset 0 1px 0 rgba(255,255,255,0.12),
+        inset 0 -18px 40px rgba(0,0,0,0.55);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* subtle highlight (not white) */
+.post-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+
+    background:
+        radial-gradient(120% 60% at 50% 0%,
+            var(--glass-highlight), transparent 72%
+        ),
+        radial-gradient(800px 500px at 80% 55%,
+            rgba(255,0,255,0.10), transparent 75%
+        );
+
+    mix-blend-mode: screen;
+    opacity: 0.50;
+}
+
+/* keep text above highlight layers */
+.post-card > * {
+    position: relative;
+    z-index: 2;
+    color: inherit;
 }
 
 .post-card:hover {
     transform: translateY(-5px);
-    border-color: var(--pink);
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+    border-color: rgba(255,0,255,0.22);
+    box-shadow:
+        0 26px 75px rgba(0,0,0,0.80),
+        0 0 28px rgba(255,0,255,0.16),
+        inset 0 1px 0 rgba(255,255,255,0.16),
+        inset 0 -20px 45px rgba(0,0,0,0.60);
 }
+
+/* ===================== CARD TEXT ===================== */
 
 .card-title {
     color: var(--orange);
@@ -181,6 +392,8 @@ h2 {
     text-transform: uppercase;
 }
 
+/* ===================== CODE ===================== */
+
 pre {
     background-color: var(--code-bg);
     border: 1px solid var(--red);
@@ -194,9 +407,9 @@ pre {
 }
 
 code {
-    font-family: 'Consolas', 'Monaco', monospace;
-    color: var(--orange);
+    color: #d4d4d4;
 }
+
 
 .copy-btn {
     position: absolute;
@@ -205,7 +418,6 @@ code {
     background-color: transparent;
     border: 1px solid var(--orange);
     color: var(--orange);
-    font-family: 'Courier New', monospace;
     font-size: 0.8rem;
     padding: 2px 8px;
     cursor: pointer;
@@ -221,6 +433,8 @@ code {
     box-shadow: 0 0 10px var(--orange);
 }
 
+/* ===================== SCROLL TOP ===================== */
+
 #scrollTopBtn {
     display: none;
     position: fixed;
@@ -233,7 +447,6 @@ code {
     cursor: pointer;
     padding: 10px 15px;
     border-radius: 5px;
-    font-family: 'Courier New', monospace;
     font-weight: bold;
     transition: all 0.3s ease;
 }
@@ -243,6 +456,8 @@ code {
     color: #000;
     box-shadow: 0 0 15px var(--orange);
 }
+
+/* ===================== MOBILE ===================== */
 
 @media (max-width: 600px) {
     .content { padding: 15px; }
@@ -255,19 +470,19 @@ input, textarea {
     user-select: text !important;
 }
 
+/* ===================== LINKS ===================== */
+
 .terminal-link {
-    color: var(--orange);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--orange);
-    cursor: pointer;
-    transition: all 0.2s ease;
+    color: #ccc;
+    transition: 0.25s ease;
 }
 
 .terminal-link:hover {
-    background-color: var(--orange);
-    color: #000;
-    box-shadow: 0 0 10px var(--orange);
+    color: var(--pink);
+    text-shadow: 0 0 6px rgba(255, 0, 255, 0.35);
 }
+
+/* ===================== TOAST ===================== */
 
 #toast-notification {
     visibility: hidden;
@@ -284,7 +499,6 @@ input, textarea {
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%);
-    font-family: 'Orbitron', sans-serif;
     font-size: 0.9rem;
 }
 
@@ -304,6 +518,29 @@ input, textarea {
     to {bottom: 0; opacity: 0;}
 }
 
+@keyframes glowFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 0.9; /* match your current glow opacity */
+    }
+}
+
+body::before {
+    opacity: 0; /* start invisible */
+    animation:
+        glowFadeIn 1.2s ease-out 0.4s forwards,
+        pinkMoveA 12s ease-in-out infinite;
+}
+
+body::after {
+    opacity: 0;
+    animation:
+        glowFadeIn 1.6s ease-out 0.6s forwards,
+        pinkMoveB 16s ease-in-out infinite;
+}
+
 
 img {
     max-width: 75%;
@@ -311,4 +548,133 @@ img {
     display: block;
     margin: 20px auto;
     border: 1px solid #333;
+}
+
+/* Fallback */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .post-card { background: rgba(20, 0, 20, 0.55); }
+}
+
+@keyframes dropDown {
+    0% {
+        transform: translateY(-120%);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+.terminal-card{
+  border-radius: 12px;
+  padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.55);
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.terminal-row{
+  display: grid;
+  grid-template-columns: 80px 16px 1fr;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 0;
+}
+
+
+.terminal-row + .terminal-row{
+    border-top: 1px dashed rgba(255,255,255,0.08);
+}
+
+.terminal-key{
+    color: rgba(255,255,255,0.5);
+    text-transform: lowercase;
+    letter-spacing: 0.6px;
+}
+
+.terminal-sep{
+  color: rgba(255,255,255,0.35);
+}
+
+.terminal-value{
+    color: #e5e5e5;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* make links + buttons match (no orange) */
+.terminal-card .terminal-link,
+.terminal-card .terminal-btn{
+  color: #d6d6d6;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255,255,255,0.22);
+  padding-bottom: 1px;
+  background: transparent;
+}
+
+/* hover = subtle pink, no orange glow */
+.terminal-card .terminal-link:hover,
+.terminal-card .terminal-btn:hover{
+  color: var(--pink);
+  border-bottom-color: rgba(255,0,255,0.55);
+  text-shadow: 0 0 6px rgba(255,0,255,0.25);
+}
+
+/* button reset so it looks like text */
+.terminal-btn{
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+/* keyboard focus (clean) */
+.terminal-card .terminal-link:focus-visible,
+.terminal-card .terminal-btn:focus-visible{
+  outline: 2px solid rgba(255,0,255,0.35);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* improve readability */
+.terminal-card{
+  line-height: 1.55;
+}
+
+/* mobile: more space for long emails/links */
+@media (max-width: 480px){
+  .terminal-row{
+    grid-template-columns: 68px 12px 1fr;
+  }
+}
+
+
+/* discord clickable should be a real button */
+.terminal-btn{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+}
+.terminal-btn:focus{
+  outline: 2px solid rgba(255,140,0,0.35);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* mobile layout */
+@media (max-width: 480px){
+  .terminal-row{
+    grid-template-columns: 70px 14px 1fr;
+  }
 }
