@@ -1,1 +1,91 @@
-<!DOCTYPE html>\n<html lang="en">\n<head>\n    <meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">\n    <title>Your Site Title</title>\n</head>\n<body>\n    <h1>Welcome to My Site</h1>\n    <p>This is a paragraph on my site.</p>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <title>NotAlive | Cyber Research</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+    <meta property="og:title" content="NotAlive Cyber Archive">
+    <meta property="og:description" content="Cybersecurity research, CTF write-ups, and penetration testing logs.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:url" content="https://notalive24.github.io/">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+<body>
+
+    <h1>Not Alive</h1>
+
+    <div class="content">
+        <p style="text-align: center; color: #888; margin-bottom: 30px;">
+            > SYSTEM STATUS: ONLINE<br>
+            > ACCESSING ARCHIVES...
+        </p>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search write-ups (ex: 'matrix', 'web')...">
+        </div>
+
+        <div class="posts-grid" id="posts-container">
+            <a href="/Heads/introduction.html" class="post-card" data-title="Who is Not Alive?" data-category="Web">
+                <div class="card-meta">
+                    <span>2026-01-08</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Who is Not Alive?</span>
+                <div class="card-preview">
+                    A detailed introduction about myself.
+                </div>
+            </a>
+                        
+            <a href="/Heads/THM.html" class="post-card" data-title="TryHackMe" data-category="Site">
+                <div class="card-meta">
+                    <span>2026-01-10</span>
+                    <span class="category-red">Library</span>
+                </div>
+                <span class="card-title">TryHackMe</span>
+                <div class="card-preview">
+                    All the write-ups I have written and updated.
+                </div>
+            </a>
+
+            <a href="/Heads/ISC2.html" class="post-card" data-title="ISC2" data-category="Site">
+                <div class="card-meta">
+                    <span>2026-02-07</span>
+                    <span class="category-red">Library</span>
+                </div>
+                <span class="card-title">ISC2</span>
+                <div class="card-preview">
+                    All the write-ups I have written and updated.
+                </div>
+            </a>
+        </div>
+        
+    </div>
+    
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+
+    <script src="assets/js/script.js" defer></script>
+</body>
+</html>
