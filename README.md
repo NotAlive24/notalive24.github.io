@@ -31,6 +31,6 @@ If you wish to exchange packets, collaborate on a CTF, or discuss a vulnerabilit
 ---
 
 ### 🔍 Metadata & Search Tags
-`Tags: #Sanjay #NotAlive #CyberSecurity #OffensiveSecurity #PenetrationTesting #TryHackMe #HardwareHacking #Research #SanjaySai`
+`Tags: #Sanjay #NotAlive #CyberSecurity #OffensiveSecurity #PenetrationTesting #TryHackMe #HardwareHacking #Research`
 
 `> END OF LINE. SUCCESSFUL_LOG_OFF.`
