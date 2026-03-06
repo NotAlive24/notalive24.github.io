@@ -7,14 +7,14 @@
 ## 1. The Profile
 I am a cybersecurity enthusiast and Computer Science undergraduate operating under the handle **NotAlive** (Sanjay). This repository serves as a permanent log of my journey through offensive security and all things cyber-related.
 
-**My Philosophy:** *If it's difficult, do it till it becomes easy.*
+**My Philosophy:** *If it's difficult, do it until it becomes easy.*
 
 ## 2. Active Protocols (Skills)
 I am currently ranked in the **Top 2% on TryHackMe**, specializing in Red Teaming and Network Security.
 
-* **Web Exploitation:** Client-side attacks, Privilege Escalation.
-* **Network Security:** Advanced Reconnaissance.
-* **Hardware Hacking:** DIY gadgets (e.g., Packet Analyzers).
+* **Web Exploitation:** Client-side attacks, privilege escalation.
+* **Network Security:** Advanced reconnaissance.
+* **Hardware Hacking:** DIY gadgets (e.g., packet analyzers).
 
 ## 3. Current Project: KNOWLEDGE_BASE_REBUILD
 `> EXEC: KNOWLEDGE_BASE_REBUILD`
