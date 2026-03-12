@@ -1,0 +1,121 @@
+<!-- File path: posts/CC/Domain3/MandatoryAccessControlMAC.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Mandatory Access Control (MAC) | NotAlive</title>
+    <meta name="title" content="Mandatory Access Control (MAC) | NotAlive">
+    <meta name="description" content="Short cybersecurity notes explaining mandatory access control, centralized permission management, and the difference between MAC and DAC.">
+    <meta name="keywords" content="mandatory access control, MAC, MAC vs DAC, centralized access control, cybersecurity, Domain 3, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain3/MandatoryAccessControlMAC.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Mandatory Access Control (MAC) | NotAlive">
+    <meta property="og:description" content="Short cybersecurity notes explaining mandatory access control, centralized permission management, and the difference between MAC and DAC.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Mandatory Access Control (MAC) page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain3/MandatoryAccessControlMAC.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mandatory Access Control (MAC) | NotAlive">
+    <meta name="twitter:description" content="Short cybersecurity notes explaining mandatory access control, centralized permission management, and the difference between MAC and DAC.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Mandatory Access Control (MAC) page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>17. Mandatory Access Control (MAC)</h1>
+
+        <h2>Mandatory Access Control (MAC)</h2>
+        <p>
+            MAC is an access control model where rules are enforced uniformly across the entire system.
+            Only designated security administrators can set or change access permissions.
+        </p>
+
+        <h2>Restricted User Control</h2>
+        <p>
+            Users are given only a defined subset of privileges, and they cannot pass information to unauthorized users,
+            grant their privileges to others, change security settings, assign security attributes,
+            or change access control rules.
+        </p>
+
+        <h2>MAC vs DAC</h2>
+        <p>
+            The key difference between <strong>MAC</strong> and <strong>DAC</strong> is control:
+            in MAC, security administrators control access;
+            in DAC, the object owner controls access.
+        </p>
+
+        <h2>Main Idea</h2>
+        <p>
+            MAC centrally enforces access rules, and only authorized administrators can manage permissions.
+        </p>
+
+        <nav>
+            <a href="DiscretionaryAccessControlDAC.html" class="home-link">&gt;&gt; Next: 18. Discretionary Access Control (DAC)</a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+            <div class="terminal-row">
+                <span class="terminal-key">email</span>
+                <span class="terminal-sep">:</span>
+                <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+            </div>
+            <div class="terminal-row">
+                <span class="terminal-key">discord</span>
+                <span class="terminal-sep">:</span>
+                <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+            </div>
+            <div class="terminal-row">
+                <span class="terminal-key">github</span>
+                <span class="terminal-sep">:</span>
+                <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>
