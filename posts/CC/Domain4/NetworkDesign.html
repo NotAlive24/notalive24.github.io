@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Network Design | NotAlive</title>
+    <meta name="title" content="Network Design | NotAlive">
+    <meta name="description" content="Network Design The goal of network design is to meet communication requirements and maintain efficient overall performance.">
+    <meta name="keywords" content="Network Design, Domain 4, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain4/NetworkDesign.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Network Design | NotAlive">
+    <meta property="og:description" content="Network Design The goal of network design is to meet communication requirements and maintain efficient overall performance.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Network Design page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain4/NetworkDesign.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Network Design | NotAlive">
+    <meta name="twitter:description" content="Network Design The goal of network design is to meet communication requirements and maintain efficient overall performance.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Network Design page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>27. Network Design</h1>
+
+        <p><strong>Network Design</strong><br />
+The goal of network design is to meet communication requirements and maintain efficient overall performance.</p>
+<p><strong>Network Segmentation</strong><br />
+Network segmentation controls traffic by dividing the network into separate parts. This limits communication so devices only interact within their allowed segment.</p>
+<div class="media-wrap"><img src="../../../assets/images/Network%20Segmentation.png" alt="Network Segmentation" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>DMZ (Demilitarized Zone)</strong><br />
+A DMZ is a separate network area for systems that must be reachable from outside, such as public web or email servers. It stays isolated from the internal private network.</p>
+<div class="media-wrap"><img src="../../../assets/images/DMZ.png" alt="DMZ" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>VLAN (Virtual Local Area Network)</strong><br />
+A VLAN is a logical network segment created through switches. It separates traffic without changing the physical network layout.</p>
+<div class="media-wrap"><img src="../../../assets/images/VLAN%201.png" alt="VLAN 1" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>VPN (Virtual Private Network)</strong><br />
+A VPN creates a point-to-point communication tunnel over an untrusted network. It is used to carry authentication and data traffic securely when properly configured.</p>
+<div class="media-wrap"><img src="../../../assets/images/VPN.png" alt="VPN" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>Defense in Depth</strong><br />
+Defense in depth uses multiple layers of controls instead of relying on a single security measure.</p>
+<div class="media-wrap"><img src="../../../assets/images/Defense%20in%20Depth%201.png" alt="Defense in Depth 1" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>NAC (Network Access Control)</strong><br />
+NAC controls access to the network by enforcing security policies before allowing devices or users into the environment.</p>
+<div class="media-wrap"><img src="../../../assets/images/NAC.png" alt="NAC" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>Main Idea</strong><br />
+Network design improves performance and security by using segmentation, isolation, layered controls, and policy-based access.</p>
+
+
+        <nav>
+          <a href="NetworkAccessControlNACDeeperDive.html" class="home-link">&gt;&gt; Next: 28. Network Access Control (NAC) Deeper Dive </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

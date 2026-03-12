@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Internet Protocol (IPv4 and IPv6) | NotAlive</title>
+    <meta name="title" content="Internet Protocol (IPv4 and IPv6) | NotAlive">
+    <meta name="description" content="IP is used to give devices logical addresses (addresses used by the network to identify devices) so they can communicate across networks. The two main versio...">
+    <meta name="keywords" content="Internet Protocol (IPv4 and IPv6), Domain 4, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain4/InternetProtocolIPv4andIPv6.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Internet Protocol (IPv4 and IPv6) | NotAlive">
+    <meta property="og:description" content="IP is used to give devices logical addresses (addresses used by the network to identify devices) so they can communicate across networks. The two main versio...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Internet Protocol (IPv4 and IPv6) page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain4/InternetProtocolIPv4andIPv6.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Internet Protocol (IPv4 and IPv6) | NotAlive">
+    <meta name="twitter:description" content="IP is used to give devices logical addresses (addresses used by the network to identify devices) so they can communicate across networks. The two main versio...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Internet Protocol (IPv4 and IPv6) page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>41. Internet Protocol (IPv4 and IPv6)</h1>
+
+        <p>IP is used to give devices <strong>logical addresses (addresses used by the network to identify devices)</strong> so they can communicate across networks. The two main versions are <strong>IPv4 (older IP version)</strong> and <strong>IPv6 (newer IP version)</strong>.</p>
+<p><strong>IPv4</strong><br />
+IPv4 uses a <strong>32-bit address (an address made of 32 binary digits)</strong>. It is written as <strong>four octets (four number sections)</strong> separated by dots, such as <code>192.168.0.1</code>.</p>
+<p>Each octet ranges from <strong>0 to 255</strong>. An IPv4 address is divided into a <strong>network portion (the part that identifies the network)</strong> and a <strong>host portion (the part that identifies the specific device on that network)</strong>.</p>
+<p>Networks are often split into <strong>subnets (smaller parts of a network)</strong>, and a <strong>subnet mask (a value that shows which part of the IP address is network and which part is host)</strong> is used to show which part of the address identifies the subnet. A common example is <code>255.255.255.0</code>.</p>
+<div class="media-wrap"><img src="../../../assets/images/IPv4.png" alt="IPv4" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p>Because IPv4 has a limited number of addresses, <strong>private addressing (addresses used only inside local/internal networks)</strong> is used inside internal networks.</p>
+<div class="media-wrap"><img src="../../../assets/images/IPv4%20Range.png" alt="IPv4 Range" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p>These private addresses are used inside local networks and are not meant to be <strong>routed (sent across other networks, especially the internet)</strong> directly on the internet.</p>
+<p>The <strong>127.x.x.x</strong> range is reserved for <strong>loopback (the device talking to itself)</strong>. The most common loopback address is <strong>127.0.0.1</strong>, which refers to the local machine.</p>
+<p>People mostly say that &quot;There is no place like 127.0.0.1&quot;, it points to yourself or in simple words it mean home.</p>
+<p><strong>IPv6</strong><br />
+IPv6 was created to solve IPv4 address shortage and improve networking features. It uses a <strong>128-bit address (a much longer address made of 128 binary digits)</strong>, which provides a much larger <strong>address space (the total number of possible addresses)</strong>.</p>
+<p>IPv6 addresses are written as <strong>eight groups of four hexadecimal digits (numbers using 0–9 and letters a–f)</strong> separated by colons. Example:<br />
+<code>2001:0db8:0000:0000:0000:ffff:0000:0001</code></p>
+<p>IPv6 addresses can be shortened by:</p>
+<ul>
+<li>removing <strong>leading zeros (zeros at the beginning of a section)</strong></li>
+<li>replacing one longest continuous set of zero groups with <code>::</code></li>
+</ul>
+<p>So the example above can become:<br />
+<code>2001:db8::ffff:0:1</code></p>
+<p><strong>IPv6 improvements</strong></p>
+<ul>
+<li>Much larger <strong>address space (more possible device addresses)</strong></li>
+<li>Better support for <strong>secure communication (safer data transfer between devices)</strong></li>
+<li>Better <strong>quality of service or QoS (better control of which traffic gets priority)</strong></li>
+</ul>
+<p><strong>Special IPv6 addresses</strong></p>
+<ul>
+<li><code>::1</code> = <strong>loopback address (device talking to itself)</strong></li>
+<li><code>2001:db8::/32</code> = reserved for <strong>documentation/examples (used in books and teaching, not normal real use)</strong></li>
+<li><code>fc00::/7</code> = <strong>private/internal use range (used inside private networks)</strong></li>
+</ul>
+<p><strong>Main Idea</strong><br />
+IPv4 and IPv6 are the two main IP versions. IPv4 uses 32-bit addresses and has limited space, while IPv6 uses 128-bit addresses and provides a much larger, more modern addressing system.</p>
+
+
+        <nav>
+          <a href="SecurePorts.html" class="home-link">&gt;&gt; Next: 42. Secure Ports </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

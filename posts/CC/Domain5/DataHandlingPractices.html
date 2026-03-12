@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Data Handling Practices | NotAlive</title>
+    <meta name="title" content="Data Handling Practices | NotAlive">
+    <meta name="description" content="Data has value and must be handled appropriately.">
+    <meta name="keywords" content="Data Handling Practices, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/DataHandlingPractices.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Data Handling Practices | NotAlive">
+    <meta property="og:description" content="Data has value and must be handled appropriately.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Data Handling Practices page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/DataHandlingPractices.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data Handling Practices | NotAlive">
+    <meta name="twitter:description" content="Data has value and must be handled appropriately.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Data Handling Practices page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>27. Data Handling Practices</h1>
+
+        <p>Data has value and must be handled appropriately.</p>
+<p>Data should be <strong>classified and labeled</strong> so it is treated according to its <strong>sensitivity</strong>.<br />
+The data life cycle also includes <strong>retention requirements</strong> and ensuring that data no longer in use is <strong>destroyed</strong>.</p>
+<h2>Classification</h2>
+<p>Businesses classify information because it has value and must be protected from unauthorized disclosure.</p>
+<p><strong>Classification</strong> is the process of recognizing the <strong>organizational impact</strong> if information is compromised in terms of:</p>
+<ul>
+<li><strong>Confidentiality</strong></li>
+<li><strong>Integrity</strong></li>
+<li><strong>Availability</strong></li>
+</ul>
+<p>Information is then <strong>labeled and handled accordingly</strong>.</p>
+<p>Classifications are often based on <strong>laws, regulations, contractual standards, or business expectations</strong>.</p>
+<p>The benefit of classification is that it allows organizations to apply the <strong>same security controls</strong> to similarly classified information.</p>
+<h2>Labeling</h2>
+<p>Security labels help implement controls to protect classified information by assigning <strong>levels of sensitivity</strong> to data.</p>
+<p>Organizations typically use <strong>two or three classifications</strong>, since more than four can be difficult to manage.</p>
+<p>Common sensitivity levels include:</p>
+<ul>
+<li><strong>Highly restricted:</strong> compromise could threaten the organization’s future or cause serious damage.</li>
+<li><strong>Moderately restricted:</strong> compromise could cause loss of competitive advantage, revenue loss, or disruption of activities.</li>
+<li><strong>Low sensitivity (internal use only):</strong> compromise could cause minor disruptions or delays.</li>
+<li><strong>Unrestricted public data:</strong> already published and further disclosure causes no harm.</li>
+</ul>
+<h2>Retention</h2>
+<p>Data should be kept <strong>only as long as necessary</strong> and no longer.
+Retention policies define:</p>
+<ul>
+<li>how long information must be maintained</li>
+<li>how records should be managed throughout the organization</li>
+</ul>
+<p>Policies should ensure that:</p>
+<ul>
+<li>personnel understand retention requirements</li>
+<li>retention rules are documented</li>
+<li>systems and personnel follow the required retention schedule</li>
+</ul>
+<p>Keeping information longer than necessary increases <strong>storage costs, exposure risk, and unnecessary data noise</strong>.</p>
+<p>When records are no longer required, they must be <strong>destroyed according to organizational policies and legal requirements</strong>.</p>
+<h2>Destruction</h2>
+<p>Deleting data may leave <strong>data remanence</strong> (residual data remaining after deletion).
+Methods used to reduce the risk of data remanence include:</p>
+<ul>
+<li><strong>Clearing:</strong> overwriting storage media with random values.</li>
+<li><strong>Purging:</strong> removing data so that it cannot be recovered.</li>
+<li><strong>Physical destruction:</strong> destroying the device or media.</li>
+</ul>
+<p>In routine environments, clearing may be sufficient. When systems are removed or disposed of, <strong>purging or destruction</strong> may be required to protect sensitive information.</p>
+
+
+        <nav>
+            <a href="../CC.html" class="home-link">&lt;&lt; Return to ENTRY-LEVEL SERVER</a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

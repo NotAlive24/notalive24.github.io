@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Hashing Deep Dive | NotAlive</title>
+    <meta name="title" content="Hashing Deep Dive | NotAlive">
+    <meta name="description" content="Hashing puts data through a hash function or algorithm to create an alphanumeric digest that means nothing to people who might view it. ### Key Points - No m...">
+    <meta name="keywords" content="Hashing Deep Dive, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/HashingDeepDive.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Hashing Deep Dive | NotAlive">
+    <meta property="og:description" content="Hashing puts data through a hash function or algorithm to create an alphanumeric digest that means nothing to people who might view it. ### Key Points - No m...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Hashing Deep Dive page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/HashingDeepDive.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hashing Deep Dive | NotAlive">
+    <meta name="twitter:description" content="Hashing puts data through a hash function or algorithm to create an alphanumeric digest that means nothing to people who might view it. ### Key Points - No m...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Hashing Deep Dive page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>12. Hashing Deep Dive</h1>
+
+        <p>Hashing puts data through a <strong>hash function</strong> or <strong>algorithm</strong> to create an <strong>alphanumeric digest</strong> that means nothing to people who might view it.</p>
+<h3>Key Points</h3>
+<ul>
+<li>No matter how long the input is, the <strong>hash digest</strong> will be the same number of characters.<ul>
+<li>Any minor change in the input, such as:</li>
+<li>a misspelling</li>
+<li>an upper-case or lower-case error
+will create a completely different hash digest.</li>
+</ul>
+</li>
+<li>The hash digest can be used to confirm that the input exactly matches what is expected or required, such as a password.</li>
+</ul>
+<h3>Why It Matters</h3>
+<ul>
+<li>Hashing can help detect changes in data.</li>
+<li>It acts as an <strong>extra layer of defense</strong>.</li>
+</ul>
+<h3>Checksum</h3>
+<ul>
+<li>Before going live with a third-party software product, it must be verified that nothing has changed since it was tested.</li>
+<li>The provider usually sends the <strong>digest</strong> of their code.</li>
+<li>That digest is compared to the original.</li>
+<li>This is also known as a <strong>checksum</strong>.</li>
+</ul>
+<h3>If There Is a Discrepancy</h3>
+<ul>
+<li>A discrepancy means something has changed.</li>
+<li>Security coders compare the original and the new one.</li>
+<li>They may need to inspect line by line to find bugs or lines that need fixing.</li>
+<li>Sometimes these problems are not intentional.</li>
+<li>Sometimes they appear during final adjustments to the software.</li>
+</ul>
+<h3>Example Mentioned in the Slide</h3>
+<ul>
+<li>At the University of Florida, copies of <strong>Windows 2000 / Millennium</strong> distributed to 50,000 students on CD-ROMs were compromised.</li>
+<li>The problem was detected when the digests did not match on a distribution file.</li>
+</ul>
+
+
+        <nav>
+          <a href="TheRisksofChange.html" class="home-link">&gt;&gt; Next: 13. The Risks of Change </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Encryption Overview | NotAlive</title>
+    <meta name="title" content="Encryption Overview | NotAlive">
+    <meta name="description" content="Encryption method of converting readable data into unreadable form to protect it is widely used in modern digital systems. It protects personal information,...">
+    <meta name="keywords" content="Encryption Overview, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/EncryptionOverview.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Encryption Overview | NotAlive">
+    <meta property="og:description" content="Encryption method of converting readable data into unreadable form to protect it is widely used in modern digital systems. It protects personal information,...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Encryption Overview page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/EncryptionOverview.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Encryption Overview | NotAlive">
+    <meta name="twitter:description" content="Encryption method of converting readable data into unreadable form to protect it is widely used in modern digital systems. It protects personal information,...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Encryption Overview page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>3. Encryption Overview</h1>
+
+        <p><strong>Encryption</strong> <em>(method of converting readable data into unreadable form to protect it)</em> is widely used in modern digital systems. It protects <strong>personal information, financial transactions, and communications</strong>. Encryption is part of <strong>cryptography</strong> <em>(science of protecting information using mathematical techniques)</em>.</p>
+<h2>Basic Encryption Idea</h2>
+<p>Encryption transforms:</p>
+<ul>
+<li><strong>Plaintext</strong> <em>(original readable data before encryption)</em><br />
+→ into</li>
+<li><strong>Ciphertext</strong> <em>(scrambled unreadable data after encryption)</em></li>
+</ul>
+<p>Only someone with the <strong>decryption key</strong> <em>(secret value used to unlock encrypted data)</em> can convert the ciphertext back to readable data.</p>
+<h2>Security Goals of Encryption</h2>
+<h3>Confidentiality</h3>
+<p><strong>Confidentiality</strong> <em>(keeping information secret from unauthorized people)</em><br />
+Encryption hides data so only the intended recipient can read it.</p>
+<h3>Integrity</h3>
+<p><strong>Integrity</strong> <em>(ensuring data has not been changed or tampered with)</em><br />
+Techniques like <strong>hash functions</strong> <em>(mathematical functions that create a unique fingerprint of data)</em> and <strong>digital signatures</strong> <em>(cryptographic proof of the sender’s identity and data authenticity)</em> help verify that data was not modified.</p>
+<h2>Encryption System</h2>
+<p>An <strong>encryption system</strong> <em>(complete setup used to encrypt and decrypt data)</em> includes:</p>
+<ul>
+<li><strong>Hardware</strong> <em>(physical devices used for encryption)</em></li>
+<li><strong>Software</strong> <em>(programs performing encryption operations)</em></li>
+<li><strong>Algorithms</strong> <em>(mathematical procedures used to encrypt data)</em></li>
+<li><strong>Control parameters</strong> <em>(settings and keys used in encryption)</em></li>
+</ul>
+<p>Together they protect information during storage and transmission.</p>
+<h2>Plaintext</h2>
+<p><strong>Plaintext</strong> <em>(data in its normal readable form before encryption)</em> can include:</p>
+<ul>
+<li><strong>Text data</strong> <em>(documents, emails, messages)</em></li>
+<li><strong>Images, audio, or video files</strong> <em>(media content)</em></li>
+<li><strong>Database records</strong> <em>(stored information inside databases)</em></li>
+<li><strong>Any digital data</strong> <em>(anything a computer can store or process)</em></li>
+</ul>
+<p>Even if the data is not easily readable by humans, it is still considered plaintext before encryption.</p>
+<div class="media-wrap"><img src="../../../assets/images/Encryption.png" alt="Encryption" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<p><strong>Main Idea:</strong><br />
+Encryption protects information by turning <strong>readable data (plaintext)</strong> into <strong>unreadable data (ciphertext)</strong> so that only authorized users can access it, while also ensuring <strong>confidentiality and integrity</strong> of the data.</p>
+
+
+        <nav>
+          <a href="SecurityAwarenessTraining.html" class="home-link">&gt;&gt; Next: 4. Security Awareness Training </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

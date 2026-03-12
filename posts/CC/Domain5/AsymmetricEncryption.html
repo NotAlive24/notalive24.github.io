@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Asymmetric Encryption | NotAlive</title>
+    <meta name="title" content="Asymmetric Encryption | NotAlive">
+    <meta name="description" content="Asymmetric encryption uses one key to encrypt and a different key to decrypt the plaintext. This is different from symmetric encryption, which uses the same...">
+    <meta name="keywords" content="Asymmetric Encryption, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/AsymmetricEncryption.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Asymmetric Encryption | NotAlive">
+    <meta property="og:description" content="Asymmetric encryption uses one key to encrypt and a different key to decrypt the plaintext. This is different from symmetric encryption, which uses the same...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Asymmetric Encryption page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/AsymmetricEncryption.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Asymmetric Encryption | NotAlive">
+    <meta name="twitter:description" content="Asymmetric encryption uses one key to encrypt and a different key to decrypt the plaintext. This is different from symmetric encryption, which uses the same...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Asymmetric Encryption page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>22. Asymmetric Encryption</h1>
+
+        <p>Asymmetric encryption uses <strong>one key to encrypt</strong> and a <strong>different key to decrypt</strong> the plaintext.<br />
+This is different from <strong>symmetric encryption</strong>, which uses the <strong>same key</strong> for both encryption and decryption.</p>
+<h2>Key Pair</h2>
+<p>To communicate using an asymmetric algorithm, a user first generates a <strong>key pair</strong>.</p>
+<ul>
+<li>One key is kept secret and is called the <strong>private key</strong>.</li>
+<li>The other key can be shared and is called the <strong>public key</strong>.</li>
+<li>Anyone can encrypt data using the <strong>recipient’s public key</strong>, but only the recipient can decrypt it using their <strong>private key</strong>.</li>
+</ul>
+<h2>Benefits</h2>
+<p>Asymmetric key cryptography solves the <strong>key distribution problem</strong> by allowing messages to be sent securely across an <strong>untrusted medium</strong> without exchanging keys beforehand.</p>
+<p>It also supports features such as:</p>
+<ul>
+<li><strong>Non-repudiation</strong> (a sender cannot deny sending the message)</li>
+<li><strong>Access control</strong></li>
+<li><strong>Data integrity</strong> (ensuring data is not altered)</li>
+</ul>
+<p>It also improves <strong>scalability</strong>, since each party only needs a <strong>key pair</strong> (one public and one private key).</p>
+<h2>Limitation</h2>
+<p>Asymmetric cryptography is <strong>much slower</strong> than symmetric cryptography.
+This is because it uses <strong>larger keys</strong> and requires <strong>more complex mathematical operations</strong>, which significantly reduces speed.</p>
+<div class="media-wrap"><img src="../../../assets/images/Asymmetric%20Enc.png" alt="Asymmetric Enc" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h2>Example Use</h2>
+<p>The <strong>public key and private key</strong> must be used together as a key pair.</p>
+<ul>
+<li>A message encrypted with a <strong>public key</strong> can only be decrypted with the corresponding <strong>private key</strong>.</li>
+</ul>
+<p>Similarly, a message signed with the <strong>sender’s private key</strong> can be verified using the <strong>sender’s public key</strong>.</p>
+<p>To send a confidential message:</p>
+<ul>
+<li>The sender encrypts the message using the <strong>receiver’s public key</strong>.</li>
+<li>Only the receiver, with the <strong>private key</strong>, can decrypt and read the message.</li>
+</ul>
+<p>This allows a <strong>confidential message to be sent across an untrusted channel</strong>.</p>
+
+
+        <nav>
+          <a href="SocialEngineering.html" class="home-link">&gt;&gt; Next: 23. Social Engineering </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

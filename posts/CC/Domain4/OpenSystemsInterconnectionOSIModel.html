@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Open Systems Interconnection (OSI) Model | NotAlive</title>
+    <meta name="title" content="Open Systems Interconnection (OSI) Model | NotAlive">
+    <meta name="description" content="The OSI model is a conceptual framework used to describe how communication occurs between computer systems on a network. It standardizes how networking funct...">
+    <meta name="keywords" content="Open Systems Interconnection (OSI) Model, Domain 4, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain4/OpenSystemsInterconnectionOSIModel.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Open Systems Interconnection (OSI) Model | NotAlive">
+    <meta property="og:description" content="The OSI model is a conceptual framework used to describe how communication occurs between computer systems on a network. It standardizes how networking funct...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Open Systems Interconnection (OSI) Model page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain4/OpenSystemsInterconnectionOSIModel.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Open Systems Interconnection (OSI) Model | NotAlive">
+    <meta name="twitter:description" content="The OSI model is a conceptual framework used to describe how communication occurs between computer systems on a network. It standardizes how networking funct...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Open Systems Interconnection (OSI) Model page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>35. Open Systems Interconnection (OSI) Model</h1>
+
+        <p>The <strong>OSI model</strong> is a conceptual framework used to describe how communication occurs between computer systems on a network. It standardizes how networking functions should operate so different hardware and software systems can communicate with each other.</p>
+<p>The model does not represent actual hardware or software implementations. Instead, it provides a <strong>structured way to understand networking processes</strong> by dividing them into layers. Each layer performs specific functions and interacts only with the layers directly above and below it.</p>
+<p>The OSI model divides network communication into <strong>seven layers</strong>, each responsible for a particular task involved in transmitting data between systems.</p>
+<h3>7. Application Layer</h3>
+<p>The <strong>application layer</strong> is the interface between user applications and the network. It provides network services to applications such as web browsers, email clients, and file transfer programs.<br />
+It determines whether communication partners are available and establishes communication with network services.</p>
+<h3>6. Presentation Layer</h3>
+<p>The <strong>presentation layer</strong> is responsible for formatting and translating data so that different systems can understand it.<br />
+It handles functions such as data encoding, compression, and encryption so that the receiving system can correctly interpret the data.</p>
+<h3>5. Session Layer</h3>
+<p>The <strong>session layer</strong> manages communication sessions between devices.<br />
+It establishes, maintains, and terminates sessions between two communicating systems. It also manages synchronization and controls the dialogue between systems.</p>
+<h3>4. Transport Layer</h3>
+<p>The <strong>transport layer</strong> provides reliable or unreliable delivery of data between hosts.<br />
+It breaks large data streams into smaller segments and ensures they are delivered correctly. It also manages flow control, error detection, and retransmission when needed.</p>
+<p>Common transport protocols include <strong>TCP</strong> (reliable, connection-oriented) and <strong>UDP</strong> (connectionless and faster).</p>
+<h3>3. Network Layer</h3>
+<p>The <strong>network layer</strong> is responsible for logical addressing and routing.<br />
+It determines the best path for data to travel between networks and delivers packets to the correct destination using IP addresses.</p>
+<p>Routers operate at this layer.</p>
+<h3>2. Data Link Layer</h3>
+<p>The <strong>data link layer</strong> handles communication between devices on the same network segment.<br />
+It packages packets into <strong>frames</strong> and uses <strong>MAC addresses</strong> to deliver them to the correct device on the local network.<br />
+It also detects and sometimes corrects transmission errors.</p>
+<p>Switches and wireless access points operate at this layer.</p>
+<h3>1. Physical Layer</h3>
+<p>The <strong>physical layer</strong> is responsible for the actual transmission of raw binary data across the physical medium.<br />
+It converts digital data into electrical, optical, or radio signals and sends them through cables, fiber optics, or wireless transmission.</p>
+<p>This layer includes physical components such as <strong>network cables, connectors, and signaling standards</strong>.</p>
+<h2>Encapsulation and De-Encapsulation</h2>
+<h3>Encapsulation</h3>
+<p>When data is transmitted across a network, it moves <strong>down the OSI layers</strong> from application to physical.</p>
+<p>At each layer, additional information called <strong>headers</strong> (and sometimes footers) is added to the data. These headers contain information needed for routing, addressing, error detection, and session management.</p>
+<p>As data moves down the layers, it becomes:</p>
+<ul>
+<li><strong>Data</strong> (upper layers)</li>
+<li><strong>Segment</strong> (transport layer)</li>
+<li><strong>Packet</strong> (network layer)</li>
+<li><strong>Frame</strong> (data link layer)</li>
+<li><strong>Bits</strong> (physical layer)</li>
+</ul>
+<h3>De-Encapsulation</h3>
+<p>When the receiving device gets the data, the process works in reverse.</p>
+<p>Data moves <strong>up the OSI layers</strong> from physical to application.<br />
+Each layer reads and removes its header, interpreting the information needed for processing the data correctly.</p>
+<p>By the time the data reaches the application layer, it is delivered in its original form for the application to use.</p>
+<div class="media-wrap"><img src="../../../assets/images/OSI.png" alt="OSI" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h2>Key Idea</h2>
+<p>The <strong>OSI model organizes network communication into seven layers</strong>, allowing complex networking functions to be understood, designed, and implemented in a structured way. Each layer performs specific tasks and passes data to the next layer until communication is completed.</p>
+
+
+        <nav>
+          <a href="NetworkAccessControlNAC.html" class="home-link">&gt;&gt; Next: 36. Network Access Control (NAC) </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

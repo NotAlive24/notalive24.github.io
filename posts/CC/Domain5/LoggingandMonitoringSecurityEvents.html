@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Logging and Monitoring Security Events | NotAlive</title>
+    <meta name="title" content="Logging and Monitoring Security Events | NotAlive">
+    <meta name="description" content="Events Events are actions that occur within the system environment and cause measurable or observable changes in one or more system elements or resources.">
+    <meta name="keywords" content="Logging and Monitoring Security Events, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/LoggingandMonitoringSecurityEvents.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Logging and Monitoring Security Events | NotAlive">
+    <meta property="og:description" content="Events Events are actions that occur within the system environment and cause measurable or observable changes in one or more system elements or resources.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Logging and Monitoring Security Events page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/LoggingandMonitoringSecurityEvents.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Logging and Monitoring Security Events | NotAlive">
+    <meta name="twitter:description" content="Events Events are actions that occur within the system environment and cause measurable or observable changes in one or more system elements or resources.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Logging and Monitoring Security Events page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>21. Logging and Monitoring Security Events</h1>
+
+        <h2>Events</h2>
+<p><strong>Events</strong> are actions that occur within the <strong>system environment</strong> and cause measurable or observable changes in one or more system elements or resources.</p>
+<p>Logging creates a <strong>computational cost</strong> but is valuable for determining <strong>accountability</strong>. Proper design of logging environments and regular log reviews are best practices for any type of computer system. Major control frameworks emphasize the importance of organizational logging practices.</p>
+<h3>Event</h3>
+<div class="media-wrap"><img src="../../../assets/images/Event.png" alt="Event" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h3>Event Details</h3>
+<div class="media-wrap"><img src="../../../assets/images/Event%20Details.png" alt="Event Details" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h3>Raw Log</h3>
+<div class="media-wrap"><img src="../../../assets/images/Raw%20Log.png" alt="Raw Log" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h3>Information Recorded in Logs</h3>
+<p>Information that may be recorded and reviewed includes:</p>
+<ul>
+<li>User IDs</li>
+<li>System activities</li>
+<li>Dates and times of key events (e.g., logon and logoff)</li>
+<li>Device and location identity</li>
+<li>Successful and rejected system and resource access attempts</li>
+<li>System configuration changes and system protection activation and deactivation events</li>
+</ul>
+<h2>Logging and Monitoring</h2>
+<p>Logging and monitoring the health of the <strong>information environment</strong> helps identify inefficient or improperly performing systems, detect compromises, and provide a record of how systems are used.</p>
+<h2>Robust Logging Practices</h2>
+<p>Robust logging practices help correlate information from diverse systems to understand the relationship between activities.</p>
+<p>Log reviews help identify security incidents, policy violations, fraudulent activities, and operational problems near the time they occur. They also support audits, forensic analysis related to internal and external investigations, and organizational security baselines.</p>
+<p>Reviewing historical audit logs can determine whether a <strong>vulnerability (weakness in a system)</strong> has previously been exploited.</p>
+<p>Organizations should create components of a <strong>log management infrastructure</strong> and determine how they interact. This helps preserve the <strong>integrity</strong> of log data and maintain the <strong>confidentiality</strong> of log data.</p>
+<p>Controls are implemented to protect against unauthorized changes to log information. Operational problems with logging facilities may involve altered recorded messages, edited or deleted log files, or log storage capacity being exceeded.</p>
+<p>Organizations must follow <strong>log retention policies</strong> required by law, regulations, and corporate governance. Because attackers may attempt to hide evidence of their attacks, policies and procedures should ensure the preservation of original logs. Logs also contain valuable and sensitive information, so measures must be taken to protect log data from malicious use.</p>
+
+
+        <nav>
+          <a href="AsymmetricEncryption.html" class="home-link">&gt;&gt; Next: 22. Asymmetric Encryption </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

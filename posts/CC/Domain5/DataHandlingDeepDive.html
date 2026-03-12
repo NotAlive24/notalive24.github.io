@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Data Handling Deep Dive | NotAlive</title>
+    <meta name="title" content="Data Handling Deep Dive | NotAlive">
+    <meta name="description" content="Data handling how organizations manage and protect data is important because data can be valuable and sensitive. Organizations must protect it from being sto...">
+    <meta name="keywords" content="Data Handling Deep Dive, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/DataHandlingDeepDive.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Data Handling Deep Dive | NotAlive">
+    <meta property="og:description" content="Data handling how organizations manage and protect data is important because data can be valuable and sensitive. Organizations must protect it from being sto...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Data Handling Deep Dive page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/DataHandlingDeepDive.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Data Handling Deep Dive | NotAlive">
+    <meta name="twitter:description" content="Data handling how organizations manage and protect data is important because data can be valuable and sensitive. Organizations must protect it from being sto...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Data Handling Deep Dive page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>2. Data Handling Deep Dive</h1>
+
+        <p><strong>Data handling</strong> <em>(how organizations manage and protect data)</em> is important because data can be valuable and sensitive. Organizations must protect it from being <strong>stolen, changed, or destroyed</strong>.</p>
+<p>First, organizations must identify <strong>data assets</strong> <em>(important information that needs protection)</em>. The <strong>data owner</strong> <em>(person or group responsible for the data)</em> decides how valuable the data is. Based on that value, organizations analyze the <strong>risk</strong> <em>(chance the data could be damaged or stolen)</em> and <strong>vulnerabilities</strong> .</p>
+<h2>Data Life Cycle</h2>
+<p>Data goes through several stages during its lifetime:</p>
+<ul>
+<li><strong>Create</strong> <em>(producing new data)</em></li>
+<li><strong>Store</strong> <em>(saving data in systems or storage)</em></li>
+<li><strong>Use</strong> <em>(accessing or processing the data)</em></li>
+<li><strong>Share</strong> <em>(sending data to other people or systems)</em></li>
+<li><strong>Archive</strong> <em>(keeping data long-term but rarely using it)</em></li>
+<li><strong>Destroy</strong> <em>(permanently deleting the data)</em></li>
+</ul>
+<p>At every stage there are different <strong>security risks</strong> <em>(possible threats to the data)</em>.</p>
+<h2>Regulations and Laws</h2>
+<p>Organizations must follow certain <strong>regulations</strong> <em>(laws or official rules about data protection)</em>.</p>
+<p>Examples:</p>
+<ul>
+<li><strong>OSHA</strong> <em>(Occupational Safety and Health Administration – U.S. agency that protects worker safety)</em></li>
+<li><strong>HIPAA</strong> <em>(Health Insurance Portability and Accountability Act – protects medical information)</em></li>
+<li><strong>PCI DSS</strong> <em>(Payment Card Industry Data Security Standard – rules for protecting credit card data)</em></li>
+<li><strong>GDPR</strong> <em>(General Data Protection Regulation – European Union law protecting personal data)</em></li>
+</ul>
+<p>These regulations often define how long data must be kept and how it must be protected.</p>
+<p>Example:<br />
+Some medical records must be stored <strong>10–30 years</strong> depending on the regulation.</p>
+<h2>Data Handling Practices</h2>
+<p>Organizations use several practices to manage data safely:</p>
+<ul>
+<li><strong>Data classification</strong> <em>(categorizing data by sensitivity such as public, internal, confidential)</em></li>
+<li><strong>Labeling</strong> <em>(marking data so users know its sensitivity level)</em></li>
+<li><strong>Access control</strong> <em>(restricting who can view or use certain data)</em></li>
+<li><strong>Retention</strong> <em>(how long data must be stored)</em></li>
+</ul>
+<h2>Data Destruction</h2>
+<p>When data is no longer needed, it must be destroyed safely.</p>
+<p><strong>Defensible destruction</strong> <em>(legally approved process for deleting data)</em> means the organization can prove the data was destroyed according to regulations.</p>
+<p>Ways to destroy data:</p>
+<ul>
+<li><strong>Digital wiping</strong> <em>(software that permanently erases files)</em></li>
+<li><strong>Physical destruction</strong> <em>(destroying storage devices)</em></li>
+<li><strong>Degaussing</strong> <em>(using strong magnets to erase magnetic storage like hard drives or tapes)</em></li>
+</ul>
+<p>Simply <strong>emptying the recycle bin</strong> does <strong>not fully delete data</strong>, because specialized tools can sometimes recover it.</p>
+<p><strong>Main Idea:</strong><br />
+Organizations must protect data during its <strong>entire life cycle</strong> and follow all <strong>laws and regulations</strong> to ensure the data is stored, used, and destroyed securely.</p>
+
+
+        <nav>
+          <a href="EncryptionOverview.html" class="home-link">&gt;&gt; Next: 3. Encryption Overview </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

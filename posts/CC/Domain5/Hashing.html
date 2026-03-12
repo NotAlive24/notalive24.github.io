@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Hashing | NotAlive</title>
+    <meta name="title" content="Hashing | NotAlive">
+    <meta name="description" content="Hashing takes an input of almost any size and returns a fixed-length result called the hash value A hash function is the algorithm used to perform this trans...">
+    <meta name="keywords" content="Hashing, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/Hashing.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Hashing | NotAlive">
+    <meta property="og:description" content="Hashing takes an input of almost any size and returns a fixed-length result called the hash value A hash function is the algorithm used to perform this trans...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Hashing page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/Hashing.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hashing | NotAlive">
+    <meta name="twitter:description" content="Hashing takes an input of almost any size and returns a fixed-length result called the hash value A hash function is the algorithm used to perform this trans...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Hashing page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>24. Hashing</h1>
+
+        <p>Hashing takes an input of almost any size and returns a <strong>fixed-length result</strong> called the <strong>hash value</strong>
+A <strong>hash function</strong> is the algorithm used to perform this transformation.<br />
+With cryptographically strong hash algorithms, hashing is a common method of ensuring <strong>message integrity</strong> (making sure the message has not been changed).</p>
+<p>Hashes are used in computing and security to create a <strong>message digest</strong> by applying a hash function to the plaintext body of a message.</p>
+<div class="media-wrap"><img src="../../../assets/images/Hash.png" alt="Hash" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h3>Properties of a Cryptographic Hash Function</h3>
+<p>A cryptographic hash function must be:</p>
+<ul>
+<li><strong>Useful:</strong> easy to compute the hash value for any given message</li>
+<li><strong>Nonreversible:</strong> computationally infeasible to reverse the hash process or derive the original plaintext from the hash value</li>
+<li><strong>Content integrity assurance:</strong> computationally infeasible to modify a message and still produce the original hash value</li>
+<li><strong>Unique:</strong> computationally infeasible to find two different sensible messages with the same hash value</li>
+<li><strong>Deterministic:</strong> the same input always generates the same hash when using the same hashing algorithm</li>
+</ul>
+<h2>Uses of Hash Functions</h2>
+<p>Cryptographic hash functions are used in information security for:</p>
+<ul>
+<li>digital signatures</li>
+<li>message authentication codes</li>
+<li>other forms of authentication</li>
+</ul>
+<p>They can also be used for <strong>fingerprinting</strong> (uniquely identifying files), finding duplicate data, and as <strong>checksums</strong> to detect accidental data corruption.</p>
+<div class="media-wrap"><img src="../../../assets/images/Hashing%20structure.png" alt="Hashing structure" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h2>Basic Hashing Process</h2>
+<p>A simple hashing function works like this:
+<strong>variable data input + hashing algorithm = fixed bit size data output (the digest)</strong>
+The originator hashes the message to create a <strong>digest</strong> and sends the digest along with the message.<br />
+The receiver hashes the received message using the same algorithm and compares that digest with the sender’s digest.</p>
+<ul>
+<li>If the digests are the same, the received message is the same as the sent message.</li>
+<li>A simple hash function alone does not protect against a malicious attacker who could change both the message and the digest in transit.</li>
+</ul>
+<div class="media-wrap"><img src="../../../assets/images/CHF.png" alt="CHF" style="max-width:100%; border-radius:12px; margin: 18px 0; display:block;" loading="lazy"></div>
+
+<h2>Key Points</h2>
+<p>Even a very small change in the input message creates a completely different hash value.
+The digest size does not vary with the size of the message, so a person cannot tell the size of the message from the digest.</p>
+
+
+        <nav>
+          <a href="ConfigurationManagementOverview.html" class="home-link">&gt;&gt; Next: 25. Configuration Management Overview </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

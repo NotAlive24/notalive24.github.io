@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>DMZ (Demilitarized Zone) Deeper Dive | NotAlive</title>
+    <meta name="title" content="DMZ (Demilitarized Zone) Deeper Dive | NotAlive">
+    <meta name="description" content="A web front-end server is often placed in the DMZ because it must be reachable from outside the network. It may still need to communicate with an internal da...">
+    <meta name="keywords" content="DMZ (Demilitarized Zone) Deeper Dive, Domain 4, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain4/DMZDemilitarizedZoneDeeperDive.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="DMZ (Demilitarized Zone) Deeper Dive | NotAlive">
+    <meta property="og:description" content="A web front-end server is often placed in the DMZ because it must be reachable from outside the network. It may still need to communicate with an internal da...">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="DMZ (Demilitarized Zone) Deeper Dive page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain4/DMZDemilitarizedZoneDeeperDive.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DMZ (Demilitarized Zone) Deeper Dive | NotAlive">
+    <meta name="twitter:description" content="A web front-end server is often placed in the DMZ because it must be reachable from outside the network. It may still need to communicate with an internal da...">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="DMZ (Demilitarized Zone) Deeper Dive page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>14. DMZ (Demilitarized Zone) Deeper Dive</h1>
+
+        <p>A web front-end server is often placed in the <strong>DMZ</strong> because it must be reachable from outside the network. It may still need to communicate with an internal database server, so traffic between the web server and the internal network must be tightly controlled by firewalls and secure network devices.</p>
+<p>Sensitive systems, such as client data, billing systems, or medical records, should be kept on <strong>segmented internal networks</strong> separate from less sensitive parts of the network. Even if the data is encrypted, segmentation is still needed to reduce exposure and limit access.</p>
+<p>Only authorized personnel should manage firewall rules and secure switches. This ensures only approved traffic can pass between the DMZ, internal servers, and sensitive network segments.</p>
+<p>In environments handling critical data, separate servers and separate network zones are used to keep important information isolated.</p>
+<p>Some organizations use a <strong>Web Application Firewall (WAF)</strong> instead of relying only on a DMZ. A WAF filters web traffic going to a web application and checks for malicious behavior before requests reach the web server. It is designed specifically to protect web applications.</p>
+<p><strong>Main Idea</strong><br />
+Public-facing systems are separated from sensitive internal systems, and traffic between them is tightly controlled to protect critical data.</p>
+
+
+        <nav>
+          <a href="VirtualLocalAreaNetworkVLAN.html" class="home-link">&gt;&gt; Next: 15. Virtual Local Area Network (VLAN) </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

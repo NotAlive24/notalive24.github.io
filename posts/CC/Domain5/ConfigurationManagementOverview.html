@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Configuration Management Overview | NotAlive</title>
+    <meta name="title" content="Configuration Management Overview | NotAlive">
+    <meta name="description" content="Configuration management is a process and discipline used to ensure that only authorized and validated changes are made to a system.">
+    <meta name="keywords" content="Configuration Management Overview, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/ConfigurationManagementOverview.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Configuration Management Overview | NotAlive">
+    <meta property="og:description" content="Configuration management is a process and discipline used to ensure that only authorized and validated changes are made to a system.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Configuration Management Overview page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/ConfigurationManagementOverview.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Configuration Management Overview | NotAlive">
+    <meta name="twitter:description" content="Configuration management is a process and discipline used to ensure that only authorized and validated changes are made to a system.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Configuration Management Overview page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>25. Configuration Management Overview</h1>
+
+        <p>Configuration management is a <strong>process and discipline</strong> used to ensure that only <strong>authorized and validated changes</strong> are made to a system.</p>
+<p>It is both a <strong>decision-making process</strong> and a <strong>set of control processes</strong>. The basic configuration management process includes <strong>identification, baselines, updates, and patches</strong>.</p>
+<h3>Main Components</h3>
+<p><strong>Identification</strong><br />
+Baseline identification of a system and its components, interfaces, and documentation.</p>
+<p><strong>Baseline</strong><br />
+A security baseline is a <strong>minimum level of protection</strong> that can be used as a reference point. It helps ensure that updates to technology and architecture meet the minimum understood and acceptable security requirements.</p>
+<p><strong>Change Control</strong><br />
+A process for requesting changes to a baseline and making changes to one or more components in that baseline. It includes review and approval for all changes, including updates and patches.</p>
+<p><strong>Verification and Audit</strong><br />
+A regression and validation process used to verify that newly applied changes did not break anything in the system. An audit process checks that the current baseline matches the initial baseline plus all approved changes.</p>
+<h2>Inventory</h2>
+<p>Inventory means making a catalog or registry of all information assets the organization is aware of, whether they already exist or still need to be acquired.</p>
+<p>This is the first step in asset management. It requires locating and identifying assets of interest, especially information assets.</p>
+<p>You cannot protect what you do not know you have.</p>
+<p>Keeping the inventory current with updates and patches is challenging. It is also difficult to identify every physical host and endpoint and gather data from all of them.</p>
+<h2>Baselines</h2>
+<p>A baseline is the total inventory of a system’s components, including hardware, software, data, administrative controls, documentation, and user instructions.</p>
+<p>If controls are in place to reduce risks, the baseline can be used as a reference. Further comparisons and development are measured against it.</p>
+<p>Baselines are also useful when protecting assets based on value. If assets are classified as <strong>high, medium, and low</strong>, separate baselines can be developed for each classification to provide the minimum required level of security.</p>
+<h2>Updates</h2>
+<p>Repairs, maintenance actions, and updates are frequently needed across system elements, from infrastructure to operating systems, application platforms, networks, and user interfaces.</p>
+<p>These modifications must be <strong>acceptance tested</strong> to verify that newly installed or repaired functionality works as required.</p>
+<p>They must also be <strong>regression tested</strong> to verify that the changes did not introduce other unexpected or incorrect behavior.</p>
+<p>Ongoing security assessment and evaluation testing checks whether the same system that passed acceptance testing is still secure.</p>
+<h2>Patches</h2>
+<p>Patch management mainly applies to software and hardware devices that are regularly modified.</p>
+<p>A <strong>patch</strong> is an update, upgrade, or modification to a system or component. Patches may be needed to address a vulnerability or improve functionality.</p>
+<p>The challenge is maintaining all patches, since they may come at irregular intervals from many vendors. Some are critical and should be deployed quickly, while others may be less critical but still necessary because later patches may depend on them.</p>
+<p>Some standards, such as <strong>PCI DSS</strong>, require organizations to deploy security patches within a certain time frame.</p>
+<p>Patches should be tested before being rolled out across the organization. This is often difficult because many organizations do not have a testing environment that matches production exactly.</p>
+<p>There is always a risk that not everything will be tested and that problems may appear in production but not in the test environment. To the extent possible, patches should be tested to ensure they will work correctly in production.</p>
+<p>If a patch does not work or causes unacceptable effects, it may be necessary to <strong>roll back</strong> to a previous <strong>pre-patch state</strong>. The rollback criteria are usually documented in advance and performed automatically when those criteria are met.</p>
+<p>Many vendors provide patch management solutions with automated or unattended updates. The risk of using unattended patching must be weighed against the risk of leaving systems unpatched. Unattended or automated patching may also cause unscheduled outages if production systems are taken offline or rebooted during the patch process.</p>
+
+
+        <nav>
+          <a href="CommonSecurityPolicies.html" class="home-link">&gt;&gt; Next: 26. Common Security Policies </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

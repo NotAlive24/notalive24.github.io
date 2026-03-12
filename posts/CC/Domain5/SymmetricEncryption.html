@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Symmetric Encryption | NotAlive</title>
+    <meta name="title" content="Symmetric Encryption | NotAlive">
+    <meta name="description" content="A symmetric algorithm uses the same key in both the encryption and decryption processes. The decryption process is a mirror image of the encryption process....">
+    <meta name="keywords" content="Symmetric Encryption, Domain 5, cybersecurity, ISC2, Certified in Cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain5/SymmetricEncryption.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Symmetric Encryption | NotAlive">
+    <meta property="og:description" content="A symmetric algorithm uses the same key in both the encryption and decryption processes. The decryption process is a mirror image of the encryption process....">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Symmetric Encryption page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain5/SymmetricEncryption.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Symmetric Encryption | NotAlive">
+    <meta name="twitter:description" content="A symmetric algorithm uses the same key in both the encryption and decryption processes. The decryption process is a mirror image of the encryption process....">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Symmetric Encryption page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .content img, .content video { box-shadow: 0 0 0 1px rgba(255,255,255,0.08), 0 12px 30px rgba(0,0,0,0.35); }
+        .content ul li { margin-bottom: 8px; }
+        .content hr { border: 0; border-top: 1px solid rgba(255,255,255,0.08); margin: 28px 0; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>20. Symmetric Encryption</h1>
+
+        <p>A <strong>symmetric algorithm</strong> uses the <strong>same key</strong> in both the <strong>encryption</strong> and <strong>decryption</strong> processes.<br />
+The decryption process is a <strong>mirror image</strong> of the encryption process.</p>
+<ul>
+<li>The two communicating parties need to <strong>share knowledge of the same key</strong>.</li>
+<li>A person without the correct key cannot read the encrypted message.</li>
+</ul>
+<h3>Challenges</h3>
+<ul>
+<li>If two parties think a communication path is compromised, they should not share key material along that path.</li>
+<li>Someone who has compromised communications between the parties could intercept the key.</li>
+<li><strong>Key distribution</strong> is difficult because the key cannot be sent in the same channel as the encrypted message.</li>
+<li>Sending the key through a different channel than the encrypted message is called <strong>out-of-band key distribution</strong>.</li>
+<li>Examples of out-of-band key distribution include sending the key by:<ul>
+<li>courier</li>
+<li>fax</li>
+<li>phone</li>
+</ul>
+</li>
+<li>Any party with knowledge of the key can <strong>access and change</strong> the message.</li>
+<li>Each person or group that wants to communicate needs a different key for each individual or group they want to connect with.</li>
+<li>This creates a <strong>scalability</strong> challenge because the number of needed keys grows quickly as the number of users or groups increases.</li>
+<li>In this arrangement, an organization of <strong>1,000 employees</strong> would need to manage <strong>499,500 keys</strong> if every employee wanted to communicate confidentially with every other employee.</li>
+</ul>
+<h3>Primary Uses of Symmetric Algorithms</h3>
+<ul>
+<li>Encrypting <strong>bulk data</strong> (e.g., backups, hard drives, portable media)</li>
+<li>Encrypting messages traveling through <strong>communication channels</strong> (e.g., IPsec, TLS)</li>
+<li>Streaming <strong>large-scale, time-sensitive data</strong> (e.g., audio/video materials, gaming)</li>
+</ul>
+<h3>Other Names for Symmetric Algorithms</h3>
+<ul>
+<li>Same key</li>
+<li>Single key</li>
+<li>Shared key</li>
+<li>Secret key</li>
+<li>Session key</li>
+</ul>
+<h3>Symmetric Encryption via Decoding Ring</h3>
+<ul>
+<li>An example of symmetric encryption is a <strong>substitution cipher</strong>.</li>
+<li>It involves substituting letters for other letters, or bits for other bits, based on a <strong>cryptovariable</strong>.</li>
+<li>These ciphers replace each letter of the <strong>plaintext</strong> with another letter that may be farther down the alphabet.</li>
+</ul>
+
+
+        <nav>
+          <a href="LoggingandMonitoringSecurityEvents.html" class="home-link">&gt;&gt; Next: 21. Logging and Monitoring Security Events </a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+          <div class="terminal-row">
+            <span class="terminal-key">email</span>
+            <span class="terminal-sep">:</span>
+            <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">discord</span>
+            <span class="terminal-sep">:</span>
+            <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+          </div>
+          <div class="terminal-row">
+            <span class="terminal-key">github</span>
+            <span class="terminal-sep">:</span>
+            <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+          </div>
+        </div>
+      </div>
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>
