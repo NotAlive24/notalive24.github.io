@@ -1,0 +1,128 @@
+<!-- File path: posts/CC/Domain3/DiscretionaryAccessControlDAC.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Discretionary Access Control (DAC) | NotAlive</title>
+    <meta name="title" content="Discretionary Access Control (DAC) | NotAlive">
+    <meta name="description" content="Short cybersecurity notes explaining discretionary access control, object ownership, access control lists, and DAC flexibility.">
+    <meta name="keywords" content="discretionary access control, DAC, access control lists, object owner permissions, cybersecurity, Domain 3, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain3/DiscretionaryAccessControlDAC.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Discretionary Access Control (DAC) | NotAlive">
+    <meta property="og:description" content="Short cybersecurity notes explaining discretionary access control, object ownership, access control lists, and DAC flexibility.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="Discretionary Access Control (DAC) page preview for NotAlive Cyber Archive">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain3/DiscretionaryAccessControlDAC.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Discretionary Access Control (DAC) | NotAlive">
+    <meta name="twitter:description" content="Short cybersecurity notes explaining discretionary access control, object ownership, access control lists, and DAC flexibility.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="Discretionary Access Control (DAC) page preview for NotAlive Cyber Archive">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="home-link">&lt;&lt; Return to Basic server</a>
+    </nav>
+
+    <div class="content">
+        <h1>18. Discretionary Access Control (DAC)</h1>
+
+        <h2>Discretionary Access Control (DAC)</h2>
+        <p>
+            DAC is an access control model where the owner of an object decides who can access it and what they can do with it.
+            Users with access may be able to share information, grant privileges, or change permissions on the objects they own.
+        </p>
+
+        <h2>Where It Is Used</h2>
+        <p>
+            It is commonly used in many operating systems and file-sharing environments.
+            Access is often managed through access control lists or capability lists.
+        </p>
+
+        <figure>
+            <img src="../../../assets/images/Perms.png" alt="Discretionary Access Control permissions diagram">
+        </figure>
+
+        <h2>Flexibility</h2>
+        <p>
+            DAC is flexible because the object owner controls access decisions directly.
+        </p>
+
+        <h2>Management Challenges</h2>
+        <p>
+            It is less scalable because access decisions depend on individual owners.
+            This can make control harder to manage and review.
+        </p>
+
+        <h2>Main Idea</h2>
+        <p>
+            DAC lets the object owner control access, making it flexible but harder to manage at scale.
+        </p>
+
+        <nav>
+            <a href="TheBenefitofMultipleControls.html" class="home-link">&gt;&gt; Next: 19. The Benefit of Multiple Controls</a>
+        </nav>
+        <br>
+
+        <div class="terminal-card">
+            <div class="terminal-row">
+                <span class="terminal-key">email</span>
+                <span class="terminal-sep">:</span>
+                <a href="mailto:notalive7593@duck.com" class="terminal-value terminal-link">notalive7593@duck.com</a>
+            </div>
+            <div class="terminal-row">
+                <span class="terminal-key">discord</span>
+                <span class="terminal-sep">:</span>
+                <button class="terminal-value terminal-link terminal-btn" type="button" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')"> _i_am_innocent_</button>
+            </div>
+            <div class="terminal-row">
+                <span class="terminal-key">github</span>
+                <span class="terminal-sep">:</span>
+                <a href="https://github.com/notalive24" target="_blank" class="terminal-value terminal-link">github.com/notalive24</a>
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>

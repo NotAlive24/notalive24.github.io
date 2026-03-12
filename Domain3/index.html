@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Domain 3: Access Control Concepts | NotAlive</title>
+
+    <meta name="description" content="Browse Domain 3 notes on access control concepts from the NotAlive Cyber Archive.">
+    <meta name="keywords" content="domain 3, access control concepts, security controls, RBAC, MAC, DAC, least privilege, privileged access management, cybersecurity, certified in cybersecurity, NotAlive">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0d0d0d">
+
+    <link rel="canonical" href="https://notalive24.github.io/posts/CC/Domain3/">
+
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Domain 3: Access Control Concepts | NotAlive">
+    <meta property="og:description" content="Browse Domain 3 notes on access control concepts from the NotAlive Cyber Archive.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:url" content="https://notalive24.github.io/posts/CC/Domain3/">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Domain 3: Access Control Concepts | NotAlive">
+    <meta name="twitter:description" content="Browse Domain 3 notes on access control concepts from the NotAlive Cyber Archive.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        h1 {
+            font-family: 'Orbitron', sans-serif !important;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../../../posts/CC/CC.html" class="home-link">&lt;&lt; Return to Entry-level server</a>
+    </nav>
+
+    <h1>Domain 3: Access Control Concepts</h1>
+
+    <div class="content">
+        <p style="text-align: center; color: #888; margin-bottom: 30px;">
+            &gt; SYSTEM STATUS: ONLINE<br>
+            &gt; ACCESSING ARCHIVES...
+        </p>
+
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search topics (ex: 'rbac', 'least privilege')...">
+        </div>
+
+        <div class="posts-grid" id="posts-container">
+            <a href="SecurityControls.html" class="post-card" data-title="Security Controls" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 1: Security Controls</span>
+                <div class="card-preview">
+                    Learn what security controls are and how they protect systems, users, assets, and business operations.
+                </div>
+            </a>
+
+            <a href="ControlsOverview.html" class="post-card" data-title="Controls Overview" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 2: Controls Overview</span>
+                <div class="card-preview">
+                    Get a quick overview of how different controls work together to reduce risk and improve security posture.
+                </div>
+            </a>
+
+            <a href="DefenseinDepth.html" class="post-card" data-title="Defense in Depth" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 3: Defense in Depth</span>
+                <div class="card-preview">
+                    Understand the layered security approach that uses multiple protections instead of relying on a single control.
+                </div>
+            </a>
+
+            <a href="ExamplesofLeastPrivilege.html" class="post-card" data-title="Examples of Least Privilege" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 4: Examples of Least Privilege</span>
+                <div class="card-preview">
+                    See practical examples of limiting access so users only get the permissions they truly need.
+                </div>
+            </a>
+
+            <a href="LogicalAccessControls.html" class="post-card" data-title="Logical Access Controls" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 5: Logical Access Controls</span>
+                <div class="card-preview">
+                    Explore digital controls such as passwords, permissions, authentication, and system-based access restrictions.
+                </div>
+            </a>
+
+            <a href="DefenseinDepthinPractice.html" class="post-card" data-title="Defense in Depth in Practice" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 6: Defense in Depth in Practice</span>
+                <div class="card-preview">
+                    Learn how layered security looks in real environments where multiple controls protect the same target.
+                </div>
+            </a>
+
+            <a href="ControlsandRisks.html" class="post-card" data-title="Controls and Risks" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 7: Controls and Risks</span>
+                <div class="card-preview">
+                    Understand how security controls help reduce risk and why control selection should match business threats.
+                </div>
+            </a>
+
+            <a href="ControlsAssessments.html" class="post-card" data-title="Controls Assessments" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 8: Controls Assessments</span>
+                <div class="card-preview">
+                    Review how organizations assess security controls to verify that protections are working as intended.
+                </div>
+            </a>
+
+            <a href="PhysicalSecurityControls.html" class="post-card" data-title="Physical Security Controls" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 9: Physical Security Controls</span>
+                <div class="card-preview">
+                    Learn about locks, guards, cameras, barriers, and other controls that protect physical spaces and hardware.
+                </div>
+            </a>
+
+            <a href="Role-BasedAccessControl.html" class="post-card" data-title="Role-Based Access Control" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 10: Role-Based Access Control</span>
+                <div class="card-preview">
+                    Understand how access can be assigned based on job roles instead of giving permissions user by user.
+                </div>
+            </a>
+
+            <a href="Role-BasedAccessControlRBACintheWorkplace.html" class="post-card" data-title="Role-Based Access Control RBAC in the Workplace" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 11: Role-Based Access Control (RBAC) in the Workplace</span>
+                <div class="card-preview">
+                    See how RBAC is used in workplaces to simplify permission management and enforce job-based access.
+                </div>
+            </a>
+
+            <a href="PrivilegedAccessManagement.html" class="post-card" data-title="Privileged Access Management" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 12: Privileged Access Management</span>
+                <div class="card-preview">
+                    Learn how privileged accounts are controlled, monitored, and protected to reduce high-impact abuse.
+                </div>
+            </a>
+
+            <a href="AuthorizedVersusUnauthorizedPersonnel.html" class="post-card" data-title="Authorized Versus Unauthorized Personnel" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 13: Authorized Versus Unauthorized Personnel</span>
+                <div class="card-preview">
+                    Understand the difference between approved access and unauthorized presence in secure environments.
+                </div>
+            </a>
+
+            <a href="PrivilegedAccounts.html" class="post-card" data-title="Privileged Accounts" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 14: Privileged Accounts</span>
+                <div class="card-preview">
+                    Explore high-permission accounts, why they are risky, and how they should be managed carefully.
+                </div>
+            </a>
+
+            <a href="Monitoring.html" class="post-card" data-title="Monitoring" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 15: Monitoring</span>
+                <div class="card-preview">
+                    Learn why monitoring is essential for detecting misuse, verifying control effectiveness, and spotting threats early.
+                </div>
+            </a>
+
+            <a href="MandatoryAccessControlMACintheWorkplace.html" class="post-card" data-title="Mandatory Access Control MAC in the Workplace" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 16: Mandatory Access Control (MAC) in the Workplace</span>
+                <div class="card-preview">
+                    See how mandatory access control is applied in environments where strict data classification is required.
+                </div>
+            </a>
+
+            <a href="MandatoryAccessControlMAC.html" class="post-card" data-title="Mandatory Access Control MAC" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 17: Mandatory Access Control (MAC)</span>
+                <div class="card-preview">
+                    Understand how MAC works by enforcing access rules through labels, classifications, and centrally defined policies.
+                </div>
+            </a>
+
+            <a href="DiscretionaryAccessControlDAC.html" class="post-card" data-title="Discretionary Access Control DAC" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 18: Discretionary Access Control (DAC)</span>
+                <div class="card-preview">
+                    Learn how resource owners can decide who gets access in discretionary access control models.
+                </div>
+            </a>
+
+            <a href="TheBenefitofMultipleControls.html" class="post-card" data-title="The Benefit of Multiple Controls" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 19: The Benefit of Multiple Controls</span>
+                <div class="card-preview">
+                    Discover why combining different types of controls creates stronger protection than using only one.
+                </div>
+            </a>
+
+            <a href="SeparationofDuties.html" class="post-card" data-title="Separation of Duties" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 20: Separation of Duties</span>
+                <div class="card-preview">
+                    Understand how dividing responsibilities helps prevent fraud, errors, and abuse of privilege.
+                </div>
+            </a>
+
+            <a href="TypesofPhysicalAccessControls.html" class="post-card" data-title="Types of Physical Access Controls" data-category="Info">
+                <div class="card-meta">
+                    <span>2026-03-12</span>
+                    <span class="category-yellow">Info</span>
+                </div>
+                <span class="card-title">Topic 21: Types of Physical Access Controls</span>
+                <div class="card-preview">
+                    Review the common types of physical access controls used to restrict entry and protect facilities.
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+
+    <script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>
