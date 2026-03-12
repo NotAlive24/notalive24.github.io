@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <title>Offensive Security Intro | NotAlive</title>
+    <meta name="title" content="Offensive Security Intro | NotAlive">
+    <meta name="description" content="A concise TryHackMe Offensive Security Intro write-up by NotAlive covering basic offensive security concepts, Gobuster usage, and cybersecurity career paths.">
+    <meta name="keywords" content="Offensive Security Intro, TryHackMe, THM, offensive security, Gobuster, penetration testing, red teaming, cybersecurity, NotAlive, write-up">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://notalive24.github.io/posts/THM/offensive_sec_intro.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Offensive Security Intro | NotAlive">
+    <meta property="og:description" content="TryHackMe Offensive Security Intro summary covering basic offensive security concepts, Gobuster, and cybersecurity career paths.">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.png">
+    <meta property="og:image:alt" content="Offensive Security Intro page preview">
+    <meta property="og:url" content="https://notalive24.github.io/posts/THM/offensive_sec_intro.html">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Offensive Security Intro | NotAlive">
+    <meta name="twitter:description" content="TryHackMe Offensive Security Intro summary covering basic offensive security concepts, Gobuster, and cybersecurity career paths.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.png">
+    <meta name="twitter:image:alt" content="Offensive Security Intro page preview">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../assets/favicon.ico">
+</head>
+<body>
+
+    <nav>
+        <a href="../../Heads/THM.html" class="home-link">&lt;&lt; Return to Mid-range server</a>
+    </nav>
+
+    <div class="content">
+        <h1>Offensive Security Intro</h1>
+
+        <h2>What is this page about?</h2>
+        <p>
+            Hello everyone, this is <strong>NotAlive.</strong>
+            <br>
+            On this page, I will be summarizing the <strong>Offensive Security Intro</strong> room from <strong>TryHackMe</strong>.
+            <br>
+            If you are new, I would recommend not reading this, as it is mainly meant for <em><strong>revision</strong></em>.
+            <br>
+            Let's get started.
+        </p>
+
+        <h2>1. What is Offensive Security?</h2>
+        <p>
+            "To outsmart a hacker, you need to think like one."
+            <br>
+            This is what the Offensive Security Intro is all about.
+        </p>
+
+        <h2>2. Hack Your First Machine</h2>
+        <p>
+            In this task, we will be using a tool like Gobuster to find hidden directories on a bank site and transfer money to another account.
+            <br>
+            First, we should start the VM, and once it is on, open the terminal.
+            <br>
+            Then we run Gobuster in the terminal like this:
+        </p>
+        <pre><code>gobuster dir -u http://fakebank.thm -w wordlist.txt</code></pre>
+        <p>
+            Then we transfer $2000 from account 2276 to account 8881.
+            <br>
+            That's it for the given task.
+        </p>
+
+        <h2>3. Careers in Cyber Security</h2>
+        <p>
+            In this section, they talk about careers in offensive security, such as <strong>Penetration Tester</strong>, <strong>Red Teamer</strong>, and <strong>Security Engineer</strong>.
+            <br>
+            That's all there was, actually. It's pretty basic.
+        </p>
+
+<pre><code>email:   <a href="mailto:notalive7593@duck.com" class="terminal-link">notalive7593@duck.com</a>
+discord: <span class="terminal-link" onclick="copyText('_i_am_innocent_', 'Discord Handle Copied!')">_i_am_innocent_</span>
+github:  <a href="https://github.com/notalive24" target="_blank" class="terminal-link">github.com/notalive24</a></code></pre>
+    </div>
+
+    <button id="scrollTopBtn" title="Go to top">^ TOP</button>
+    <div id="toast-notification"></div>
+
+    <script src="../../assets/js/script.js" defer></script>
+</body>
+</html>
