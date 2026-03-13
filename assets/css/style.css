@@ -1,9 +1,4 @@
-   
-body {
-    font-family: 'JetBrains Mono', monospace;
-    font-weight: 400;
-    letter-spacing: 0.3px; 
-}
+
 
 h1 {
     font-family: 'Orbitron', sans-serif;
@@ -98,47 +93,14 @@ body {
 
 @keyframes gridMove {
     from {
-        background-position: 0 0, 0 0;
+        background-position: 0 0, 0 0, 0 0;
     }
     to {
-        background-position: 70px 70px, 70px 70px;
+        background-position: 70px 70px, 70px 70px, 0 60px;
     }
 }
 
-@keyframes scanlineMove {
-    from {
-        background-position-y: 0;
-    }
-    to {
-        background-position-y: 60px;
-    }
-}
-
-/* grid layer */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -2;
-
-    background:
-        linear-gradient(rgba(255,0,255,0.16) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,0,255,0.16) 1px, transparent 1px);
-
-    background-size: 70px 70px;
-
-    animation: gridMove 4s linear infinite;
-}
-
-/* scanlines */
-body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: -1;
-
+body {
     background:
         repeating-linear-gradient(
             0deg,
@@ -146,9 +108,18 @@ body::after {
             rgba(255,255,255,0.02) 1px,
             transparent 1px,
             transparent 5px
-        );
+        ),
+        linear-gradient(rgba(255,0,255,0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,255,0.16) 1px, transparent 1px),
+        var(--bg);
 
-    animation: scanlineMove 0.5s linear infinite;
+    background-size:
+        100% 60px,
+        70px 70px,
+        70px 70px,
+        auto;
+
+    animation: gridMove 4s linear infinite;
 }
 
 
