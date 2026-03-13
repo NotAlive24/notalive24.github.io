@@ -93,3 +93,31 @@ function copyText(textToCopy, message) {
         console.error('Failed to copy: ', err);
     });
 }
+
+
+const glow = document.createElement("div");
+glow.className = "cursor-glow";
+document.body.appendChild(glow);
+
+let mouseX = 0;
+let mouseY = 0;
+
+let glowX = window.innerWidth / 2;
+let glowY = window.innerHeight / 2;
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+});
+
+function animateGlow() {
+    glowX += (mouseX - glowX) * 0.12;
+    glowY += (mouseY - glowY) * 0.12;
+
+    glow.style.left = glowX + "px";
+    glow.style.top = glowY + "px";
+
+    requestAnimationFrame(animateGlow);
+}
+
+animateGlow();

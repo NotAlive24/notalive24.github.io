@@ -93,98 +93,66 @@ body {
     20%, 24%, 55% { text-shadow: none; opacity: 0.5; }
 }
 
-/* ===================== SMALL MOVING PINK GLOW (MOSTLY BLACK) ===================== */
-/* Viewport-fixed. Only a LITTLE pink. It moves around the screen. */
 
-@keyframes pinkMoveA {
-    0%   { transform: translate(-20%, -10%) scale(1.0); }
-    25%  { transform: translate( 30%, -15%) scale(1.05); }
-    50%  { transform: translate( 40%,  25%) scale(1.0); }
-    75%  { transform: translate(-10%,  35%) scale(1.05); }
-    100% { transform: translate(-20%, -10%) scale(1.0); }
+/* ===================== FAST CYBER GRID BACKGROUND ===================== */
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0, 0 0;
+    }
+    to {
+        background-position: 70px 70px, 70px 70px;
+    }
 }
 
-@keyframes pinkMoveB {
-    0%   { transform: translate( 25%,  30%) scale(1.0); }
-    33%  { transform: translate(-35%,  10%) scale(1.08); }
-    66%  { transform: translate(-20%, -25%) scale(1.0); }
-    100% { transform: translate( 25%,  30%) scale(1.0); }
+@keyframes scanlineMove {
+    from {
+        background-position-y: 0;
+    }
+    to {
+        background-position-y: 60px;
+    }
 }
 
-body {
-    background-color: var(--bg); 
-    color: var(--text-main);
-    margin: 0;
-    animation: pageFade 0.8s ease-out forwards;
-    padding: 0;
-    line-height: 1.6;
-    overflow-x: hidden;
-    transform-origin: center;
+/* grid layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    background:
+        linear-gradient(rgba(255,0,255,0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,0,255,0.16) 1px, transparent 1px);
 
-    position: relative;
-    isolation: isolate;
+    background-size: 70px 70px;
+
+    animation: gridMove 4s linear infinite;
 }
 
-/* Two small pink glows that move; rest stays black */
-body::before,
+/* scanlines */
 body::after {
     content: "";
     position: fixed;
-    inset: 0;           /* locked to viewport, won’t go past footer */
-    width: 100vw;
-    height: 100vh;
+    inset: 0;
     pointer-events: none;
-}
-
-body::before {
-    z-index: -2;
-
-    
-    background:
-        radial-gradient(420px 420px at 20% 20%, var(--pink-a), transparent 70%),
-        radial-gradient(520px 520px at 75% 65%, var(--pink-b), transparent 75%);
-
-    filter: blur(26px) saturate(170%);
-    opacity: 0.9;
-
-    animation: pinkMoveA 12s ease-in-out infinite;
-}
-
-body::after {
     z-index: -1;
 
     background:
-        radial-gradient(380px 380px at 70% 30%, rgba(255,0,255,0.16), transparent 72%);
-
-    filter: blur(30px) saturate(150%);
-    mix-blend-mode: screen;
-    opacity: 0.65;
-
-    animation: pinkMoveB 16s ease-in-out infinite;
-}
-
-    
-body::after {
-    background:
-        radial-gradient(380px 380px at 70% 30%, rgba(255,0,255,0.16), transparent 72%),
         repeating-linear-gradient(
             0deg,
-            rgba(255,255,255,0.012),
-            rgba(255,255,255,0.012) 1px,
+            rgba(255,255,255,0.05),
+            rgba(255,255,255,0.02) 1px,
             transparent 1px,
             transparent 5px
         );
+
+    animation: scanlineMove 0.5s linear infinite;
 }
 
 
-
-
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 body { overflow-x: hidden; } /* ok */
 body { overflow-x: hidden; } 
 
@@ -518,29 +486,6 @@ input, textarea {
     to {bottom: 0; opacity: 0;}
 }
 
-@keyframes glowFadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 0.9; /* match your current glow opacity */
-    }
-}
-
-body::before {
-    opacity: 0; /* start invisible */
-    animation:
-        glowFadeIn 1.2s ease-out 0.4s forwards,
-        pinkMoveA 12s ease-in-out infinite;
-}
-
-body::after {
-    opacity: 0;
-    animation:
-        glowFadeIn 1.6s ease-out 0.6s forwards,
-        pinkMoveB 16s ease-in-out infinite;
-}
-
 
 img {
     max-width: 75%;
@@ -678,3 +623,199 @@ img {
     grid-template-columns: 70px 14px 1fr;
   }
 }
+
+
+
+
+
+/* ================= DOWNLOAD MODULE ================= */
+
+.download-module{
+
+    max-width:500px;
+    margin:80px auto;
+
+    border-radius:12px;
+
+    background:rgba(0,0,0,0.6);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    font-family:'JetBrains Mono',monospace;
+
+    overflow:hidden;
+
+}
+
+
+/* terminal header */
+
+.download-header{
+
+    display:flex;
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 14px;
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    background:rgba(255,255,255,0.02);
+
+}
+
+
+/* terminal dots */
+
+.download-dot{
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+}
+
+.download-dot.red{ background:#ff5f56; }
+.download-dot.yellow{ background:#ffbd2e; }
+.download-dot.green{ background:#27c93f; }
+
+.download-title{
+
+    margin-left:10px;
+
+    font-size:12px;
+
+    color:#888;
+
+}
+
+
+/* body */
+
+.download-body{
+
+    padding:16px;
+
+}
+
+
+/* rows */
+
+.download-row{
+
+    display:grid;
+
+    grid-template-columns:80px 14px 1fr;
+
+    gap:6px;
+
+    padding:8px 0;
+
+}
+
+.download-row + .download-row{
+
+    border-top:1px dashed rgba(255,255,255,0.08);
+
+}
+
+
+/* text */
+
+.download-key{
+    color:#666;
+    text-transform:lowercase;
+}
+
+.download-sep{
+    color:#444;
+}
+
+.download-value{
+    color:#ddd;
+}
+
+
+/* link */
+
+.download-link{
+
+    color:#ccc;
+
+    text-decoration:none;
+
+    border-bottom:1px dashed rgba(255,255,255,0.25);
+
+    transition:.2s;
+
+}
+
+.download-link:hover{
+
+    color:var(--pink);
+
+    border-bottom-color:rgba(255,0,255,0.5);
+
+}
+
+
+/* =========================================================
+RUNAWAY CURSOR GLOW (GLOBAL)
+Does NOT modify existing styles
+========================================================= */
+
+.cursor-glow {
+
+    position: fixed;
+
+    width: 320px;
+    height: 320px;
+
+    pointer-events: none;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        circle,
+        rgba(255,0,255,0.16) 0%,
+        rgba(255,0,255,0.08) 45%,
+        rgba(255,0,255,0.03) 65%,
+        transparent 80%
+    );
+
+    mix-blend-mode: screen;
+
+    transform: translate(-50%, -50%);
+
+    z-index: -3;
+
+    opacity: 0.55;
+
+    filter: blur(40px);
+}
+
+
+/* breathing animation */
+
+@keyframes glowBreath {
+
+    0% {
+        opacity: .55;
+        filter: blur(45px);
+    }
+
+    50% {
+        opacity: .85;
+        filter: blur(65px);
+    }
+
+    100% {
+        opacity: .55;
+        filter: blur(45px);
+    }
+
+}
+
