@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#050505">
+<meta name="msapplication-TileColor" content="#050505">
+<title>Python for Cybersecurity — Complete Curriculum, All Keywords & Projects | NotAlive</title>
+<meta name="title" content="Python for Cybersecurity — Complete Curriculum, All Keywords & Projects | NotAlive">
+<meta name="description" content="The most complete Python cybersecurity curriculum online. 5 stages, 30+ topics, 13 hands-on projects — every keyword, library, and method from core Python to exploit development, CTF tools, Scapy, pwntools, asyncio, and more.">
+<meta name="keywords" content="Python cybersecurity, Python ethical hacking, Python penetration testing, Python CTF, learn Python hacking, pwntools tutorial, Scapy Python, socket programming cybersecurity, Python exploit development, hashlib hacking, Python threading scanner, paramiko SSH, impacket Python, Python cryptography hacking, BeautifulSoup web hacking, requests library hacking, asyncio port scanner, Python binary exploitation, angr symbolic execution, z3 solver CTF, Python cybersecurity roadmap, Python security tools, cybersecurity programming, Python for ethical hackers, Python malware analysis, pefile Python, frida Python, Python subprocess security, Python argparse tools, Python regex security, Python CTF tools, buffer overflow Python, ROP chain Python, Python network scanner, Python web fuzzer, Python brute force, Python hash cracker, Python banner grabber, NotAlive cybersecurity, cybersecurity learning path, Python security keywords, cybersecurity beginner Python, learn Python security, Python hacking projects, CTF Python tools, Python offensive security">
+<meta name="author" content="NotAlive">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="revisit-after" content="7 days">
+<meta name="language" content="English">
+<meta name="rating" content="general">
+<meta name="category" content="Cybersecurity, Programming, Education">
+<meta name="coverage" content="Worldwide">
+<meta name="target" content="all">
+<meta name="HandheldFriendly" content="True">
+<link rel="canonical" href="https://notalive24.github.io/posts/python_cybersecurity.html">
+<link rel="alternate" hreflang="en" href="https://notalive24.github.io/posts/python_cybersecurity.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NotAlive Cyber Archive">
+<meta property="og:title" content="Python for Cybersecurity — Complete Curriculum, All Keywords & Projects">
+<meta property="og:description" content="5 stages, 30+ topics, 13 projects — every Python keyword and library from core basics to exploit development. The only curriculum you need for cybersecurity.">
+<meta property="og:url" content="https://notalive24.github.io/posts/python_cybersecurity.html">
+<meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+<meta property="og:image:alt" content="Python for Cybersecurity Complete Curriculum by NotAlive">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="NotAlive">
+<meta property="article:published_time" content="2026-03-19T00:00:00+00:00">
+<meta property="article:modified_time" content="2026-03-19T00:00:00+00:00">
+<meta property="article:section" content="Cybersecurity">
+<meta property="article:tag" content="Python"><meta property="article:tag" content="Cybersecurity"><meta property="article:tag" content="Ethical Hacking"><meta property="article:tag" content="CTF"><meta property="article:tag" content="Penetration Testing"><meta property="article:tag" content="pwntools"><meta property="article:tag" content="Scapy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@notalive24">
+<meta name="twitter:creator" content="@notalive24">
+<meta name="twitter:title" content="Python for Cybersecurity — Complete Curriculum, All Keywords & Projects">
+<meta name="twitter:description" content="5 stages, 30+ topics, 13 projects — every Python keyword from core basics to exploit development. The only cybersecurity Python curriculum you need.">
+<meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+<meta name="twitter:label1" content="Reading time"><meta name="twitter:data1" content="25 minutes">
+<meta name="twitter:label2" content="Skill level"><meta name="twitter:data2" content="Beginner to Expert">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Python for Cybersecurity — Complete Curriculum, All Keywords & Projects","description":"The most complete Python cybersecurity curriculum online. 5 stages, 30+ topics, 13 hands-on projects.","author":{"@type":"Person","name":"NotAlive","url":"https://notalive24.github.io"},"publisher":{"@type":"Organization","name":"NotAlive Cyber Archive","url":"https://notalive24.github.io"},"datePublished":"2026-03-19","dateModified":"2026-03-19","url":"https://notalive24.github.io/posts/python_cybersecurity.html","inLanguage":"en-US","keywords":"Python, cybersecurity, ethical hacking, CTF, pwntools, Scapy, socket, penetration testing","proficiencyLevel":"Beginner to Expert","dependencies":"Python 3.x"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://notalive24.github.io"},{"@type":"ListItem","position":2,"name":"Posts","item":"https://notalive24.github.io/posts"},{"@type":"ListItem","position":3,"name":"Python for Cybersecurity","item":"https://notalive24.github.io/posts/python_cybersecurity.html"}]}</script>
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#ff8c00;--pink:#ff00ff;--red:#ff0000;--bg:#050505;--text:#e2e2e2;--muted:#7a7a7a;--dim:#3a3a3a;--code-bg:#0d0d0d;--glass:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.09);--teal:#00dca0;--teal-a:rgba(0,220,160,0.10);--teal-b:rgba(0,220,160,0.28);--purple:#b464ff;--purple-a:rgba(180,100,255,0.10);--purple-b:rgba(180,100,255,0.28);--coral:#ff643c;--coral-a:rgba(255,100,60,0.10);--coral-b:rgba(255,100,60,0.28);--slate:#a0afb8;--slate-a:rgba(160,175,184,0.07);--slate-b:rgba(160,175,184,0.20);color-scheme:dark;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{min-height:100%;overflow-x:hidden;}
+@keyframes pageFade{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes gridMove{from{background-position:0 0,0 0,0 0}to{background-position:70px 70px,70px 70px,0 60px}}
+@keyframes flicker{0%,19%,21%,23%,25%,54%,56%,100%{text-shadow:0 0 4px var(--orange),0 0 14px var(--orange),0 0 35px rgba(255,140,0,0.35);opacity:1}20%,24%,55%{text-shadow:none;opacity:0.35}}
+@keyframes scanline{0%{top:-4px}100%{top:100vh}}
+@keyframes fadeToast{from{bottom:0;opacity:0}to{bottom:30px;opacity:1}}
+@keyframes outToast{from{bottom:30px;opacity:1}to{bottom:0;opacity:0}}
+@keyframes pulseGlow{0%,100%{opacity:.45;filter:blur(45px)}50%{opacity:.85;filter:blur(70px)}}
+body{
+  background-color:var(--bg);
+  background:
+    repeating-linear-gradient(0deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01) 1px,transparent 1px,transparent 5px),
+    linear-gradient(rgba(255,0,255,0.12) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,0,255,0.12) 1px,transparent 1px),
+    var(--bg);
+  background-size:100% 60px,70px 70px,70px 70px,auto;
+  animation:gridMove 4s linear infinite,pageFade 0.9s ease-out forwards;
+  color:var(--text);font-family:'JetBrains Mono',monospace;font-size:17px;line-height:1.75;
+  position:relative;isolation:isolate;
+}
+.scanline{position:fixed;left:0;width:100%;height:3px;background:linear-gradient(transparent,rgba(255,0,255,0.05),transparent);animation:scanline 9s linear infinite;pointer-events:none;z-index:9997;}
+nav{position:sticky;top:0;z-index:9999;padding:18px 28px;text-align:center;background:rgba(5,5,5,0.9);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid rgba(255,0,255,0.14);}
+.home-link{color:var(--orange);font-weight:700;text-decoration:none;font-size:1rem;text-transform:uppercase;letter-spacing:2.5px;font-family:'Orbitron',sans-serif;transition:color .2s,text-shadow .2s;}
+.home-link:hover{color:var(--pink);text-shadow:0 0 14px rgba(255,0,255,0.55);}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:36px 30px 90px;}
+.hero{text-align:center;padding:72px 0 54px;position:relative;}
+.hero-eyebrow{font-family:'JetBrains Mono',monospace;font-size:1rem;color:var(--orange);letter-spacing:4px;text-transform:uppercase;margin-bottom:26px;display:block;}
+h1{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(2.8rem,6.5vw,5.4rem);line-height:1.04;letter-spacing:3px;text-transform:uppercase;background:linear-gradient(135deg,var(--orange) 0%,var(--red) 42%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:flicker 4s infinite alternate;margin-bottom:22px;}
+.hero-sub{font-size:1.2rem;color:var(--muted);max-width:700px;margin:0 auto 40px;line-height:1.75;}
+.stats-row{display:flex;justify-content:center;gap:36px;flex-wrap:wrap;margin-bottom:52px;}
+.stat{text-align:center;}
+.stat-num{display:block;font-family:'Orbitron',sans-serif;font-weight:800;font-size:2.6rem;background:linear-gradient(135deg,var(--orange),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.stat-label{font-size:0.82rem;color:var(--dim);letter-spacing:2.5px;text-transform:uppercase;}
+.note{background:rgba(255,140,0,0.07);border:1px solid rgba(255,140,0,0.22);border-left:3px solid var(--orange);border-radius:8px;padding:20px 24px;font-size:1.05rem;color:rgba(255,140,0,0.82);line-height:1.75;margin-bottom:52px;}
+.stage-block{margin-bottom:64px;}
+.stage-header{display:flex;align-items:center;gap:15px;margin-bottom:10px;}
+.stage-badge{font-family:'JetBrains Mono',monospace;font-size:0.8rem;font-weight:700;letter-spacing:0.12em;padding:5px 15px;border-radius:5px;white-space:nowrap;}
+.bt{background:var(--teal-a);border:1px solid var(--teal-b);color:var(--teal);}
+.bp{background:var(--purple-a);border:1px solid var(--purple-b);color:var(--purple);}
+.bc{background:var(--coral-a);border:1px solid var(--coral-b);color:var(--coral);}
+.bg{background:var(--slate-a);border:1px solid var(--slate-b);color:var(--slate);}
+.stage-title{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:2px;}
+.st{color:var(--teal);}.sp{color:var(--purple);}.sc{color:var(--coral);}.sg{color:var(--slate);}
+.stage-sub{font-size:1rem;color:var(--dim);margin-bottom:26px;letter-spacing:1px;}
+.sec-label{font-size:0.8rem;letter-spacing:3px;text-transform:uppercase;color:#2e2e2e;margin:30px 0 16px;display:flex;align-items:center;gap:12px;}
+.sec-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,rgba(255,255,255,0.05),transparent);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;}
+.grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px;}
+.card{background:var(--glass);border:1px solid var(--border);border-radius:14px;padding:22px 24px;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);box-shadow:0 4px 28px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.05);transition:transform .25s,border-color .25s,box-shadow .25s;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(120% 55% at 50% 0%,rgba(255,255,255,0.065),transparent 68%);mix-blend-mode:screen;}
+.card:hover{transform:translateY(-5px);border-color:rgba(255,0,255,0.22);box-shadow:0 14px 44px rgba(0,0,0,0.65),0 0 22px rgba(255,0,255,0.09),inset 0 1px 0 rgba(255,255,255,0.08);}
+.card-name{font-size:1.1rem;font-weight:700;margin-bottom:14px;display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
+.ct{color:var(--teal);}.cp{color:var(--purple);}.cc{color:var(--coral);}.cg{color:var(--slate);}
+.kws{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;}
+.kw{font-family:'JetBrains Mono',monospace;font-size:0.8rem;padding:3px 9px;border-radius:4px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);color:var(--muted);transition:color .15s,border-color .15s;}
+.card:hover .kw{color:#c5c5c5;}
+.card-desc{font-size:1rem;color:var(--muted);line-height:1.75;}
+.card-use{font-size:0.85rem;color:#343434;margin-top:13px;padding-top:12px;border-top:1px dashed rgba(255,255,255,0.07);line-height:1.65;}
+.pcard{border-radius:14px;padding:24px 26px;border:1px solid;position:relative;overflow:hidden;backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);transition:transform .25s,box-shadow .25s;}
+.pcard:hover{transform:translateY(-5px);}
+.pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.pt{background:rgba(0,220,160,0.06);border-color:rgba(0,220,160,0.20);}
+.pt::before{background:linear-gradient(90deg,transparent,var(--teal),transparent);}
+.pt .ptitle{color:var(--teal);}.pt .pdesc{color:rgba(0,220,160,0.52);}
+.pt .ptag{background:rgba(0,220,160,0.1);color:var(--teal);border-color:rgba(0,220,160,0.24);}
+.pp{background:rgba(180,100,255,0.06);border-color:rgba(180,100,255,0.20);}
+.pp::before{background:linear-gradient(90deg,transparent,var(--purple),transparent);}
+.pp .ptitle{color:var(--purple);}.pp .pdesc{color:rgba(180,100,255,0.52);}
+.pp .ptag{background:rgba(180,100,255,0.1);color:var(--purple);border-color:rgba(180,100,255,0.24);}
+.pc{background:rgba(255,100,60,0.06);border-color:rgba(255,100,60,0.20);}
+.pc::before{background:linear-gradient(90deg,transparent,var(--coral),transparent);}
+.pc .ptitle{color:var(--coral);}.pc .pdesc{color:rgba(255,100,60,0.52);}
+.pc .ptag{background:rgba(255,100,60,0.1);color:var(--coral);border-color:rgba(255,100,60,0.24);}
+.pg{background:rgba(160,175,184,0.04);border-color:rgba(160,175,184,0.16);}
+.pg::before{background:linear-gradient(90deg,transparent,var(--slate),transparent);}
+.pg .ptitle{color:var(--slate);}.pg .pdesc{color:rgba(160,175,184,0.52);}
+.pg .ptag{background:rgba(160,175,184,0.07);color:var(--slate);border-color:rgba(160,175,184,0.18);}
+.ptitle{font-size:1.15rem;font-weight:700;margin-bottom:9px;}
+.pdesc{font-size:0.97rem;line-height:1.75;margin-bottom:15px;}
+.ptags{display:flex;flex-wrap:wrap;gap:6px;}
+.ptag{font-family:'JetBrains Mono',monospace;font-size:0.74rem;padding:3px 10px;border-radius:4px;border:1px solid;font-weight:600;}
+.divider{border:none;margin:64px 0;height:1px;background:linear-gradient(to right,transparent,rgba(255,0,255,0.18),rgba(255,140,0,0.18),rgba(255,0,255,0.18),transparent);}
+h2{font-family:'Orbitron',sans-serif;font-size:1.9rem;font-weight:800;color:var(--pink);letter-spacing:2px;border-bottom:1px dashed rgba(255,0,255,0.22);padding-bottom:11px;margin:64px 0 10px;}
+.tree{background:rgba(0,0,0,0.55);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:32px 36px;margin-top:18px;}
+.tree-root{font-size:1.15rem;font-weight:700;color:#fff;margin-bottom:20px;letter-spacing:1px;}
+.ti{display:flex;align-items:flex-start;gap:10px;padding:4px 0;font-size:0.94rem;line-height:1.65;}
+.tl{color:#252525;flex-shrink:0;}
+.tn{color:#ccc;}
+.tc{margin-left:22px;border-left:1px solid rgba(255,255,255,0.05);padding-left:15px;margin-top:3px;margin-bottom:9px;}
+.tk{display:inline-block;font-family:'JetBrains Mono',monospace;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:3px;padding:1px 6px;font-size:0.75rem;color:#4a4a4a;margin:2px 2px 0 0;}
+.tkt{color:var(--teal);border-color:rgba(0,220,160,0.17);}
+.tkp{color:var(--purple);border-color:rgba(180,100,255,0.17);}
+.tkc{color:var(--coral);border-color:rgba(255,100,60,0.17);}
+pre{background:var(--code-bg);border:1px solid rgba(255,0,0,0.28);padding:22px 24px;overflow-x:auto;box-shadow:0 0 20px rgba(255,0,0,0.1);color:#fff;border-radius:10px;font-size:1.05rem;position:relative;margin-top:52px;line-height:1.85;}
+code{color:#d4d4d4;font-size:1.05rem;}
+.copy-btn{position:absolute;top:10px;right:10px;background:transparent;border:1px solid var(--orange);color:var(--orange);font-size:0.82rem;padding:3px 11px;cursor:pointer;border-radius:4px;transition:all .2s;opacity:.7;font-family:'JetBrains Mono',monospace;}
+.copy-btn:hover{background:var(--orange);color:#000;opacity:1;box-shadow:0 0 14px var(--orange);}
+.tlink{color:#ccc;transition:.25s;}
+.tlink:hover{color:var(--pink);text-shadow:0 0 9px rgba(255,0,255,0.45);}
+#scrollTopBtn{display:none;position:fixed;bottom:26px;right:26px;z-index:99;background:#000;border:1px solid var(--orange);color:var(--orange);cursor:pointer;padding:12px 20px;border-radius:6px;font-weight:700;font-family:'JetBrains Mono',monospace;font-size:0.92rem;transition:all .3s;letter-spacing:1px;}
+#scrollTopBtn:hover{background:var(--orange);color:#000;box-shadow:0 0 20px var(--orange);}
+#toast{visibility:hidden;min-width:270px;background:#000;color:var(--orange);text-align:center;border:1px solid var(--orange);box-shadow:0 0 20px var(--orange);border-radius:5px;padding:17px;position:fixed;z-index:1000;left:50%;bottom:30px;transform:translateX(-50%);font-size:0.97rem;font-family:'JetBrains Mono',monospace;}
+#toast.show{visibility:visible;animation:fadeToast .5s,outToast .5s 2.5s;}
+.cursor-glow{position:fixed;width:360px;height:360px;pointer-events:none;border-radius:50%;background:radial-gradient(circle,rgba(255,0,255,0.13) 0%,rgba(255,0,255,0.06) 45%,transparent 76%);mix-blend-mode:screen;transform:translate(-50%,-50%);z-index:-1;opacity:.55;filter:blur(42px);animation:pulseGlow 4s ease-in-out infinite;}
+@media(max-width:660px){.wrap{padding:20px 16px 64px;}h1{font-size:2.1rem;}.grid,.grid2{grid-template-columns:1fr;}.stats-row{gap:22px;}.tree{padding:20px 17px;}}
+</style>
+</head>
+<body>
+<div class="scanline"></div>
+<nav><a href="../index.html" class="home-link">&lt;&lt; Return to Base</a></nav>
+
+<div class="wrap">
+
+<div class="hero">
+  <span class="hero-eyebrow">// NotAlive &middot; Python &times; Cybersecurity &middot; 2026</span>
+  <h1>Python for<br>Cybersecurity</h1>
+  <p class="hero-sub">The complete curriculum. Every keyword, every library, every project — from core Python to writing your first exploit. No fluff. Just the map.</p>
+  <div class="stats-row">
+    <div class="stat"><span class="stat-num">05</span><span class="stat-label">Stages</span></div>
+    <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Topics</span></div>
+    <div class="stat"><span class="stat-num">13</span><span class="stat-label">Projects</span></div>
+    <div class="stat"><span class="stat-num">15+</span><span class="stat-label">Libraries</span></div>
+  </div>
+</div>
+
+<div class="note">// HOW TO USE &mdash; Work top to bottom. Each stage builds on the last. Don't skip the projects &mdash; reading code doesn't teach you hacking, writing it does. Stages 1&ndash;2 move fast if you have CTF experience. Stage 3 is where it gets real.</div>
+
+<hr class="divider">
+
+<div class="stage-block">
+  <div class="stage-header">
+    <span class="stage-badge bt">STAGE 01</span>
+    <span class="stage-title st">Core Language</span>
+  </div>
+  <div class="stage-sub">// the absolute must-knows before touching any library</div>
+  <div class="sec-label">concepts &amp; keywords</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-name ct">Variables + Data Types</div>
+      <div class="kws"><span class="kw">int</span><span class="kw">float</span><span class="kw">str</span><span class="kw">bool</span><span class="kw">bytes</span><span class="kw">bytearray</span><span class="kw">list</span><span class="kw">tuple</span><span class="kw">dict</span><span class="kw">set</span><span class="kw">None</span><span class="kw">type()</span><span class="kw">isinstance()</span><span class="kw">len()</span></div>
+      <div class="card-desc">Core containers and primitives. <code>bytes</code> and <code>bytearray</code> are critical &mdash; almost all network and binary data is raw bytes. Learn the difference early or it will break you later.</div>
+      <div class="card-use">// security use: IPs as strings, ports as ints, raw packets as bytes, scan results in dicts</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">Loops + Conditionals</div>
+      <div class="kws"><span class="kw">for</span><span class="kw">while</span><span class="kw">if</span><span class="kw">elif</span><span class="kw">else</span><span class="kw">break</span><span class="kw">continue</span><span class="kw">pass</span><span class="kw">range()</span><span class="kw">enumerate()</span><span class="kw">zip()</span><span class="kw">in</span><span class="kw">not in</span><span class="kw">is</span></div>
+      <div class="card-desc">You will loop over wordlists, port ranges, IP lists, and HTTP responses constantly. Know <code>break</code> and <code>continue</code> cold &mdash; stopping a scan on first hit matters a lot in practice.</div>
+      <div class="card-use">// security use: iterate ports 1&ndash;65535, loop through 10M-line wordlists, scan subnets</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">Functions + Scope</div>
+      <div class="kws"><span class="kw">def</span><span class="kw">return</span><span class="kw">*args</span><span class="kw">**kwargs</span><span class="kw">lambda</span><span class="kw">global</span><span class="kw">nonlocal</span><span class="kw">default args</span><span class="kw">type hints</span><span class="kw">docstrings</span></div>
+      <div class="card-desc">Every tool should be a collection of focused functions. Avoid monolithic scripts &mdash; they're undebuggable at 3am during a CTF. Each function does exactly one thing.</div>
+      <div class="card-use">// security use: scan_port(), crack_hash(), send_payload(), parse_response()</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">String Manipulation</div>
+      <div class="kws"><span class="kw">.split()</span><span class="kw">.strip()</span><span class="kw">.join()</span><span class="kw">.replace()</span><span class="kw">.find()</span><span class="kw">.startswith()</span><span class="kw">.endswith()</span><span class="kw">.lower()</span><span class="kw">f-strings</span><span class="kw">.format()</span><span class="kw">encode()</span><span class="kw">decode()</span><span class="kw">repr()</span></div>
+      <div class="card-desc">Parsing server responses, cleaning log lines, building payloads &mdash; all string ops. <code>encode()/decode()</code> bridges str&harr;bytes which you'll do constantly in network code.</div>
+      <div class="card-use">// security use: parse HTTP headers, extract tokens, build SQLi payloads as strings</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">File I/O</div>
+      <div class="kws"><span class="kw">open()</span><span class="kw">read()</span><span class="kw">readline()</span><span class="kw">readlines()</span><span class="kw">write()</span><span class="kw">writelines()</span><span class="kw">with</span><span class="kw">'r' 'w' 'a' 'rb' 'wb'</span><span class="kw">pathlib.Path</span><span class="kw">.exists()</span><span class="kw">.read_text()</span></div>
+      <div class="card-desc">Wordlists can be 100M lines. Always use <code>with open()</code> and iterate line-by-line &mdash; never load the entire file into memory. Use <code>'rb'</code> for anything binary.</div>
+      <div class="card-use">// security use: load rockyou.txt, save scan JSON, read config files, log findings</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">Error Handling</div>
+      <div class="kws"><span class="kw">try</span><span class="kw">except</span><span class="kw">else</span><span class="kw">finally</span><span class="kw">raise</span><span class="kw">Exception</span><span class="kw">ConnectionRefusedError</span><span class="kw">TimeoutError</span><span class="kw">socket.timeout</span><span class="kw">KeyboardInterrupt</span><span class="kw">OSError</span></div>
+      <div class="card-desc">A scanner that crashes on the first closed port is useless. Catch specific exceptions, not bare <code>except:</code>. Know your network error types cold.</div>
+      <div class="card-use">// security use: handle closed ports, auth failures, resets without stopping the scan</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">List Comprehensions + Generators</div>
+      <div class="kws"><span class="kw">[x for x in y]</span><span class="kw">if filter</span><span class="kw">{k:v for k,v}</span><span class="kw">(x for x)</span><span class="kw">map()</span><span class="kw">filter()</span><span class="kw">sorted()</span><span class="kw">yield</span><span class="kw">next()</span></div>
+      <div class="card-desc">Generators are memory-efficient for massive datasets. A generator over rockyou.txt uses almost no RAM vs loading all 14 million lines into a list at once.</div>
+      <div class="card-use">// security use: filter open ports, transform IP lists, deduplicate findings efficiently</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">Modules + Imports</div>
+      <div class="kws"><span class="kw">import</span><span class="kw">from x import y</span><span class="kw">as</span><span class="kw">__name__</span><span class="kw">__main__</span><span class="kw">pip install</span><span class="kw">requirements.txt</span><span class="kw">venv</span><span class="kw">__init__.py</span></div>
+      <div class="card-desc">The <code>if __name__ == "__main__"</code> pattern is non-negotiable. It lets your code work as both a runnable script and an importable module inside a larger recon framework.</div>
+      <div class="card-use">// security use: reuse your scanner module inside a bigger framework without rewriting it</div>
+    </div>
+  </div>
+  <div class="sec-label">build these first</div>
+  <div class="grid2">
+    <div class="pcard pt"><div class="ptitle">Port Scanner v1</div><div class="pdesc">Loop ports 1&ndash;1024, attempt TCP connection, print open/closed. Add a timeout so closed ports don't hang. Your first real security tool.</div><div class="ptags"><span class="ptag">socket</span><span class="ptag">for loop</span><span class="ptag">try/except</span><span class="ptag">functions</span></div></div>
+    <div class="pcard pt"><div class="ptitle">Wordlist Password Checker</div><div class="pdesc">Read a wordlist line-by-line with a generator, check each word against a hash or rule. Works on 100M-line wordlists without crashing your RAM.</div><div class="ptags"><span class="ptag">file I/O</span><span class="ptag">loops</span><span class="ptag">strings</span><span class="ptag">generators</span></div></div>
+    <div class="pcard pt"><div class="ptitle">Log Parser</div><div class="pdesc">Read an Apache/nginx log, extract IPs and status codes, count hits per IP, flag 404 storms. Pure stdlib &mdash; zero dependencies, maximum learning.</div><div class="ptags"><span class="ptag">file I/O</span><span class="ptag">string ops</span><span class="ptag">dicts</span><span class="ptag">sorting</span></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="stage-block">
+  <div class="stage-header">
+    <span class="stage-badge bt">STAGE 02</span>
+    <span class="stage-title st">Standard Library</span>
+  </div>
+  <div class="stage-sub">// built-in power &mdash; no pip install needed</div>
+  <div class="sec-label">concepts &amp; keywords</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-name ct">socket</div>
+      <div class="kws"><span class="kw">socket.socket()</span><span class="kw">AF_INET</span><span class="kw">SOCK_STREAM</span><span class="kw">SOCK_DGRAM</span><span class="kw">.connect()</span><span class="kw">.bind()</span><span class="kw">.listen()</span><span class="kw">.accept()</span><span class="kw">.send()</span><span class="kw">.recv()</span><span class="kw">.settimeout()</span><span class="kw">.close()</span><span class="kw">gethostbyname()</span></div>
+      <div class="card-desc">The foundation of all network tools. TCP = SOCK_STREAM (reliable), UDP = SOCK_DGRAM (fast). <code>settimeout()</code> is essential &mdash; never let a connect hang forever on a dead host.</div>
+      <div class="card-use">// security use: port scanning, banner grabbing, custom TCP listeners, raw connections</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">re (regex)</div>
+      <div class="kws"><span class="kw">re.search()</span><span class="kw">re.match()</span><span class="kw">re.findall()</span><span class="kw">re.finditer()</span><span class="kw">re.sub()</span><span class="kw">re.compile()</span><span class="kw">groups()</span><span class="kw">group(1)</span><span class="kw">\d \w \s \b</span><span class="kw">^ $</span><span class="kw">* + ?</span><span class="kw">re.IGNORECASE</span><span class="kw">re.MULTILINE</span></div>
+      <div class="card-desc">Extract structured data from unstructured text. IPs, emails, JWTs, and API keys all follow patterns. Pre-compile with <code>re.compile()</code> in hot loops for speed.</div>
+      <div class="card-use">// security use: extract IPs from logs, find API keys in source, parse HTTP headers</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">subprocess</div>
+      <div class="kws"><span class="kw">subprocess.run()</span><span class="kw">Popen()</span><span class="kw">capture_output=True</span><span class="kw">text=True</span><span class="kw">shell=True</span><span class="kw">timeout=</span><span class="kw">.stdout</span><span class="kw">.stderr</span><span class="kw">.returncode</span><span class="kw">shlex.split()</span></div>
+      <div class="card-desc">Wrap external tools (nmap, john, gobuster) and capture their output. Avoid <code>shell=True</code> &mdash; use a list of args to prevent shell injection in your own code.</div>
+      <div class="card-use">// security use: run nmap and parse output, chain tools in a recon pipeline</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">hashlib</div>
+      <div class="kws"><span class="kw">hashlib.md5()</span><span class="kw">hashlib.sha1()</span><span class="kw">hashlib.sha256()</span><span class="kw">hashlib.sha512()</span><span class="kw">.update()</span><span class="kw">.hexdigest()</span><span class="kw">.digest()</span><span class="kw">pbkdf2_hmac()</span><span class="kw">algorithms_available</span></div>
+      <div class="card-desc">Hash functions everywhere in security. MD5/SHA1 are broken but dominate CTFs and legacy systems. Know the difference between a hash, a MAC, and a KDF.</div>
+      <div class="card-use">// security use: crack MD5 with wordlist, verify file integrity, understand password storage</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">argparse</div>
+      <div class="kws"><span class="kw">ArgumentParser()</span><span class="kw">add_argument()</span><span class="kw">parse_args()</span><span class="kw">--flag</span><span class="kw">-f</span><span class="kw">type=int</span><span class="kw">required=True</span><span class="kw">default=</span><span class="kw">help=</span><span class="kw">subparsers</span><span class="kw">nargs='+'</span></div>
+      <div class="card-desc">Turn scripts into real tools. A proper CLI: <code>--target 10.0.0.1 --ports 1-1024 --threads 50 --output results.json</code>. That's what separates a script from a tool.</div>
+      <div class="card-use">// security use: every tool you write needs a proper CLI interface from day one</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">threading + queue</div>
+      <div class="kws"><span class="kw">threading.Thread()</span><span class="kw">target=</span><span class="kw">.start()</span><span class="kw">.join()</span><span class="kw">daemon=True</span><span class="kw">threading.Lock()</span><span class="kw">with lock:</span><span class="kw">queue.Queue()</span><span class="kw">.put()</span><span class="kw">.get()</span><span class="kw">.task_done()</span></div>
+      <div class="card-desc">Single-threaded scanner at 1s timeout over 65535 ports = 18 hours. With 100 threads = 11 minutes. Threading is non-optional for any scanning tool you actually want to run.</div>
+      <div class="card-use">// security use: threaded port scanner, parallel hash cracker, concurrent web fuzzer</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">json + struct</div>
+      <div class="kws"><span class="kw">json.loads()</span><span class="kw">json.dumps()</span><span class="kw">json.load()</span><span class="kw">json.dump()</span><span class="kw">indent=</span><span class="kw">sort_keys=</span><span class="kw">struct.pack()</span><span class="kw">struct.unpack()</span><span class="kw">'&gt;I' '&lt;H' 'B' 'Q'</span></div>
+      <div class="card-desc"><code>json</code> for API responses and results. <code>struct</code> is critical for binary protocol parsing &mdash; reading packet headers, crafting raw payloads, dissecting file formats at byte level.</div>
+      <div class="card-use">// security use: parse nmap JSON, unpack TCP headers, read binary file formats</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">base64 + binascii + codecs</div>
+      <div class="kws"><span class="kw">b64encode()</span><span class="kw">b64decode()</span><span class="kw">b32encode()</span><span class="kw">b16encode()</span><span class="kw">binascii.hexlify()</span><span class="kw">binascii.unhexlify()</span><span class="kw">.hex()</span><span class="kw">bytes.fromhex()</span><span class="kw">codecs 'rot_13'</span></div>
+      <div class="card-desc">Encoding is everywhere in CTFs and real exploits. Base64 in auth headers, hex in shellcode, ROT13 in obfuscation. Encoding &ne; encryption &mdash; know this cold.</div>
+      <div class="card-use">// security use: decode JWT tokens, encode payloads, convert shellcode between formats</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">os + sys + pathlib</div>
+      <div class="kws"><span class="kw">os.path.join()</span><span class="kw">os.getcwd()</span><span class="kw">os.environ</span><span class="kw">os.getenv()</span><span class="kw">os.listdir()</span><span class="kw">os.walk()</span><span class="kw">sys.argv</span><span class="kw">sys.exit()</span><span class="kw">pathlib.Path()</span><span class="kw">.glob()</span></div>
+      <div class="card-desc"><code>os.walk()</code> is powerful for hunting through directory trees. Combine with regex to find sensitive files: private keys, .env files, database dumps, configs left exposed.</div>
+      <div class="card-use">// security use: hunt for .env, id_rsa, *.pem, config.php across a directory tree</div>
+    </div>
+    <div class="card">
+      <div class="card-name ct">urllib + http.server</div>
+      <div class="kws"><span class="kw">urllib.parse.urlencode()</span><span class="kw">urllib.parse.quote()</span><span class="kw">urllib.parse.urlparse()</span><span class="kw">http.server.HTTPServer</span><span class="kw">SimpleHTTPRequestHandler</span></div>
+      <div class="card-desc">URL encoding is critical for web attacks &mdash; <code>&amp;</code> <code>?</code> <code>=</code> and spaces need encoding in payloads. <code>http.server</code> spins up a file server in one line for payload delivery.</div>
+      <div class="card-use">// security use: encode SQLi payloads, serve files for reverse shell delivery in CTFs</div>
+    </div>
+  </div>
+  <div class="sec-label">build these</div>
+  <div class="grid2">
+    <div class="pcard pt"><div class="ptitle">Threaded Port Scanner v2</div><div class="pdesc">50&ndash;100 worker threads, queue of ports, argparse CLI with --target --ports --threads --timeout, JSON output of open ports with service banners.</div><div class="ptags"><span class="ptag">socket</span><span class="ptag">threading</span><span class="ptag">queue</span><span class="ptag">argparse</span><span class="ptag">json</span></div></div>
+    <div class="pcard pt"><div class="ptitle">Banner Grabber</div><div class="pdesc">Connect to open ports, grab service banners (SSH version, HTTP server, FTP greeting). Use regex to identify service + version. Save to JSON.</div><div class="ptags"><span class="ptag">socket</span><span class="ptag">re</span><span class="ptag">json</span><span class="ptag">threading</span></div></div>
+    <div class="pcard pt"><div class="ptitle">MD5 Hash Cracker</div><div class="pdesc">Take a target hash, iterate a wordlist, hash each word and compare. --algorithm flag for SHA1/SHA256. Show result and time elapsed.</div><div class="ptags"><span class="ptag">hashlib</span><span class="ptag">file I/O</span><span class="ptag">argparse</span><span class="ptag">threading</span></div></div>
+    <div class="pcard pt"><div class="ptitle">Sensitive File Finder</div><div class="pdesc">Walk a directory tree searching for .env, id_rsa, *.pem, config.php, *.bak. Report paths and permissions. Pure stdlib, works on Linux and Windows.</div><div class="ptags"><span class="ptag">os.walk</span><span class="ptag">pathlib</span><span class="ptag">re</span><span class="ptag">argparse</span></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="stage-block">
+  <div class="stage-header">
+    <span class="stage-badge bp">STAGE 03</span>
+    <span class="stage-title sp">Third-Party Libraries</span>
+  </div>
+  <div class="stage-sub">// pip install and the ecosystem opens up</div>
+  <div class="sec-label">web + http</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-name cp">requests</div>
+      <div class="kws"><span class="kw">requests.get()</span><span class="kw">requests.post()</span><span class="kw">requests.put()</span><span class="kw">requests.delete()</span><span class="kw">headers={}</span><span class="kw">params={}</span><span class="kw">data={}</span><span class="kw">json={}</span><span class="kw">cookies={}</span><span class="kw">auth=()</span><span class="kw">Session()</span><span class="kw">timeout=</span><span class="kw">verify=False</span><span class="kw">.status_code</span><span class="kw">.text</span><span class="kw">.json()</span><span class="kw">.headers</span><span class="kw">.cookies</span><span class="kw">.history</span></div>
+      <div class="card-desc"><code>Session()</code> persists cookies across requests &mdash; essential for authenticated scanning. <code>verify=False</code> skips SSL cert checks on internal lab targets.</div>
+      <div class="card-use">// security use: web fuzzing, form submission, authenticated crawling, API testing</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">BeautifulSoup (bs4)</div>
+      <div class="kws"><span class="kw">BeautifulSoup(html,'html.parser')</span><span class="kw">.find()</span><span class="kw">.find_all()</span><span class="kw">.select()</span><span class="kw">.get_text()</span><span class="kw">['href']</span><span class="kw">['action']</span><span class="kw">.attrs</span><span class="kw">.children</span><span class="kw">lxml parser</span></div>
+      <div class="card-desc">Parse HTML to extract forms, links, hidden fields, comments. Combine with requests to build a web crawler. Find input fields to fuzz for XSS and injection.</div>
+      <div class="card-use">// security use: extract forms, find hidden inputs, crawl endpoints, detect HTML comments</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">httpx + aiohttp</div>
+      <div class="kws"><span class="kw">httpx.Client()</span><span class="kw">httpx.AsyncClient()</span><span class="kw">async with</span><span class="kw">await client.get()</span><span class="kw">aiohttp.ClientSession()</span><span class="kw">asyncio.gather()</span><span class="kw">Semaphore</span><span class="kw">http2=True</span></div>
+      <div class="card-desc">Async HTTP &mdash; send hundreds of requests concurrently without threads. Much faster than requests at scale. Semaphore controls rate to avoid triggering WAFs and IDS.</div>
+      <div class="card-use">// security use: async directory brute-forcer, concurrent endpoint fuzzer at real scale</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">Scapy</div>
+      <div class="kws"><span class="kw">IP()</span><span class="kw">TCP()</span><span class="kw">UDP()</span><span class="kw">ICMP()</span><span class="kw">Ether()</span><span class="kw">ARP()</span><span class="kw">DNS()</span><span class="kw">/ (layer stack)</span><span class="kw">send()</span><span class="kw">sr()</span><span class="kw">sr1()</span><span class="kw">sendp()</span><span class="kw">sniff()</span><span class="kw">wrpcap()</span><span class="kw">rdpcap()</span><span class="kw">flags='S'</span></div>
+      <div class="card-desc">Build and send raw packets. SYN scans, ARP spoofing, custom DNS, packet sniffing. Understand every byte on the wire. Requires root/admin. Lab machines only.</div>
+      <div class="card-use">// security use: SYN scanner, ARP spoofer, DNS amp demo, PCAP analysis</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">paramiko</div>
+      <div class="kws"><span class="kw">SSHClient()</span><span class="kw">.connect()</span><span class="kw">AutoAddPolicy()</span><span class="kw">.exec_command()</span><span class="kw">.open_sftp()</span><span class="kw">Transport()</span><span class="kw">RSAKey</span><span class="kw">AuthenticationException</span><span class="kw">look_for_keys=False</span></div>
+      <div class="card-desc">SSH in Python. Test auth, run remote commands, transfer files. Catch <code>AuthenticationException</code> for failed logins during credential testing. Lab machines only.</div>
+      <div class="card-use">// security use: SSH credential testing, remote command execution (lab only)</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">impacket</div>
+      <div class="kws"><span class="kw">SMBConnection()</span><span class="kw">NTLMAuthNegotiate</span><span class="kw">secretsdump</span><span class="kw">psexec</span><span class="kw">GetNPUsers</span><span class="kw">Kerberos</span><span class="kw">LDAP</span><span class="kw">DCERPC</span><span class="kw">ntlm.compute_response()</span></div>
+      <div class="card-desc">Windows network protocol implementation in Python. The backbone of CrackMapExec, BloodHound, and many Windows pen-test tools. Essential for Active Directory work.</div>
+      <div class="card-use">// security use: SMB enum, Pass-the-Hash, Kerberoasting, NTLM relay setup</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">cryptography</div>
+      <div class="kws"><span class="kw">Fernet()</span><span class="kw">generate_key()</span><span class="kw">.encrypt()</span><span class="kw">.decrypt()</span><span class="kw">AES</span><span class="kw">CBC ECB CTR GCM</span><span class="kw">RSA</span><span class="kw">generate_private_key()</span><span class="kw">padding.PKCS1v15()</span><span class="kw">OAEP()</span><span class="kw">hashes.SHA256()</span><span class="kw">HMAC()</span></div>
+      <div class="card-desc">Proper crypto. AES-ECB is broken (penguins!), use GCM for authenticated encryption. RSA key gen, signing, verification. Used in both attack tooling and defensive code.</div>
+      <div class="card-use">// security use: break ECB mode, decrypt captured traffic, forge HMAC, crypto CTFs</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">pycryptodome</div>
+      <div class="kws"><span class="kw">from Crypto.Cipher import AES</span><span class="kw">from Crypto.Util import number</span><span class="kw">getPrime()</span><span class="kw">inverse()</span><span class="kw">long_to_bytes()</span><span class="kw">bytes_to_long()</span><span class="kw">from Crypto.PublicKey import RSA</span><span class="kw">XOR cipher</span></div>
+      <div class="card-desc">CTF crypto staple. <code>number.getPrime()</code> for RSA challenges, <code>long_to_bytes()</code> for BigInteger conversion. Most crypto CTF writeups you'll find are built on this.</div>
+      <div class="card-use">// security use: RSA challenges, XOR ciphers, padding oracle, crypto CTF writeups</div>
+    </div>
+    <div class="card">
+      <div class="card-name cp">PyJWT</div>
+      <div class="kws"><span class="kw">jwt.encode()</span><span class="kw">jwt.decode()</span><span class="kw">algorithms=['HS256']</span><span class="kw">algorithms=['RS256']</span><span class="kw">verify=False</span><span class="kw">options={}</span><span class="kw">alg:none attack</span><span class="kw">header/payload/sig</span></div>
+      <div class="card-desc">Decode, forge, and attack JWTs. The <code>alg:none</code> attack, weak secret brute-force, and RS256&rarr;HS256 algorithm confusion appear constantly across web targets.</div>
+      <div class="card-use">// security use: forge JWT tokens, test weak secrets, exploit algorithm confusion bugs</div>
+    </div>
+  </div>
+  <div class="sec-label">build these</div>
+  <div class="grid2">
+    <div class="pcard pp"><div class="ptitle">Directory Brute-Forcer</div><div class="pdesc">GET requests to TARGET/word for each wordlist entry. Detect 200/301/302 as hits. Threading, custom headers, --extensions for .php .html .bak</div><div class="ptags"><span class="ptag">requests</span><span class="ptag">threading</span><span class="ptag">argparse</span><span class="ptag">queue</span></div></div>
+    <div class="pcard pp"><div class="ptitle">SSH Brute-Forcer</div><div class="pdesc">Try user:pass pairs from a wordlist against SSH. Catch AuthenticationException for failures, print hits immediately. --delay flag. Lab machines only.</div><div class="ptags"><span class="ptag">paramiko</span><span class="ptag">threading</span><span class="ptag">file I/O</span><span class="ptag">argparse</span></div></div>
+    <div class="pcard pp"><div class="ptitle">ARP Spoofer</div><div class="pdesc">Craft ARP replies to poison two hosts' caches, positioning yourself as MITM. Restore real ARP tables on exit via finally block. Root required.</div><div class="ptags"><span class="ptag">scapy</span><span class="ptag">ARP()</span><span class="ptag">Ether()</span><span class="ptag">try/finally</span></div></div>
+    <div class="pcard pp"><div class="ptitle">Web Form Fuzzer</div><div class="pdesc">Parse all forms with BeautifulSoup. For each input, send a payload list (XSS, SQLi). Flag responses that reflect payloads or error out.</div><div class="ptags"><span class="ptag">requests</span><span class="ptag">bs4</span><span class="ptag">re</span><span class="ptag">argparse</span></div></div>
+    <div class="pcard pp"><div class="ptitle">JWT Forger</div><div class="pdesc">Decode a JWT, modify the payload (role: admin), re-sign with the original secret or test the alg:none bypass. Output the forged token ready to paste.</div><div class="ptags"><span class="ptag">PyJWT</span><span class="ptag">base64</span><span class="ptag">json</span><span class="ptag">hashlib</span></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="stage-block">
+  <div class="stage-header">
+    <span class="stage-badge bc">STAGE 04</span>
+    <span class="stage-title sc">Code Quality</span>
+  </div>
+  <div class="stage-sub">// make tools you can trust, share, and actually run at 3am</div>
+  <div class="sec-label">concepts &amp; keywords</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-name cc">Classes + OOP</div>
+      <div class="kws"><span class="kw">class</span><span class="kw">__init__()</span><span class="kw">self</span><span class="kw">@property</span><span class="kw">@staticmethod</span><span class="kw">@classmethod</span><span class="kw">inheritance</span><span class="kw">super()</span><span class="kw">__str__()</span><span class="kw">__repr__()</span><span class="kw">@dataclass</span><span class="kw">ABC</span><span class="kw">abstractmethod</span></div>
+      <div class="card-desc">Model a <code>Scanner</code> class, a <code>Target</code> class, a <code>Vulnerability</code> class. Makes tools composable. Use <code>@dataclass</code> for clean data containers without boilerplate.</div>
+      <div class="card-use">// security use: Scanner(target, ports, threads) — a clean API for complex tools</div>
+    </div>
+    <div class="card">
+      <div class="card-name cc">logging</div>
+      <div class="kws"><span class="kw">logging.getLogger()</span><span class="kw">basicConfig()</span><span class="kw">DEBUG INFO WARNING ERROR CRITICAL</span><span class="kw">.debug()</span><span class="kw">.info()</span><span class="kw">.warning()</span><span class="kw">.error()</span><span class="kw">FileHandler()</span><span class="kw">StreamHandler()</span><span class="kw">Formatter()</span></div>
+      <div class="card-desc">Replace every <code>print()</code> with proper logging. Set level via CLI: <code>--verbose</code> &rarr; DEBUG, default &rarr; INFO. Log to file and console simultaneously for a clean audit trail.</div>
+      <div class="card-use">// security use: audit trail of every action your tool takes — required for legal pen testing</div>
+    </div>
+    <div class="card">
+      <div class="card-name cc">Type Hints + mypy</div>
+      <div class="kws"><span class="kw">def f(x: int) -&gt; str</span><span class="kw">List[str]</span><span class="kw">Dict[str, Any]</span><span class="kw">Optional[str]</span><span class="kw">Union[int, str]</span><span class="kw">Tuple[int, ...]</span><span class="kw">Callable</span><span class="kw">from typing import</span><span class="kw">mypy</span></div>
+      <div class="card-desc">Type hints make function signatures self-documenting and catch bugs before runtime. A bytes/str mismatch in an exploit script can be catastrophic &mdash; catch it statically first.</div>
+      <div class="card-use">// security use: prevent silent type bugs that would break exploits at the worst moment</div>
+    </div>
+    <div class="card">
+      <div class="card-name cc">Testing (pytest)</div>
+      <div class="kws"><span class="kw">pytest</span><span class="kw">def test_*()</span><span class="kw">assert</span><span class="kw">@pytest.fixture</span><span class="kw">@pytest.mark.parametrize</span><span class="kw">monkeypatch</span><span class="kw">tmp_path</span><span class="kw">unittest.mock</span><span class="kw">MagicMock()</span><span class="kw">patch()</span></div>
+      <div class="card-desc">Test scanner logic without hitting real hosts. Mock network calls with <code>unittest.mock</code>. Parametrize to cover edge cases: closed ports, timeouts, auth failures.</div>
+      <div class="card-use">// security use: verify tool logic before running it against a real live target</div>
+    </div>
+    <div class="card">
+      <div class="card-name cc">Configuration</div>
+      <div class="kws"><span class="kw">configparser</span><span class="kw">tomllib</span><span class="kw">python-dotenv</span><span class="kw">load_dotenv()</span><span class="kw">os.getenv()</span><span class="kw">pydantic</span><span class="kw">BaseSettings</span><span class="kw">yaml</span></div>
+      <div class="card-desc">Never hardcode API keys, IPs, or credentials. Use <code>.env</code> files via python-dotenv. Pydantic BaseSettings validates config and gives type-safe access with sane defaults.</div>
+      <div class="card-use">// security use: keep API keys and target configs out of your source code entirely</div>
+    </div>
+    <div class="card">
+      <div class="card-name cc">Packaging + Distribution</div>
+      <div class="kws"><span class="kw">pyproject.toml</span><span class="kw">setup.py</span><span class="kw">requirements.txt</span><span class="kw">pip freeze</span><span class="kw">venv</span><span class="kw">pipenv</span><span class="kw">poetry</span><span class="kw">entry_points</span><span class="kw">__version__</span><span class="kw">Makefile</span></div>
+      <div class="card-desc">Share tools properly. <code>requirements.txt</code> + <code>README.md</code> is minimum. A <code>pyproject.toml</code> lets others <code>pip install</code> your tool directly from GitHub.</div>
+      <div class="card-use">// security use: publish tools on GitHub as a portfolio — every recruiter will look</div>
+    </div>
+  </div>
+  <div class="sec-label">build these</div>
+  <div class="grid2">
+    <div class="pcard pc"><div class="ptitle">Recon Framework v1</div><div class="pdesc">Combine port scanner, banner grabber, and web fuzzer into one modular framework. Clean class architecture: Target, Scanner, Reporter. JSON + HTML output. Logging and CLI.</div><div class="ptags"><span class="ptag">OOP</span><span class="ptag">logging</span><span class="ptag">argparse</span><span class="ptag">json</span><span class="ptag">threading</span></div></div>
+    <div class="pcard pc"><div class="ptitle">Vuln Report Generator</div><div class="pdesc">Take JSON scan results, classify by severity, generate a structured HTML report with CVE references and remediation advice. Jinja2 for templating.</div><div class="ptags"><span class="ptag">json</span><span class="ptag">jinja2</span><span class="ptag">dataclasses</span><span class="ptag">pytest</span></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<div class="stage-block">
+  <div class="stage-header">
+    <span class="stage-badge bg">STAGE 05</span>
+    <span class="stage-title sg">Advanced &mdash; Exploit Dev + Specialist</span>
+  </div>
+  <div class="stage-sub">// where your CTF experience pays off hardest</div>
+  <div class="sec-label">binary exploitation</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-name cg">pwntools</div>
+      <div class="kws"><span class="kw">process()</span><span class="kw">remote()</span><span class="kw">gdb.attach()</span><span class="kw">.send()</span><span class="kw">.sendline()</span><span class="kw">.recv()</span><span class="kw">.recvuntil()</span><span class="kw">.recvline()</span><span class="kw">p32() p64()</span><span class="kw">u32() u64()</span><span class="kw">flat()</span><span class="kw">cyclic()</span><span class="kw">cyclic_find()</span><span class="kw">ROP()</span><span class="kw">.chain()</span><span class="kw">ELF()</span><span class="kw">context.arch</span><span class="kw">asm()</span><span class="kw">shellcraft</span></div>
+      <div class="card-desc">The CTF exploit framework. <code>cyclic()</code> finds buffer overflow offsets. <code>ROP()</code> builds ROP chains. <code>ELF()</code> parses binaries. You've probably touched this already in CTFs.</div>
+      <div class="card-use">// security use: buffer overflows, ROP chains, format strings, shellcode injection</div>
+    </div>
+    <div class="card">
+      <div class="card-name cg">struct + ctypes</div>
+      <div class="kws"><span class="kw">struct.pack(fmt,*v)</span><span class="kw">struct.unpack()</span><span class="kw">&lt; &gt; ! (endianness)</span><span class="kw">B H I Q (sizes)</span><span class="kw">ctypes.cdll.LoadLibrary()</span><span class="kw">ctypes.windll</span><span class="kw">ctypes.cast()</span><span class="kw">c_char_p</span><span class="kw">c_void_p</span><span class="kw">create_string_buffer()</span></div>
+      <div class="card-desc"><code>struct</code> packs/unpacks binary data for protocol parsing. <code>ctypes</code> calls native C/Windows API functions directly &mdash; used in shellcode loaders and DLL injection scripts.</div>
+      <div class="card-use">// security use: binary protocols, Windows shellcode loaders, call VirtualAlloc/CreateThread</div>
+    </div>
+    <div class="card">
+      <div class="card-name cg">angr + z3</div>
+      <div class="kws"><span class="kw">angr.Project()</span><span class="kw">claripy</span><span class="kw">BVS() BVV()</span><span class="kw">state.solver</span><span class="kw">SimulationManager()</span><span class="kw">.explore()</span><span class="kw">find= avoid=</span><span class="kw">z3.Solver()</span><span class="kw">z3.Int()</span><span class="kw">z3.BitVec()</span><span class="kw">.add()</span><span class="kw">.check()</span><span class="kw">.model()</span></div>
+      <div class="card-desc">Symbolic execution and constraint solving &mdash; find inputs that reach a target code path automatically. z3 solves constraint puzzles in hard CTF challenges without any manual reversing.</div>
+      <div class="card-use">// security use: auto-solve crackmes, find license keys, break obfuscated checks</div>
+    </div>
+  </div>
+  <div class="sec-label">async + performance + specialist</div>
+  <div class="grid">
+    <div class="card">
+      <div class="card-name cg">asyncio</div>
+      <div class="kws"><span class="kw">async def</span><span class="kw">await</span><span class="kw">asyncio.run()</span><span class="kw">asyncio.gather()</span><span class="kw">asyncio.create_task()</span><span class="kw">asyncio.Semaphore()</span><span class="kw">asyncio.Queue()</span><span class="kw">asyncio.open_connection()</span><span class="kw">asyncio.wait_for()</span><span class="kw">event loop</span><span class="kw">coroutine</span></div>
+      <div class="card-desc">True concurrency for I/O-bound tasks. An async port scanner handles 10,000 concurrent connections. Semaphore throttles rate to avoid triggering IDS or rate limits.</div>
+      <div class="card-use">// security use: massively fast port scanner, concurrent web crawler, async brute-forcer</div>
+    </div>
+    <div class="card">
+      <div class="card-name cg">multiprocessing</div>
+      <div class="kws"><span class="kw">Process()</span><span class="kw">Pool()</span><span class="kw">.map()</span><span class="kw">.starmap()</span><span class="kw">Queue()</span><span class="kw">Pipe()</span><span class="kw">Manager()</span><span class="kw">Value()</span><span class="kw">cpu_count()</span><span class="kw">Pool(os.cpu_count())</span></div>
+      <div class="card-desc">For CPU-bound tasks like hashing. Threading is limited by the GIL for CPU work &mdash; multiprocessing uses all cores in parallel. Use for hash cracking at real scale.</div>
+      <div class="card-use">// security use: parallel hash cracking, CPU-intensive crypto attacks across all cores</div>
+    </div>
+    <div class="card">
+      <div class="card-name cg">pefile + lief</div>
+      <div class="kws"><span class="kw">pefile.PE()</span><span class="kw">.sections</span><span class="kw">.imports</span><span class="kw">.exports</span><span class="kw">.OPTIONAL_HEADER</span><span class="kw">lief.parse()</span><span class="kw">.add_section()</span><span class="kw">.patch_address()</span><span class="kw">ELF MachO PE</span></div>
+      <div class="card-desc">Parse and modify PE (Windows EXE/DLL) and ELF (Linux) binaries. Read import tables to identify malware capabilities. Patch binaries, add sections, inject code. Static analysis staple.</div>
+      <div class="card-use">// security use: malware static analysis, binary patching, packer identification</div>
+    </div>
+    <div class="card">
+      <div class="card-name cg">frida (Python bindings)</div>
+      <div class="kws"><span class="kw">frida.attach()</span><span class="kw">frida.spawn()</span><span class="kw">session.create_script()</span><span class="kw">script.exports</span><span class="kw">Interceptor.attach()</span><span class="kw">Memory.read*()</span><span class="kw">Memory.write*()</span><span class="kw">NativeFunction()</span><span class="kw">ObjC.classes</span></div>
+      <div class="card-desc">Dynamic instrumentation &mdash; hook into running processes, modify return values, dump memory, bypass SSL pinning in mobile apps. Python drives the Frida agent from outside the process.</div>
+      <div class="card-use">// security use: bypass SSL pinning, hook crypto functions, dynamic malware analysis</div>
+    </div>
+  </div>
+  <div class="sec-label">build these</div>
+  <div class="grid2">
+    <div class="pcard pg"><div class="ptitle">Buffer Overflow Exploit</div><div class="pdesc">pwntools exploit for a vulnerable 32-bit ELF. Find offset with cyclic(), control EIP, redirect to shellcode or ret2libc. Against your own compiled binary.</div><div class="ptags"><span class="ptag">pwntools</span><span class="ptag">ELF()</span><span class="ptag">cyclic()</span><span class="ptag">ROP()</span><span class="ptag">asm()</span></div></div>
+    <div class="pcard pg"><div class="ptitle">Async Subnet Scanner</div><div class="pdesc">Scan a /24 &mdash; all 254 hosts, top 1000 ports &mdash; in under 60 seconds. asyncio + Semaphore(500). Output live hosts and open ports as JSON in real-time.</div><div class="ptags"><span class="ptag">asyncio</span><span class="ptag">open_connection</span><span class="ptag">Semaphore</span><span class="ptag">json</span></div></div>
+    <div class="pcard pg"><div class="ptitle">Crackme Solver (angr)</div><div class="pdesc">Point angr at a crackme binary. Define "success" as find= and "fail" as avoid=. Symbolic execution finds the valid input automatically. No manual reversing needed.</div><div class="ptags"><span class="ptag">angr</span><span class="ptag">claripy</span><span class="ptag">SimulationManager</span></div></div>
+    <div class="pcard pg"><div class="ptitle">PE Static Analyzer</div><div class="pdesc">Take a suspicious EXE, extract imports, section entropy (high = packed), strings, compile timestamp. Flag suspicious patterns. Output a JSON report.</div><div class="ptags"><span class="ptag">pefile</span><span class="ptag">math (entropy)</span><span class="ptag">re</span><span class="ptag">json</span></div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<h2>Full Keyword Tree</h2>
+<p style="font-size:1.05rem;color:var(--dim);margin-bottom:20px;letter-spacing:1px;">// every import and concept flattened into one view</p>
+
+<div class="tree">
+  <div class="tree-root">Python &times; Cybersecurity</div>
+  <div class="ti"><span class="tl" style="color:var(--teal)">&#9500;&#9472;&#9472;</span><span class="tn" style="color:var(--teal);font-weight:700">Stage 1 &middot; Core Language</span></div>
+  <div class="tc">
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">Data types</span></div>
+    <div class="tc"><span class="tk tkt">int</span><span class="tk tkt">float</span><span class="tk tkt">str</span><span class="tk tkt">bool</span><span class="tk tkt">bytes</span><span class="tk tkt">bytearray</span><span class="tk tkt">list</span><span class="tk tkt">tuple</span><span class="tk tkt">dict</span><span class="tk tkt">set</span><span class="tk tkt">None</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">Control flow</span></div>
+    <div class="tc"><span class="tk tkt">for</span><span class="tk tkt">while</span><span class="tk tkt">if/elif/else</span><span class="tk tkt">break</span><span class="tk tkt">continue</span><span class="tk tkt">pass</span><span class="tk tkt">range()</span><span class="tk tkt">enumerate()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">Functions</span></div>
+    <div class="tc"><span class="tk tkt">def</span><span class="tk tkt">return</span><span class="tk tkt">*args</span><span class="tk tkt">**kwargs</span><span class="tk tkt">lambda</span><span class="tk tkt">type hints</span><span class="tk tkt">docstrings</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">Strings</span></div>
+    <div class="tc"><span class="tk tkt">f-strings</span><span class="tk tkt">.split()</span><span class="tk tkt">.strip()</span><span class="tk tkt">.join()</span><span class="tk tkt">.replace()</span><span class="tk tkt">encode()</span><span class="tk tkt">decode()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">File I/O</span></div>
+    <div class="tc"><span class="tk tkt">open()</span><span class="tk tkt">with</span><span class="tk tkt">read()</span><span class="tk tkt">write()</span><span class="tk tkt">'rb' 'wb'</span><span class="tk tkt">pathlib.Path</span></div>
+    <div class="ti"><span class="tl">&#9492;&#9472;&#9472;</span><span class="tn">Error handling</span></div>
+    <div class="tc"><span class="tk tkt">try/except/finally</span><span class="tk tkt">raise</span><span class="tk tkt">ConnectionRefusedError</span><span class="tk tkt">TimeoutError</span></div>
+  </div>
+  <div class="ti"><span class="tl" style="color:var(--teal)">&#9500;&#9472;&#9472;</span><span class="tn" style="color:var(--teal);font-weight:700">Stage 2 &middot; Standard Library</span></div>
+  <div class="tc">
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">socket</span></div>
+    <div class="tc"><span class="tk tkt">AF_INET</span><span class="tk tkt">SOCK_STREAM</span><span class="tk tkt">SOCK_DGRAM</span><span class="tk tkt">.connect()</span><span class="tk tkt">.recv()</span><span class="tk tkt">.settimeout()</span><span class="tk tkt">gethostbyname()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">re</span></div>
+    <div class="tc"><span class="tk tkt">search()</span><span class="tk tkt">findall()</span><span class="tk tkt">sub()</span><span class="tk tkt">compile()</span><span class="tk tkt">groups()</span><span class="tk tkt">IGNORECASE</span><span class="tk tkt">MULTILINE</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">subprocess</span></div>
+    <div class="tc"><span class="tk tkt">run()</span><span class="tk tkt">Popen()</span><span class="tk tkt">capture_output</span><span class="tk tkt">.stdout</span><span class="tk tkt">.returncode</span><span class="tk tkt">shlex.split()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">hashlib</span></div>
+    <div class="tc"><span class="tk tkt">md5()</span><span class="tk tkt">sha1()</span><span class="tk tkt">sha256()</span><span class="tk tkt">.hexdigest()</span><span class="tk tkt">pbkdf2_hmac()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">threading</span></div>
+    <div class="tc"><span class="tk tkt">Thread()</span><span class="tk tkt">.start()</span><span class="tk tkt">.join()</span><span class="tk tkt">Lock()</span><span class="tk tkt">queue.Queue()</span><span class="tk tkt">daemon=True</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">argparse</span></div>
+    <div class="tc"><span class="tk tkt">ArgumentParser()</span><span class="tk tkt">add_argument()</span><span class="tk tkt">parse_args()</span><span class="tk tkt">type=</span><span class="tk tkt">required=</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">base64 + binascii</span></div>
+    <div class="tc"><span class="tk tkt">b64encode()</span><span class="tk tkt">b64decode()</span><span class="tk tkt">hexlify()</span><span class="tk tkt">unhexlify()</span><span class="tk tkt">.hex()</span><span class="tk tkt">fromhex()</span></div>
+    <div class="ti"><span class="tl">&#9492;&#9472;&#9472;</span><span class="tn">json + struct</span></div>
+    <div class="tc"><span class="tk tkt">loads()</span><span class="tk tkt">dumps()</span><span class="tk tkt">pack()</span><span class="tk tkt">unpack()</span><span class="tk tkt">'&lt;I' '&gt;H' 'B'</span></div>
+  </div>
+  <div class="ti"><span class="tl" style="color:var(--purple)">&#9500;&#9472;&#9472;</span><span class="tn" style="color:var(--purple);font-weight:700">Stage 3 &middot; Third-Party Libraries</span></div>
+  <div class="tc">
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">requests</span></div>
+    <div class="tc"><span class="tk tkp">get() post()</span><span class="tk tkp">Session()</span><span class="tk tkp">headers=</span><span class="tk tkp">cookies=</span><span class="tk tkp">.status_code</span><span class="tk tkp">.text</span><span class="tk tkp">.json()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">BeautifulSoup</span></div>
+    <div class="tc"><span class="tk tkp">BeautifulSoup()</span><span class="tk tkp">find()</span><span class="tk tkp">find_all()</span><span class="tk tkp">select()</span><span class="tk tkp">['href']</span><span class="tk tkp">.get_text()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">Scapy</span></div>
+    <div class="tc"><span class="tk tkp">IP() TCP() UDP() ICMP() ARP() Ether()</span><span class="tk tkp">send() sr() sr1() sniff()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">paramiko</span></div>
+    <div class="tc"><span class="tk tkp">SSHClient()</span><span class="tk tkp">.connect()</span><span class="tk tkp">exec_command()</span><span class="tk tkp">AuthenticationException</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">cryptography</span></div>
+    <div class="tc"><span class="tk tkp">Fernet()</span><span class="tk tkp">AES CBC GCM ECB</span><span class="tk tkp">RSA</span><span class="tk tkp">HMAC()</span><span class="tk tkp">padding.PKCS1v15()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">pycryptodome</span></div>
+    <div class="tc"><span class="tk tkp">AES</span><span class="tk tkp">getPrime()</span><span class="tk tkp">long_to_bytes()</span><span class="tk tkp">inverse()</span><span class="tk tkp">XOR</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">PyJWT</span></div>
+    <div class="tc"><span class="tk tkp">encode()</span><span class="tk tkp">decode()</span><span class="tk tkp">algorithms=</span><span class="tk tkp">alg:none</span><span class="tk tkp">verify=False</span></div>
+    <div class="ti"><span class="tl">&#9492;&#9472;&#9472;</span><span class="tn">impacket</span></div>
+    <div class="tc"><span class="tk tkp">SMBConnection</span><span class="tk tkp">NTLM</span><span class="tk tkp">Kerberos</span><span class="tk tkp">secretsdump</span><span class="tk tkp">DCERPC</span></div>
+  </div>
+  <div class="ti"><span class="tl" style="color:var(--coral)">&#9500;&#9472;&#9472;</span><span class="tn" style="color:var(--coral);font-weight:700">Stage 4 &middot; Code Quality</span></div>
+  <div class="tc">
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">OOP</span></div>
+    <div class="tc"><span class="tk tkc">class</span><span class="tk tkc">__init__</span><span class="tk tkc">@property</span><span class="tk tkc">@dataclass</span><span class="tk tkc">super()</span><span class="tk tkc">ABC</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">logging</span></div>
+    <div class="tc"><span class="tk tkc">getLogger()</span><span class="tk tkc">DEBUG/INFO/WARNING/ERROR</span><span class="tk tkc">FileHandler</span><span class="tk tkc">Formatter</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">type hints</span></div>
+    <div class="tc"><span class="tk tkc">x: int</span><span class="tk tkc">-&gt; str</span><span class="tk tkc">Optional[]</span><span class="tk tkc">List[]</span><span class="tk tkc">Dict[]</span><span class="tk tkc">mypy</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">pytest</span></div>
+    <div class="tc"><span class="tk tkc">def test_*()</span><span class="tk tkc">assert</span><span class="tk tkc">fixture</span><span class="tk tkc">parametrize</span><span class="tk tkc">mock.patch()</span></div>
+    <div class="ti"><span class="tl">&#9492;&#9472;&#9472;</span><span class="tn">packaging</span></div>
+    <div class="tc"><span class="tk tkc">pyproject.toml</span><span class="tk tkc">requirements.txt</span><span class="tk tkc">venv</span><span class="tk tkc">poetry</span><span class="tk tkc">entry_points</span></div>
+  </div>
+  <div class="ti"><span class="tl" style="color:var(--slate)">&#9492;&#9472;&#9472;</span><span class="tn" style="color:var(--slate);font-weight:700">Stage 5 &middot; Advanced</span></div>
+  <div class="tc">
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">pwntools</span></div>
+    <div class="tc"><span class="tk">process() remote()</span><span class="tk">p32() p64() u32() u64()</span><span class="tk">cyclic()</span><span class="tk">ROP()</span><span class="tk">ELF()</span><span class="tk">asm()</span><span class="tk">shellcraft</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">ctypes</span></div>
+    <div class="tc"><span class="tk">cdll.LoadLibrary()</span><span class="tk">windll</span><span class="tk">c_char_p</span><span class="tk">c_void_p</span><span class="tk">create_string_buffer()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">asyncio</span></div>
+    <div class="tc"><span class="tk">async def</span><span class="tk">await</span><span class="tk">gather()</span><span class="tk">Semaphore()</span><span class="tk">open_connection()</span><span class="tk">wait_for()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">angr + z3</span></div>
+    <div class="tc"><span class="tk">Project()</span><span class="tk">SimulationManager()</span><span class="tk">find= avoid=</span><span class="tk">z3.Solver()</span><span class="tk">BVS() BVV()</span></div>
+    <div class="ti"><span class="tl">&#9500;&#9472;&#9472;</span><span class="tn">pefile + lief</span></div>
+    <div class="tc"><span class="tk">PE()</span><span class="tk">.sections</span><span class="tk">.imports</span><span class="tk">lief.parse()</span><span class="tk">.patch_address()</span></div>
+    <div class="ti"><span class="tl">&#9492;&#9472;&#9472;</span><span class="tn">frida</span></div>
+    <div class="tc"><span class="tk">attach()</span><span class="tk">spawn()</span><span class="tk">create_script()</span><span class="tk">Interceptor.attach()</span><span class="tk">Memory.read*()</span></div>
+  </div>
+</div>
+
+<pre><code>email:   <a href="mailto:notalive7593@duck.com" class="tlink">notalive7593@duck.com</a>
+discord: <span class="tlink" style="cursor:pointer" onclick="copyText('_i_am_innocent_','Discord Handle Copied!')">_i_am_innocent_</span>
+github:  <a href="https://github.com/notalive24" target="_blank" class="tlink">github.com/notalive24</a></code></pre>
+
+</div>
+
+<button id="scrollTopBtn" title="Go to top">^ TOP</button>
+<div id="toast"></div>
+
+<script>
+document.querySelectorAll('pre').forEach(pre=>{
+  const btn=document.createElement('button');
+  btn.className='copy-btn';btn.innerText='Copy';pre.appendChild(btn);
+  btn.addEventListener('click',()=>{
+    const c=pre.querySelector('code');
+    if(c)navigator.clipboard.writeText(c.innerText).then(()=>{
+      const o=btn.innerText;btn.innerText='Copied!';setTimeout(()=>{btn.innerText=o;},2000);
+    });
+  });
+});
+const scrollBtn=document.getElementById('scrollTopBtn');
+window.onscroll=()=>{scrollBtn.style.display=(document.documentElement.scrollTop>300)?'block':'none';};
+scrollBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+if(history.scrollRestoration)history.scrollRestoration='manual';
+window.scrollTo(0,0);
+function copyText(text,msg){
+  navigator.clipboard.writeText(text).then(()=>{
+    const t=document.getElementById('toast');
+    t.innerText=msg||'Copied!';t.className='show';
+    setTimeout(()=>{t.className=t.className.replace('show','');},3000);
+  });
+}
+const glow=document.createElement('div');
+glow.className='cursor-glow';document.body.appendChild(glow);
+let mx=0,my=0,gx=window.innerWidth/2,gy=window.innerHeight/2;
+document.addEventListener('mousemove',e=>{mx=e.pageX;my=e.pageY;});
+(function animate(){gx+=(mx-gx)*.1;gy+=(my-gy)*.1;glow.style.left=gx+'px';glow.style.top=gy+'px';requestAnimationFrame(animate);})();
+</script>
+</body>
+</html>
