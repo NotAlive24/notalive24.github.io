@@ -1,3 +1,8 @@
+body {
+  animation: none;
+  background: #0b0b0f;
+}
+
 :root {
   --radius-sm: 12px;
   --radius-md: 16px;
