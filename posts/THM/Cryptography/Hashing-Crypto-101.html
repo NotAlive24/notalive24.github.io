@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
+    <meta name="supported-color-schemes" content="dark">
+    <meta name="theme-color" content="#050505">
+    <meta name="msapplication-TileColor" content="#050505">
+    <meta name="msapplication-navbutton-color" content="#ff8c00">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+
+    <title>Hashing — Crypto 101 | TryHackMe Write-Up | NotAlive</title>
+
+    <meta name="title" content="Hashing — Crypto 101 | TryHackMe Write-Up | NotAlive">
+    <meta name="description" content="Complete TryHackMe write-up for Hashing - Crypto 101. Covers hash functions, avalanche effect, MD5/SHA-256 collisions, password storage, rainbow tables, salting, bcrypt, hashcat, John the Ripper, and HMAC. Written by NotAlive.">
+    <meta name="keywords" content="hashing crypto 101, tryhackme hashing, hash functions, SHA-256, MD5, bcrypt, salting, rainbow tables, hashcat, john the ripper, HMAC, password cracking, cybersecurity write-up, CTF, tryhackme walkthrough, notalive, cryptography, pigeonhole principle, hash collision, sha512crypt, rockyou, integrity checking, avalanche effect, NTLM, unix shadow file, password storage">
+    <meta name="author" content="NotAlive">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="bingbot" content="index, follow">
+    <meta name="language" content="en">
+    <meta name="revisit-after" content="7 days">
+    <meta name="rating" content="general">
+    <meta name="category" content="Cybersecurity, Cryptography, CTF">
+    <meta name="classification" content="Education, Security Research">
+    <meta name="coverage" content="Worldwide">
+    <meta name="distribution" content="Global">
+    <meta name="target" content="all">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="canonical" href="https://notalive24.github.io/posts/THM/Cryptography/Hashing-Crypto-101.html">
+    <link rel="alternate" hreflang="en" href="https://notalive24.github.io/posts/THM/Cryptography/Hashing-Crypto-101.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="NotAlive Cyber Archive">
+    <meta property="og:title" content="Hashing — Crypto 101 | TryHackMe Write-Up">
+    <meta property="og:description" content="Complete TryHackMe write-up for Hashing - Crypto 101. Hash functions, salting, rainbow tables, bcrypt, hashcat, HMAC and more — by NotAlive.">
+    <meta property="og:url" content="https://notalive24.github.io/posts/THM/Cryptography/Hashing-Crypto-101.html">
+    <meta property="og:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta property="og:image:alt" content="NotAlive Cyber Archive — Hashing Crypto 101 Write-Up">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:updated_time" content="2026-03-19T00:00:00+00:00">
+    <meta property="article:published_time" content="2026-03-19T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-03-19T00:00:00+00:00">
+    <meta property="article:author" content="NotAlive">
+    <meta property="article:section" content="Cryptography">
+    <meta property="article:tag" content="hashing">
+    <meta property="article:tag" content="cryptography">
+    <meta property="article:tag" content="tryhackme">
+    <meta property="article:tag" content="bcrypt">
+    <meta property="article:tag" content="hashcat">
+    <meta property="article:tag" content="HMAC">
+    <meta property="article:tag" content="salting">
+    <meta property="article:tag" content="rainbow tables">
+    <meta property="article:tag" content="SHA-256">
+    <meta property="article:tag" content="password cracking">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@notalive24">
+    <meta name="twitter:creator" content="@notalive24">
+    <meta name="twitter:title" content="Hashing — Crypto 101 | TryHackMe Write-Up | NotAlive">
+    <meta name="twitter:description" content="Complete TryHackMe write-up covering hash functions, salting, rainbow tables, bcrypt, hashcat, HMAC and more.">
+    <meta name="twitter:image" content="https://notalive24.github.io/assets/images/banner.jpg">
+    <meta name="twitter:image:alt" content="NotAlive — Hashing Crypto 101">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="NotAlive">
+    <meta name="twitter:label2" content="Category">
+    <meta name="twitter:data2" content="Cryptography · TryHackMe">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      "headline": "Hashing — Crypto 101 | TryHackMe Write-Up",
+      "description": "Complete TryHackMe write-up for Hashing - Crypto 101. Covers hash functions, salting, rainbow tables, bcrypt, hashcat, HMAC, and more.",
+      "author": {
+        "@type": "Person",
+        "name": "NotAlive",
+        "url": "https://notalive24.github.io"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "NotAlive Cyber Archive",
+        "url": "https://notalive24.github.io",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://notalive24.github.io/assets/favicon.ico"
+        }
+      },
+      "datePublished": "2026-03-19",
+      "dateModified": "2026-03-19",
+      "url": "https://notalive24.github.io/posts/THM/Cryptography/Hashing-Crypto-101.html",
+      "image": "https://notalive24.github.io/assets/images/banner.jpg",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://notalive24.github.io/posts/THM/Cryptography/Hashing-Crypto-101.html"
+      },
+      "keywords": "hashing, cryptography, TryHackMe, bcrypt, hashcat, HMAC, salting, rainbow tables, SHA-256, password cracking",
+      "about": {
+        "@type": "Thing",
+        "name": "Cryptographic Hashing",
+        "description": "The process of converting input data into a fixed-size digest using a one-way hash function."
+      },
+      "educationalLevel": "Beginner",
+      "learningResourceType": "Write-Up",
+      "inLanguage": "en-US"
+    }
+    </script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-73D1FGWK93"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-73D1FGWK93');
+    </script>
+
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../../../assets/favicon.ico">
+    <link rel="apple-touch-icon" href="../../../assets/favicon.ico">
+
+    <style>
+        body {
+            background: var(--bg) !important;
+            animation: none !important;
+        }
+
+        .cursor-glow { display: none !important; }
+
+        #progress-bar {
+            position: fixed;
+            top: 0; left: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--orange), var(--pink));
+            z-index: 10000;
+            width: 0%;
+            transition: width .1s;
+        }
+
+        .post-header {
+            text-align: center;
+            padding: 50px 0 30px;
+            border-bottom: 1px dashed rgba(255,255,255,0.08);
+            margin-bottom: 40px;
+        }
+
+        .room-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--pink);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+
+        .room-tag::before {
+            content: '';
+            display: block;
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: var(--pink);
+            box-shadow: 0 0 8px var(--pink);
+            animation: glowBreath 2s infinite;
+        }
+
+        .post-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 16px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        .post-meta .difficulty {
+            color: var(--yellow);
+            border: 1px solid rgba(255,255,0,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .post-meta .cat {
+            color: var(--pink);
+            border: 1px solid rgba(255,0,255,0.3);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        .post-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 16px;
+        }
+
+        .post-tags span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.68rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.10);
+            color: #555;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+        }
+
+        .toc {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-left: 2px solid var(--orange);
+            padding: 22px 26px;
+            border-radius: 8px;
+            margin-bottom: 48px;
+        }
+
+        .toc-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: var(--orange);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .toc ol { list-style: none; counter-reset: toc; padding: 0; }
+        .toc ol li { counter-increment: toc; padding: 5px 0; }
+        .toc ol li::before {
+            content: counter(toc, decimal-leading-zero) " ";
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--orange);
+            font-size: 0.72rem;
+            margin-right: 8px;
+        }
+        .toc a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color .2s;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .toc a:hover { color: var(--pink); }
+
+        .section { margin-bottom: 60px; }
+
+        h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.05rem;
+            color: var(--orange);
+            margin: 28px 0 12px;
+            letter-spacing: 1px;
+        }
+
+        h3::before { content: '> '; color: #444; }
+
+        p { margin-bottom: 14px; font-size: 1.05rem; line-height: 1.8; }
+        strong { color: #f0f0f0; }
+
+        .callout {
+            border-left: 2px solid;
+            padding: 14px 18px;
+            margin: 22px 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .callout.info    { border-color: #00ccff; background: rgba(0,204,255,0.04);  color: #8acde8; }
+        .callout.warning { border-color: var(--yellow); background: rgba(255,255,0,0.04); color: #d4d48a; }
+        .callout.danger  { border-color: var(--red);   background: rgba(255,0,0,0.04);   color: #e08888; }
+        .callout.success { border-color: #00ff88;      background: rgba(0,255,136,0.04);  color: #80e8b0; }
+
+        .callout-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+            opacity: 0.6;
+        }
+
+        .def-grid { display: grid; gap: 10px; margin: 18px 0; }
+
+        .def-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-left: 2px solid var(--pink);
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .def-term {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.92rem;
+            color: var(--pink);
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .def-desc { font-size: 0.98rem; color: #aaa; margin: 0; }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+            margin: 18px 0;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .data-table th {
+            background: rgba(255,255,255,0.02);
+            color: var(--orange);
+            text-align: left;
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            letter-spacing: 1px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+
+        .data-table td {
+            padding: 10px 14px;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            color: #aaa;
+            vertical-align: top;
+        }
+
+        .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+        .s-bad  { color: var(--red); }
+        .s-ok   { color: var(--yellow); }
+        .s-good { color: #00ff88; }
+
+        .hash-format {
+            background: var(--code-bg);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 14px 18px;
+            border-radius: 5px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            color: #00ccff;
+            margin: 18px 0;
+            line-height: 2;
+        }
+
+        .hash-format .pfx { color: var(--pink); }
+        .hash-format .lbl { color: #444; font-size: 0.68rem; }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+            margin: 22px 0;
+        }
+
+        .concept-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 18px;
+            border-radius: 8px;
+            transition: border-color .25s, transform .25s;
+        }
+
+        .concept-card:hover { border-color: rgba(255,0,255,0.25); transform: translateY(-3px); }
+        .concept-card .icon { font-size: 1.3rem; margin-bottom: 10px; }
+
+        .concept-card .c-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.78rem;
+            color: var(--orange);
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .concept-card p { font-size: 0.92rem; color: #555; margin: 0; line-height: 1.6; }
+
+        .post-footer {
+            border-top: 1px dashed rgba(255,255,255,0.08);
+            padding: 28px 0 10px;
+            text-align: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            color: #444;
+        }
+
+        .post-footer a { color: #444; text-decoration: none; transition: color .2s; }
+        .post-footer a:hover { color: var(--orange); }
+
+        @media (max-width: 600px) {
+            .concept-grid { grid-template-columns: 1fr; }
+            .post-meta { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav>
+    <a href="../../../Heads/THM.html" class="home-link">&lt;&lt; Return to Mid-range server</a>
+</nav>
+
+<div class="content">
+
+    <div class="post-header">
+        <div class="room-tag">TryHackMe &nbsp;·&nbsp; Cryptography</div>
+        <h1>Hashing — Crypto 101</h1>
+        <div class="post-meta">
+            <span>2026-03-19</span>
+            <span class="difficulty">EASY</span>
+            <span class="cat">Cryptography</span>
+        </div>
+        <div class="post-tags">
+            <span>hashing</span>
+            <span>salting</span>
+            <span>MD5</span>
+            <span>SHA-256</span>
+            <span>bcrypt</span>
+            <span>hashcat</span>
+            <span>john</span>
+            <span>rainbow-tables</span>
+            <span>HMAC</span>
+            <span>integrity</span>
+        </div>
+    </div>
+
+    <p>
+        Hello everyone, this is <strong>NotAlive.</strong><br>
+        On this page, I will be summarizing the <strong>Hashing - Crypto 101</strong> room from <strong>TryHackMe</strong>.<br>
+        If you are new, I would recommend not reading this, as it is mainly meant for <em><strong>revision</strong></em>.<br>
+        Let's get started.
+    </p>
+
+    <div class="toc">
+        <div class="toc-title">&gt; Table of Contents</div>
+        <ol>
+            <li><a href="#terminology">Key Terminology</a></li>
+            <li><a href="#hashing">What is Hashing?</a></li>
+            <li><a href="#collisions">Hash Collisions & The Pigeonhole Principle</a></li>
+            <li><a href="#password-storage">Password Storage & Why It Matters</a></li>
+            <li><a href="#salting">Salting — Defeating Rainbow Tables</a></li>
+            <li><a href="#identifying">Identifying Hash Types</a></li>
+            <li><a href="#cracking">Cracking Hashes</a></li>
+            <li><a href="#integrity">Integrity Checking & HMAC</a></li>
+        </ol>
+    </div>
+
+    <section class="section" id="terminology">
+        <h2>1. Key Terminology</h2>
+
+        <div class="def-grid">
+            <div class="def-item">
+                <div class="def-term">Plaintext</div>
+                <p class="def-desc">Data before encryption or hashing. Often text, but can be any file — a photograph, binary, etc.</p>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Encoding</div>
+                <p class="def-desc">NOT encryption. Just a data representation format (e.g. base64, hex). Immediately and trivially reversible — like translation.</p>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Hash</div>
+                <p class="def-desc">The fixed-size output of a hash function. Also used as a verb — "to hash" means to produce the digest of some input data.</p>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Brute Force</div>
+                <p class="def-desc">Attacking cryptography by systematically trying every possible password or key combination.</p>
+            </div>
+            <div class="def-item">
+                <div class="def-term">Cryptanalysis</div>
+                <p class="def-desc">Attacking cryptography by finding and exploiting a mathematical weakness in the underlying algorithm.</p>
+            </div>
+        </div>
+
+        <div class="callout info">
+            <div class="callout-label">Note</div>
+            Encoding (base64, hex) is NOT a security measure. Anyone can reverse it instantly. Never confuse encoding with encryption or hashing.
+        </div>
+    </section>
+
+    <section class="section" id="hashing">
+        <h2>2. What is Hashing?</h2>
+
+        <p>A <strong>hash function</strong> takes input data of <em>any size</em> and produces a <strong>fixed-size output</strong> called a <strong>digest</strong>. Unlike encryption, it uses no key and is designed to be strictly <strong>one-way</strong> — reconstructing the original input from the output should be computationally infeasible.</p>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <div class="icon">⚡</div>
+                <div class="c-title">Fast to Compute</div>
+                <p>Good hash functions are designed to be computed quickly, enabling efficient verification at scale.</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">🔒</div>
+                <div class="c-title">One-Way</div>
+                <p>The original input cannot be feasibly reconstructed from the hash output alone.</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">🌊</div>
+                <div class="c-title">Avalanche Effect</div>
+                <p>A single bit change in the input produces a dramatically different output — unpredictable and non-linear.</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">📏</div>
+                <div class="c-title">Fixed Output Size</div>
+                <p>Regardless of input length, the output digest is always the same length for a given algorithm.</p>
+            </div>
+        </div>
+
+        <p>The raw binary output is typically encoded as <strong>hexadecimal</strong> or <strong>base64</strong> for display. Decoding this representation does <em>not</em> reveal the original input — it's just presentation.</p>
+
+        <h3>How It Works in Login Systems</h3>
+        <p>When you log in to a service, your password is <strong>never stored</strong> directly. The system stores its hash. On login, it hashes what you typed and compares against the stored hash. If they match — authenticated, without ever exposing the real password.</p>
+
+        <pre><code>$ echo -n "password123" | sha256sum
+ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f
+
+$ echo -n "password124" | sha256sum
+7ee5a5c90c4fd9f6b04b2f92bc34f54e4b7d55aee6827a09f7e4a22ee48f0e0</code></pre>
+    </section>
+
+    <section class="section" id="collisions">
+        <h2>3. Hash Collisions & The Pigeonhole Principle</h2>
+
+        <p>A <strong>hash collision</strong> occurs when two completely different inputs produce the same hash output. Since hash functions take infinite possible inputs and produce finite outputs, collisions are <strong>mathematically unavoidable</strong>.</p>
+
+        <div class="callout warning">
+            <div class="callout-label">The Pigeonhole Principle</div>
+            If you have more pigeons than pigeonholes, at least one pigeonhole must contain more than one pigeon. Since there are more possible inputs than possible hash outputs, some inputs must share the same output. It's not a flaw, it's math.
+        </div>
+
+        <p>The goal of secure hash algorithms is not to eliminate collisions (impossible), but to make <strong>intentional / engineered collisions</strong> computationally infeasible for an attacker to produce.</p>
+
+        <h3>Algorithm Status</h3>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Algorithm</th>
+                    <th>Output Size</th>
+                    <th>Collision Status</th>
+                    <th>Safe for Security Use?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MD5</td>
+                    <td>128-bit</td>
+                    <td><span class="s-bad">Collisions proven</span></td>
+                    <td><span class="s-bad">❌ No</span></td>
+                </tr>
+                <tr>
+                    <td>SHA-1</td>
+                    <td>160-bit</td>
+                    <td><span class="s-bad">Collisions proven</span></td>
+                    <td><span class="s-bad">❌ No</span></td>
+                </tr>
+                <tr>
+                    <td>SHA-256</td>
+                    <td>256-bit</td>
+                    <td><span class="s-good">No known collision</span></td>
+                    <td><span class="s-good">✅ Yes</span></td>
+                </tr>
+                <tr>
+                    <td>SHA-512</td>
+                    <td>512-bit</td>
+                    <td><span class="s-good">No known collision</span></td>
+                    <td><span class="s-good">✅ Yes</span></td>
+                </tr>
+                <tr>
+                    <td>bcrypt</td>
+                    <td>184-bit</td>
+                    <td><span class="s-good">No known collision</span></td>
+                    <td><span class="s-good">✅ Yes (passwords)</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout info">
+            <div class="callout-label">Interesting</div>
+            No attack has ever produced the same engineered collision in both MD5 and SHA-1 simultaneously. Combining both hashes can still help detect differences, though modern algorithms like SHA-256 are always preferred.
+        </div>
+    </section>
+
+    <section class="section" id="password-storage">
+        <h2>4. Password Storage & Why It Matters</h2>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <div class="icon">💀</div>
+                <div class="c-title">Plaintext Storage</div>
+                <p>Catastrophic. Any database breach immediately exposes every user's password. <span class="s-bad">Never acceptable.</span></p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">⚠️</div>
+                <div class="c-title">Encrypted Storage</div>
+                <p>Requires storing the decryption key. If the key is compromised, all passwords are decryptable at once.</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">✅</div>
+                <div class="c-title">Hashed Storage</div>
+                <p>One-way. No key to steal. Each password must be cracked individually. The correct approach.</p>
+            </div>
+        </div>
+
+        <div class="callout danger">
+            <div class="callout-label">Real-World Breach — rockyou.txt</div>
+            The infamous <strong>rockyou.txt</strong> wordlist originates from the RockYou breach where millions of passwords were stored in plaintext and dumped publicly. It is now the most commonly used wordlist in password cracking attacks — the textbook example of why plaintext storage is unacceptable.
+        </div>
+
+        <h3>Where Hashes Are Stored</h3>
+        <ul>
+            <li><strong>Linux</strong> — <code>/etc/shadow</code>, readable by root only.</li>
+            <li><strong>Windows</strong> — the SAM (Security Account Manager) database. Hashes are NTLM-based and look visually similar to MD4/MD5, so context is needed to identify them.</li>
+        </ul>
+
+        <pre><code>$ cat /etc/shadow
+
+username:$6$rounds=5000$salt$hash:days:min:max:warn:inactive:expire:</code></pre>
+    </section>
+
+    <section class="section" id="salting">
+        <h2>5. Salting — Defeating Rainbow Tables</h2>
+
+        <h3>The Rainbow Table Problem</h3>
+        <p>If two users have the same password, they have the same hash. An attacker with a <strong>rainbow table</strong> — a precomputed list of hash-to-plaintext mappings — can look up millions of hashes instantly without computing anything. Sites like <strong>CrackStation</strong> use massive rainbow tables for exactly this.</p>
+
+        <h3>The Salt Solution</h3>
+        <p>A <strong>salt</strong> is a random value generated uniquely per user and combined with their password before hashing. Even if two users have the same password, their salts differ — producing completely different hashes. The salt is stored alongside the hash (it doesn't need to be secret) and its purpose is to guarantee uniqueness and invalidate precomputed tables.</p>
+
+        <div class="callout success">
+            <div class="callout-label">How It Works</div>
+            <code>hash( password + salt )</code> → unique hash per user, even for identical passwords. Rainbow tables become useless because they would need to be recomputed for every possible salt value.
+        </div>
+
+        <pre><code>User A: hash( "hunter2" + "xK9mQ2" ) = a1b2c3d4e5f6...
+User B: hash( "hunter2" + "pL7nR1" ) = f9e8d7c6b5a4...
+
+bcrypt      → auto-salted, slow by design (resistant to GPU cracking)
+sha512crypt → auto-salted, configurable rounds</code></pre>
+    </section>
+
+    <section class="section" id="identifying">
+        <h2>6. Identifying Hash Types</h2>
+
+        <p>Tools like <strong>hashID</strong> can help, but they aren't always reliable — MD5, MD4, and NTLM hashes can look visually identical. The most reliable method combines: tools + hash length/prefix + <strong>context</strong> (where did the hash come from?).</p>
+
+        <h3>Unix-Style Hash Prefixes</h3>
+        <p>Unix/Linux password hashes include a prefix that identifies the algorithm, following the format:</p>
+
+        <div class="hash-format">
+            <span class="pfx">$format$</span>rounds$<span class="pfx">salt</span>$hash<br>
+            <span class="lbl">── format identifier ── optional rounds ── per-user salt ── the actual hash ──</span>
+        </div>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Prefix</th>
+                    <th>Algorithm</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>$1$</code></td>
+                    <td>MD5crypt</td>
+                    <td><span class="s-bad">Weak — avoid</span></td>
+                </tr>
+                <tr>
+                    <td><code>$2$</code> / <code>$2a$</code> / <code>$2b$</code></td>
+                    <td>bcrypt</td>
+                    <td><span class="s-good">Strong — recommended for passwords</span></td>
+                </tr>
+                <tr>
+                    <td><code>$5$</code></td>
+                    <td>SHA-256crypt</td>
+                    <td><span class="s-ok">Acceptable</span></td>
+                </tr>
+                <tr>
+                    <td><code>$6$</code></td>
+                    <td>SHA-512crypt</td>
+                    <td><span class="s-good">Strong — common on modern Linux</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout info">
+            <div class="callout-label">Context is Everything</div>
+            A 32-character hex hash could be MD5, NTLM, or MD4. If you pulled it from a web app database, it's likely MD5. If it's from a Windows SAM dump, it's NTLM. Tools alone can't determine this — context does.
+        </div>
+    </section>
+
+    <section class="section" id="cracking">
+        <h2>7. Cracking Hashes</h2>
+
+        <p>Since hashes cannot be decrypted, cracking requires <strong>brute-force or dictionary attacks</strong>: take a candidate password, apply the hash function (with salt if present), compare to the target. Repeat for millions of candidates.</p>
+
+        <p>GPUs are preferred because they have thousands of parallel cores and can compute billions of hashes per second. Running cracking tools inside a VM is usually slower since VMs often lack direct GPU access — always prefer running on the host system.</p>
+
+        <h3>Hashcat & John the Ripper</h3>
+
+        <pre><code>$ hashcat -m 0 -a 0 hash.txt /usr/share/wordlists/rockyou.txt
+
+$ hashcat -m 1800 hash.txt rockyou.txt -r rules/best64.rule
+
+$ john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt</code></pre>
+
+        <div class="callout warning">
+            <div class="callout-label">bcrypt is Special</div>
+            bcrypt is intentionally slow and designed to resist GPU acceleration. This is a feature, not a bug — it makes brute-force attacks orders of magnitude more expensive, even with powerful hardware.
+        </div>
+    </section>
+
+    <section class="section" id="integrity">
+        <h2>8. Integrity Checking & HMAC</h2>
+
+        <h3>Data Integrity</h3>
+        <p>Because the same input always produces the same hash, hashing verifies that data has not been altered. Even a single bit change produces a completely different digest.</p>
+        <ul>
+            <li>Verifying downloaded file integrity</li>
+            <li>Detecting tampering in transmitted data</li>
+            <li>Identifying duplicate files (same hash = identical files)</li>
+        </ul>
+
+        <pre><code>$ sha256sum kali-linux-2024.iso
+abc123...def456  kali-linux-2024.iso</code></pre>
+
+        <h3>HMAC — Hash-Based Message Authentication Code</h3>
+        <p>HMAC combines a hash function with a <strong>secret key</strong>, providing two guarantees that plain hashing cannot:</p>
+
+        <div class="concept-grid">
+            <div class="concept-card">
+                <div class="icon">🔐</div>
+                <div class="c-title">Integrity</div>
+                <p>Data hasn't been modified since it was signed. Same guarantee as regular hashing.</p>
+            </div>
+            <div class="concept-card">
+                <div class="icon">🪪</div>
+                <div class="c-title">Authenticity</div>
+                <p>The message came from someone who holds the secret key. This is what plain hashing cannot provide.</p>
+            </div>
+        </div>
+
+        <div class="callout success">
+            <div class="callout-label">Real-World Use</div>
+            VPNs commonly use <strong>HMAC-SHA512</strong> to verify secure communication — ensuring messages are neither modified in transit nor sent by an impersonator. Only a party with the shared secret key can generate a valid HMAC.
+        </div>
+
+        <pre><code>$ echo -n "message" | sha256sum
+ab530a13e45914982b79f9b7e3fba994...
+
+$ echo -n "message" | openssl dgst -sha256 -hmac "secretkey"
+HMAC-SHA256(stdin)= 8b5f48702995c1598c573db1e21866a9...</code></pre>
+    </section>
+
+    <div class="post-footer">
+        <span><a href="../../../Heads/THM.html">← Back to TryHackMe</a></span>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <span>NotAlive · 2026</span>
+        &nbsp;&nbsp;·&nbsp;&nbsp;
+        <span><a href="https://tryhackme.com/room/hashingcrypto101" target="_blank">Room Link</a></span>
+    </div>
+
+</div>
+
+<div id="progress-bar-script">
+    <script>
+        const _pb = document.getElementById('progress-bar');
+        window.addEventListener('scroll', () => {
+            const h = document.documentElement;
+            _pb.style.width = (h.scrollTop / (h.scrollHeight - h.clientHeight) * 100) + '%';
+        });
+    </script>
+</div>
+
+<button id="scrollTopBtn" title="Go to top">^ TOP</button>
+<div id="toast-notification"></div>
+<script src="../../../assets/js/script.js" defer></script>
+</body>
+</html>
