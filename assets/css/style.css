@@ -119,12 +119,12 @@ body {
         70px 70px,
         auto;
 
-    animation: gridMove 12s linear infinite;
+    animation: gridMove 4s linear infinite;
 }
 
 
 html, body { min-height: 100%; }
-
+body { overflow-x: hidden; } /* ok */
 body { overflow-x: hidden; } 
 
 
