@@ -119,12 +119,12 @@ body {
         70px 70px,
         auto;
 
-    animation: gridMove 4s linear infinite;
+    animation: gridMove 12s linear infinite;
 }
 
 
 html, body { min-height: 100%; }
-body { overflow-x: hidden; } /* ok */
+
 body { overflow-x: hidden; } 
 
 
@@ -790,3 +790,23 @@ Does NOT modify existing styles
 
 }
 
+.booking-btn{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 18px;
+
+    border:1px solid var(--pink);
+    border-radius:8px;
+
+    text-decoration:none;
+    color:var(--text-main);
+
+    transition:0.25s ease;
+
+    background:rgba(255,0,255,0.06);
+}
+
+.booking-btn:hover{
+    transform:translateY(-2px);
+    box-shadow:0 0 18px rgba(255,0,255,0.25);
+}
